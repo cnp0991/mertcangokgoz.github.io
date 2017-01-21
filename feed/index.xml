@@ -5,14 +5,449 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Sat, 21 Jan 2017 12:31:43 +0300</lastBuildDate>
-        <pubDate>Sat, 21 Jan 2017 12:31:43 +0300</pubDate>
+        <lastBuildDate>Sat, 21 Jan 2017 20:27:43 +0300</lastBuildDate>
+        <pubDate>Sat, 21 Jan 2017 20:27:43 +0300</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
                 <title>Siberyildiz Soru ve Cevaplar</title>
-                <description>&lt;p&gt;CTF Bittiğinde tüm soru ve detaylı cevaplara bu link aracılığı ile ulaşabilirsiniz.&lt;/p&gt;
+                <description>&lt;p&gt;Merhaba arkadaşlar bilindiği gibi &lt;strong&gt;USOM&lt;/strong&gt; aracılığı ile bir &lt;strong&gt;CTF&lt;/strong&gt; düzenlendi ve bizde buna katılma ihtiyacı duyduk. Bizler ne etik hackerız nede bu alanda çalışıyoruz. Biz sadece programlama ve bir takım bilgiler ile CTF’ler de neler yapabileceğimize bakıyoruz.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CTF&lt;/strong&gt; başladığında haliyle siteye girip soruları çözemedik bunda en büyük etken yarışma başladığında kurumun hiçbir şekilde Anti-ddos araçları ile siteyi korumamış olması ayrıca sistemin düzgün çalışmaması neyse her yerde olabilir vs deyip bir kaç soruya girebildik ve çözmeye başladık&lt;/p&gt;
+
+&lt;p&gt;Ancak belirtmek istiyorum. Oldukça fazla bir şekilde cevap paylaşımı ve çoklu grup kafası yüzünden ciddi anlamda geçerliliği sorgulanması gerekiyor üstelik bu yarışma yaklaşık 6 Saat kadar bir süre saldırı kaynaklı kesintiye uğradı ve bizde dahil cevaplarımızı giremedik&lt;/p&gt;
+
+&lt;p&gt;Sisteme giriş yaptığımızda ise pek çok gurubun yüksek puanlara geçmiş olduğunu gördük. İnsanlarda haklı olarak twitter hesaplarından tepkide bulundular.&lt;/p&gt;
+
+&lt;p&gt;Soruların bazılarının cevaplarını yazacak vaktim olmadığı için &lt;strong&gt;ilerleyen güncelerde makale güncellenecektir.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“İyi bak “&lt;/em&gt; Bu soruda ilk olarak size bir adet resim veriyor ve bu resimden yola çıkarak cevabı bulmanız isteniyor. Resmi google aracılığı ile arattığımızda para ile alınmış olabileceğini düşündük ve biraz araştırma yaptık daha sonra basitten zora gidiyordur diye bi &lt;code class=&quot;highlighter-rouge&quot;&gt;exiftool&lt;/code&gt; aracılığı ile comment ve copyright baktık ama soruda “iyi bak” dediği için daha sonrasında resme odaklandık&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/soru1siberyildiz.jpg&quot; alt=&quot;siberyildizsoru1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Her neyse resmin boş olduğunu anladıktan sonra curl atıp bakalım dedik birde ne görelim &lt;code class=&quot;highlighter-rouge&quot;&gt;FLAG&lt;/code&gt; olarak orada bulunuyordu&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/soru1cevap.png&quot; alt=&quot;soru1cevap&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;335286429afb2a2344079fe68764a1e0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Bakalım ne kadar iyisin ?”&lt;/em&gt; Bu soruda ise basit bir login ekranı geliyor karşımıza ne kadar iyisin diyor sonrada bize ilk başta ekip olarak biz bi xss yada sql inj deneriz çünkü basitten zora gitmek gerekir biraz kurcaladıktan sonra altta yazan mesaja odaklandık kullanıcı adını bulmamız bu sayede zor olmadı :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/soru2siberyildiz.png&quot; alt=&quot;siberyildizsoru2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kullanıcı adı: Yonetici&lt;br /&gt;
+Şifre: 1’or’1’=’1&lt;/p&gt;
+
+&lt;p&gt;Olarak sisteme giriş yaptık&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Yetkili bir kullanıcı ile giriş yapman lazım.&lt;/em&gt; Sorusuna gelelim bu soruda ise sistemde zaten hali hazırda giriş yapmış olduğumuzu biliyoruz. Ancak bize daha yetkilisini bulmamızı söylüyor. Ve sayfa ilk giriş yaptığımızda bize çerez olarak&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;isAdmin=cfcd208495d565ef66e7dff9f98764da
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Yukarıdaki yükleniyor hemen ardından ise çıkış yaptığımızda bu değeri sistemden siliyor. Biz bu değeri bir decode edelim dedik karşımıza &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; çıktı cevap haliyle bu olamazdı&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Elimizde bir flash bellek var, içerisindeki resimlerden biri bize lazım.”&lt;/em&gt; adlı sorumuza geldi sıra buradada bize verdiği dosya sözde bir disk imajı&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ef2a36ae56f254dd6adf716dffc84264: DOS/MBR boot sector, code offset 0x52+2, OEM-ID &quot;NTFS    &quot;, sectors/cluster 8, Media descriptor 0xf8, sectors/track 62, heads 247, hidden sectors 2048, dos &amp;lt; 4.0 BootSector (0x80), FAT (1Y bit by descriptor); NTFS, sectors/track 62, sectors 102399, $MFT start cluster 4, $MFTMirror start cluster 6399, bytes/RecordSegment 2^(-1*246), clusters/index block 1, serial number 013e61d99342ea2e1; contains Microsoft Windows XP/VISTA bootloader BOOTMGR
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Buraya kadar herşey normal şimdi sıra dosyaya &lt;code class=&quot;highlighter-rouge&quot;&gt;binwalk&lt;/code&gt; ile bakmaya içerisinde neyin olup bittiğini görebileceğiz bu sayede&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;binwalk ef2a36ae56f254dd6adf716dffc84264 &amp;gt; dump.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dosya içerisinde birden fazla PDF ve Resim olduğunu görüyoruz. Şimdi bunları dd ile tek tek çıkartmaya geldi&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dd if=ef2a36ae56f254dd6adf716dffc84264 of=new.jpeg skip=14433399 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new2.jpeg skip=14516838 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new3.jpeg skip=28406368 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new4.jpeg skip=29052314 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new5.jpeg skip=29241403 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new6.jpeg skip=33026056 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new7.jpeg skip=33062920 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new8.jpeg skip=33062950 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new9.tiff skip=33062950 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new0.jpeg skip=45166530 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new11.jpeg skip=49163867 bs=1
+dd if=ef2a36ae56f254dd6adf716dffc84264 of=new12.jpeg skip=49279925 bs=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Çıkarttığımız resimler içerisinde benim dikkatimi en fazla çeken usomun logosunun bulunduğu ve resim headeri bozuk olandı&lt;/p&gt;
+
+&lt;p&gt;Herhangi bir hex aracı ile resmi açıyorsunuz ve header bilgisini düzeltiyorsunuz uzun uzun anlatmayacağım mantığını şu site aracılığı ile öğrenebilirsiniz. &lt;a href=&quot;https://samsclass.info/121/proj/p7-image-header.htm&quot;&gt;Rebuilding an Image Header&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Daha sonra resmi düzelttikten hemen sonra herhangi bir exif aracı ile ki ben “exiftool” seçtim bilgilere bakıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mertcan@0x2e88ce4:~/Desktop$ exiftool exifusom.png
+ExifTool Version Number         : 10.37
+File Name                       : exifusom.png
+Directory                       : .
+File Size                       : 87 kB
+File Modification Date/Time     : 2017:01:21 14:23:12+03:00
+File Access Date/Time           : 2017:01:21 14:23:20+03:00
+File Inode Change Date/Time     : 2017:01:21 14:23:26+03:00
+File Permissions                : rw-r--r--
+File Type                       : PNG
+File Type Extension             : png
+MIME Type                       : image/png
+Image Width                     : 962
+Image Height                    : 421
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+Exif Byte Order                 : Little-endian (Intel, II)
+Copyright                       : D0sy4kurt4rmA_B1ziM-1$iM1Z
+Thumbnail Offset                : 94
+Thumbnail Length                : 3755
+Pixels Per Unit X               : 11811
+Pixels Per Unit Y               : 11811
+Pixel Units                     : meters
+Software                        : Adobe ImageReady
+Warning                         : Truncated PNG image
+Image Size                      : 962x421
+Megapixels                      : 0.405
+Thumbnail Image                 : (Binary data 3755 bytes, use -b option to extract)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ve sonunda bayrağımıza ulaştık&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright                       : D0sy4kurt4rmA_B1ziM-1$iM1Z
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Değerin md5 hash halini alıyoruz ve işlemimiz burada bitiyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0679ce1ac69b580a695fc8308bfd2116
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;“Parolayı bul ve bize gönder !” başlıklı bu soruda ise bize site içerisinde kaynakta gözükecek şekilde obfuscate edilmiş yani karıştırılmış bir JS kodu verilmiş ve bizden bunu çözmemiz isteniyor. İlk olarak kodu düzeltelim&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document)['ready'](function() {
+    $('#loginform')['submit'](function(_0x34b0x1) {
+        _0x34b0x1['preventDefault']();
+        var _0x34b0x2 = true;
+        var _0x34b0x3 = $('input[name=&quot;username&quot;]')['val']();
+        var _0x34b0x4 = $('input[name=&quot;password&quot;]')['val']();
+        var _0x34b0x5 = new Array('b5', '1c44', 'c6', '24c1', 'e6', '2b93', 'da', '1fd4', 'b1');
+        if (CryptoJS.MD5(_0x34b0x3).toString() === '2dfa843b02427819d8bdf8271bb84a3c' &amp;amp;&amp;amp; _0x34b0x4['length'] === (18 / 3 + 6 - 3)) {
+            for (i = 0; i &amp;lt; _0x34b0x3['length']; i++) {
+                if (i % 2 === 0) {
+                    if (((_0x34b0x3['charAt'](i)['charCodeAt'](0)) + (_0x34b0x4['charAt'](i)['charCodeAt'](0))).toString(16) !== _0x34b0x5[i]) {
+                        _0x34b0x2 = false;
+                        break;
+                    }
+                } else {
+                    if (_0x34b0x5[i] !== ((_0x34b0x3['charAt'](i)['charCodeAt'](0)) * (_0x34b0x4['charAt'](i)['charCodeAt'](0))).toString(16)) {
+                        _0x34b0x2 = false;
+                        break;
+                    }
+                }
+            };
+            if (_0x34b0x2) {
+                alert('Ba\u015Far\u0131l\u0131 i\u015Flem')
+            } else {
+                alert('Hatal\u0131 i\u015Flem')
+            };
+        } else {
+            alert('Kullan\u0131c\u0131 ad\u0131 veya \u015Fifre yanl\u0131\u015F')
+        };
+    })
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Şimdi bu düzelttiğimiz kodların içerisinde yukarıda bulunan ve benim dahil etmediğim bir var bulunuyor çünkü bunun içerisinde sadece kullanıcı adı bulunuyordu oda md5 formatında verilmişti.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2dfa843b02427819d8bdf8271bb84a3c&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Şimdi burada belirlememiz gereken tek şey şifre idi koda baktığımızda kullanıcı adının uzunluğunun 8 şifrenin ise 9 olması gerektiği idi bunu attık kenara zaten kullanıcı adı “alpaslan” yani md5 değerinin çözülmüş hali idi&lt;/p&gt;
+
+&lt;p&gt;Şifreyi çözmek içinse şöyle bir yol izlendi&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##Adım 1 -
+_0x4831 HEX  &amp;gt; ASCII
+&quot;&quot;&quot;
+input[name=&quot;username&quot;]
+input[name=&quot;password&quot;]
+b5
+1c44
+c6
+24c1
+e6
+2b93
+da
+1fd4
+b1
+2dfa843b02427819d8bdf8271bb84a3c
+length
+charCodeAt
+charAt
+Başarılı işlem
+Hatalı işlem
+Kullanıcı adı veya şix66re yanlış
+submit
+#loginform
+ready
+##Adım2
+_0x4831[13] &amp;gt; MD5 Crack &amp;gt; alparslan
+
+##Adım 3
+_0x34b0x5  &amp;gt; HEX &amp;gt; Decimal
+181
+7236
+198
+9409
+230
+11155
+218
+8148
+177
+
+##Adım 4
+alparslan &amp;gt; Stplit Keys &amp;gt; Char Code
+97
+108
+112
+97
+114
+115
+108
+97
+110
+
+##Adım 5
+a-b OR a/b  &amp;gt; Char
+181-97=84 T
+7236/108= C
+198-112=86 V
+9409-97=97 a
+230-114=116 t
+11155/115=97 a
+218-108=110 n
+8148/97=84 T
+177-110=67 C
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Şifre olarak ise çözümlemeler sonucunda uzunluğu 9 olan bir şifre elde ettik &lt;code class=&quot;highlighter-rouge&quot;&gt;TCVatanTC&lt;/code&gt; Ayrıca sayfanın title baktığımızda BS yazdığını da gördük yani alpaslan demek istediği Büyük Selçuklu olabilirdi yada bi s…. git diyerek küfür ediyo da olabilirdi ancak sonuca ulaşabilmiştir.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;d66ab2522c55a041661ff6526c99c36d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;“Holowy Conz den beklediğimiz mesaj geldi, acaba nedir ?” olarak karşımıza bir resim çıkıyor. Haliyle bu bir steghide sorusu zorlanacağımızı düşündüysek de 10 sn kadar bir süre aldı çözmemiz&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/soru6gorsel.png&quot; alt=&quot;siberyildizsoru6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Herhangi bir unhide sitesine giriyoruz ve resmi siteye yüklüyoruz. Bu iş için biz &lt;a href=&quot;http://incoherency.co.uk/image-steganography/#unhide&quot;&gt;Image Steganography&lt;/a&gt; sitesini kullandık sonuç olarak bize aşağıdaki gibi bir çıktı geldi ve hemen bir barkod okuyucu ile cevabı aldık&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/soru6cevap.jpg&quot; alt=&quot;siberyildizsoru6cevap&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ve sonuç olarak kare barkod da “siberstar” çıktı bunun md5 değerini alıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0b6f6a0a8520da0839e5e3075df924fa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ancak bu değer sistem tarafından kabul edilmiyor. Dosya içerisinde başka bir şekilde bulunuyor olma ihtimali yüksek&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Algoritmada ne kadar hizlisin ?&lt;/em&gt; Bu soruda bize sıralı bir dizi vermiş ve bizden sıralı olarak gidenleri bulmamızı istiyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bir silsileden(sequence) sifir yada daha fazla eleman atilarak elde edilen silsileye alt silsile denir. Alt silsileler arasinda silsile elemanlari sirali olanlara sirali alt silsile denir. Ornegin (1,5,6,3,4,2,9,10,11) silsilesinden elden edilen (1,5) ve (2,9,10) birer sirali alt silsiledir. Ayni zamanda (2,9,10,11) silsilesi en fazla uyeye sahip sirali alt silsiledir. Buna gore asagida elemanlari onaltilik (hexadecimal) sayi sisteminde verilen silsilenin en fazla elemana sahip sirali alt silsilesi nedir.
+
+Not: Cevap (1,25,216) formatinda (bosluksuz,virgullu ve parantezli) olmalidir. Elemanlar onluk (decimal) sayi sisteminde olmalidir.
+
+Soru Silsilesi:
+(0x9a,0x85,0x9e,0xac,0xaa,0xc4,0xa4,0xbb,0xbe,0x9a,0x64,0x9e,0x8e,0x9b,0x70,0xb4,0x81,0xa3,0x81,0x9b,0x9c,0x68,0x68,0x8b,0x6b,0x83,0x70,0x81,0xb2,0xb9,0x75,0xa7,0xb2,0x98,0x7a,0x90,0x92,0xc0,0xbf,0x64,0x75,0x68,0x7a,0xc5,0xa2,0xaa,0xab,0xc4,0x78,0x6c,0xab,0xbb,0xb5,0x7c,0x95,0xa4,0xb2,0x73,0x84,0xa0,0x88,0x96,0x72,0x8d,0xac,0x85,0xa7,0xad,0x82,0x9d,0xab,0x99,0x7c,0x72,0x6d,0x6b,0x8c,0x8a,0xa7,0x7d,0x68,0x86,0xaf,0xbb,0x79,0x83,0x8c,0x7b,0x72,0xb2,0x6f,0x77,0xb6,0xb8,0xf4,0xF6,0x8c,0x67,0xb6,0xb5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hex formatında verdiği içinde buna göre bazı işlemler yapmamız gerekiyordu haliyle&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;liste=&quot;0x9a,0x85,0x9e,0xac,0xaa,0xc4,0xa4,0xbb,0xbe,0x9a,0x64,0x9e,0x8e,0x9b,0x70,0xb4,0x81,0xa3,0x81,0x9b,0x9c,0x68,0x68,0x8b,0x6b,0x83,0x70,0x81,0xb2,0xb9,0x75,0xa7,0xb2,0x98,0x7a,0x90,0x92,0xc0,0xbf,0x64,0x75,0x68,0x7a,0xc5,0xa2,0xaa,0xab,0xc4,0x78,0x6c,0xab,0xbb,0xb5,0x7c,0x95,0xa4,0xb2,0x73,0x84,0xa0,0x88,0x96,0x72,0x8d,0xac,0x85,0xa7,0xad,0x82,0x9d,0xab,0x99,0x7c,0x72,0x6d,0x6b,0x8c,0x8a,0xa7,0x7d,0x68,0x86,0xaf,0xbb,0x79,0x83,0x8c,0x7b,0x72,0xb2,0x6f,0x77,0xb6,0xb8,0xf4,0xF6,0x8c,0x67,0xb6,0xb5&quot;
+for i in liste.split(&quot;,&quot;):
+    print int(i,16)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Şeklinde kodumuzu yazdık ve dönüştürme işlemine geçtik okunabilir hale aşağıdaki gibi getirdik ve başladık içerisinde gözümüz ile aramaya&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[154, 133, 158, 172, 170, 196, 164, 187, 190, 154, 100, 158, 142, 155, 112, 180, 129, 163, 129, 155, 156, 104, 104, 139
+, 107, 131, 112, 129, 178, 185, 117, 167, 178, 152, 122, 144, 146, 192, 191, 100, 117, 104, 122, 197, 162, 170, 171, 19
+6, 120, 108, 171, 187, 181, 124, 149, 164, 178, 115, 132, 160, 136, 150, 114, 141, 172, 133, 167, 173, 130, 157, 171, 1
+53, 124, 114, 109, 107, 140, 138, 167, 125, 104, 134, 175, 187, 121, 131, 140, 123, 114, 178, 111, 119, 182, 184, 244,
+246, 140, 103, 182, 181]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Baktığımızda bizden istediği şu olabilirdi.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(124,149,164,178)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;veya&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(111,119,182,184,244,246)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;En uzun olanı seçiyoruz burada çünkü bize en uzun olanı soruyor. Oda ikinci bulduğumuz idi hemen md5 değerini alıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ce549031ea58a4a7493dde46a2c71357
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Splinter’ın bilgisayarından önemli veriler aldık, bunların ne olduğu bul ve bize bildir.&lt;/em&gt; Bu soruda ise bize bir adet ne olduğu belirsiz bir dosya veriyor ancak dosyayı sistemimize indirip &lt;code class=&quot;highlighter-rouge&quot;&gt;file&lt;/code&gt; ile baktığımızda bunun bir pcap dosyası olduğunu görüyoruz.&lt;/p&gt;
+
+&lt;p&gt;içerisinde ise host tarafına bağlanan bir USB belleğin paketleri bulunuyordu. “URB_INTERRUPT” ve cihaz bilgisi vs şimdi burada yapmamız gereken bir kaç işlem var öncelikli olarak bunlara karar verelim.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tshark -r splinter -T fields -e usb.capdata &amp;gt; dump.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;devamı gelecek…&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Şimdi de uygulamanın kullandığı veritabanı parolası lazım&lt;/em&gt; Sorusuna geldik soruya geldiğimizde bizi ilk başta bi 404 hatası karşılıyordu. Çoğu kişi bu sayfanın gerçek olduğunu sanıp soru çalışmıyor diye twitterdan yazmaya başladı aslında olay &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL + U&lt;/code&gt; bastığımızda sayfanın en altında gizlenmiş bir div içerisinde bulunan form ile gerçekleşiyordu F12 aracılığı ile tarayıcı tarafında &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt; dosyasında bulunan değerleri kaldırdığınızda karşınıza 2 adet input ekranı geliyor haliyle buralar basittir diyip direk olarak &lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; yazdık ve içerdeydik veya jsfiddle gibi araçlar ile &lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; değeri ile post isteği attığınızda içeriye girebiliyorsunuz.&lt;/p&gt;
+
+&lt;p&gt;Her neyse karşımıza şu şekilde bir ekran geliyor ve aşağıda da ufak bir hata bulunuyordu ayrıca link yapısına baktığımızda bunun bir LFI olduğunu anlamak hiçte zor olmadı&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/soru9siberyildiz.jpg&quot; alt=&quot;soru9siberyildiz&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Şimdi bu hata ışında biraz kurcalayalım. Bir kaç alt dizine inmemiz gerekiyor aslında çok değil hataya bakıldığında maximum 3 dizin aşağıya gitsek bu iş tamam bunun için ise biz şöyle bir payload seçtik&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;../db.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;linkimiz ise şu şekilde olacaktı&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dd96a95ce40af42633d10802bd419bc5/sanayihirsizligi/index.php?file=..%2Fdb.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;urldecode ettiğinizde yukarıda vermiş olduğum payload olduğunu anlayabilirsiniz. Bu bilgiler ışığında oluşturduğumuz link ile girdiğimizde &lt;code class=&quot;highlighter-rouge&quot;&gt;flag&lt;/code&gt; bir anda önümüze çıktı &lt;code class=&quot;highlighter-rouge&quot;&gt;FLAG: Om3rHal1sD3MIR&lt;/code&gt; Bu değeride md5 formatına çevirdiğimizdede cevabımız tamamen hazırdı zaten&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/soru9cevap.jpg&quot; alt=&quot;soru9cevap&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0ae4ce5c35afcc6f88501b24f8498c0f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Bu görev önünde iki seçenek var : başarılı olursun veya olamazsın&lt;/em&gt; Bu soruda ilk olarak bi login kısmı geliyor burası basit zaten adam sana &lt;code class=&quot;highlighter-rouge&quot;&gt;admin olarak gir&lt;/code&gt; diyor.&lt;/p&gt;
+
+&lt;p&gt;Kullanıcı adı: admin
+Şifre: admin&lt;/p&gt;
+
+&lt;p&gt;Peki bundan sonra ne geliyor. Komutu çalıştıracak şifreyi bulmaya ve komutu çalıştırmaya komut zaten &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt; ancak komutu çalıştırmak için bizden bir adet şifre istiyor. Biraz uğraştıktan sonra elime geçen bir wordlist aracılığı ile get metodu kullanılan linke zorlama yaptık ve şifre karşımıza çıktı &lt;code class=&quot;highlighter-rouge&quot;&gt;adminlele&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;9f0f364f34fc230630922d7c4ce66d68/cannotfindme/?pass[]=adminlele&amp;amp;cmd=ls
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Giriş yaptıktan sonra ise içeride 3 adet dosya gözüküyor bize oda şöyle ki&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;index.php
+readme.txt
+try.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bunlar içerisinde &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.txt&lt;/code&gt; ve &lt;code class=&quot;highlighter-rouge&quot;&gt;try.html&lt;/code&gt; gözümüze çarpıyor. kontrol ediyoruz. &lt;code class=&quot;highlighter-rouge&quot;&gt;try.html&lt;/code&gt; dosyası içerisinde ise aşağıdaki satır yer alıyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;read file /tmp/isThatFlag.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Tabi burada bazı arkadaşlar gidip dosyayı bulup okumak isteyeceklerdir. Ancak ana bizim girdiğimiz dosyanın adının &lt;code class=&quot;highlighter-rouge&quot;&gt;try&lt;/code&gt; olduğunu göz önünde bulundurarak direk yukarıdaki değerin md5 halini aldık ve sonuç olumlu oldu&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fc5b4590ba6b20619556c126d7aa101f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Holowy Conz den beklediğimiz mesaj geldi, acaba nedir ?&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Yapabileceğine inancımız tam.&lt;/em&gt; Bu sorudada öncelikli olarak linki baya bi kurcaladık ne var ne yok diye bakma isteği duyduk sonra get isteği atmaya sql map ile denemeye başladık ilk olarak yüksek hızlı tarama işlemi yapınca site requestleri drop etmeye başladı bizde dedik bu böyle olmaz bir takım kısıtlamalar ile taramaya devam ettik şu şekilde bir URL elde ettik&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;index.php?id=1' UNION ALL SELECT NULL,CONCAT(0x716b626b71,0x756a64567375626642615a5042756b5551576d4345784d6e527a526545734a6c585a4a4745766175,0x71786b6271)-- mmYT--
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Zararlı bir hacker’ın bilgisayarından veri elde ettik, içerisindeki hackerin şifresini bulabilir misin ?&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soru 14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Nedir bu sence ?&lt;/em&gt; Sorusunun ne olduğunu her ne kadar anlasak da cevaba ulaşamadık altın oran sorusu olup fibonacci ile rabbit seq arasında bir ilişki bulunmakta&lt;/p&gt;
+
+&lt;h3 id=&quot;yardmlarndan-dolay&quot;&gt;Yardımlarından dolayı&lt;/h3&gt;
+
+&lt;p&gt;Yasin YAMAN&lt;br /&gt;
+Ömer İPEK&lt;br /&gt;
+Furkan KALKAN ve diğer tüm arkadaşlarıma teşekkürlerimi sunarım.&lt;/p&gt;
 </description>
                 <link>https://mertcangokgoz.com/siberyildiz-soru-ve-cevaplari/</link>
                 <guid>https://mertcangokgoz.com/siberyildiz-soru-ve-cevaplari</guid>
