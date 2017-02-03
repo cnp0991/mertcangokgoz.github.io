@@ -5,10 +5,37 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Sun, 22 Jan 2017 16:26:33 +0300</lastBuildDate>
-        <pubDate>Sun, 22 Jan 2017 16:26:33 +0300</pubDate>
+        <lastBuildDate>Fri, 03 Feb 2017 18:07:43 +0300</lastBuildDate>
+        <pubDate>Fri, 03 Feb 2017 18:07:43 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>HTTP üzerinden Temel Kimlik Doğrulama kullanmayın</title>
+                <description>&lt;p&gt;Temel kimlik doğrulama, uygulamanın basitliği ve kolaylığı nedeniyle son derece popüler bir kimlik doğrulama aracıdır. Maalesef, HTTP üzerinden aynı zamanda, kişilerin kimlik doğrulamalarını sağlamak güzel bir yöntem değildir! Temel kimlik doğrulama, istemcilerin kullanıcı adı ve parola kimlik bilgilerini iletmek için kimlik doğrulama HTTP başlık bilgisini(header) kullanır. İstemci verilen kullanıcı adını ve parolayı alır, &lt;strong&gt;base64&lt;/strong&gt; olarak her ikisini de kodlar ve bir sunucuya istekte bulunurken bunları HTTP başlık bilgisine(header) ekler. Buraya kadar bir sorun yok hatta bu durum size normal bile geliyor olabilir.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GET /admin-panel HTTP/1.1
+Authentication: Basic ZGVtbzpleGFtcGxl
+Host: mertcangokgoz.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sunucu, doğrulama yapmak için kullanıcı adı ve parolanızı alır ve kimlik doğrulama başlık bilgisini(header) basitçe &lt;strong&gt;base64&lt;/strong&gt; halini çözer. Sonuç olarak kişi benim doküman sistemime ulaşır. Maalesef, yukarıda belirttiğim gibi temel kimlik doğrulama &lt;strong&gt;HTTP&lt;/strong&gt; protokolü üzerinden hiçbir zaman kullanılmamalıdır.&lt;/p&gt;
+
+&lt;p&gt;HTTP protokolü, daha akıllı kardeşi olan HTTPS’den farklı olarak &lt;strong&gt;şifrelenmez&lt;/strong&gt;. Bu da internette bulunan herkesin gönderdiğiniz her ne olursa olsun görebildiğini varsayabileceğimiz anlamına gelir. Doküman koleksiyonum hassas bilgi değilken, isteği yaptığımda kimlik doğrulama başlığında benim kimlik bilgilerimi göndermiş oldum; bu da benim kimlik bilgilerimi kötü niyetli bilgisayar korsanlarına veriyor olabileceğim anlamına geliyor, çünkü  şifrelenmemiş istek ile yapılan bu işlem oldukça kolay bir şekilde istismar edilebilir.&lt;/p&gt;
+
+&lt;p&gt;İster aynı kafede oturuyor olun isterseniz dünyanın bir ucunda olun, kimlik bilgileriniz &lt;strong&gt;HTTPS&lt;/strong&gt; dışında tamamen görülebileceği gibi kolayca parlolalarınız çözülecektir &lt;strong&gt;Base64&lt;/strong&gt; bir şifreleme aracı kesinlikle değildir! Bu nedenle &lt;strong&gt;HTTP&lt;/strong&gt; üzerinden temel kimlik doğrulamasını asla kullanmamalısınız! temel kimlik doğrulama yalnızca &lt;strong&gt;HTTPS&lt;/strong&gt; üzerinden düşünülmeli ve kullanılmalıdır.&lt;/p&gt;
+
+&lt;p&gt;Peki HTTPS üzerinden kullanılan temel kimlik doğrulama işlemi yeterlimidir ?&lt;/p&gt;
+
+&lt;p&gt;Aslında hayır. Ama bu durum gerçekten sitenizin neye ve ne kadar güvenli olması durumuna bağlıdır. Parola her istek için tekrar tekrar gönderilebilir. Parola, web tarayıcısı tarafından, en azından işlem uzunluğu boyunca ön belleğe alınır. Buda sunucuya yapılan başka herhangi bir istekle sessizce yeniden kullanılabilir olabileceği anlamına gelir.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HTTPS&lt;/strong&gt; kullanılması durumu bunlardan sadece bir tanesini çözer. Yani web sunucusundan istek gelene kadar korur herhangi bir iç yönlendirme, sunucu log vb. alanlarda parolalarınız düz metin olarak gözükür.&lt;/p&gt;
+</description>
+                <link>https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/</link>
+                <guid>https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin</guid>
+                <pubDate>Fri, 03 Feb 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>Siberyildiz Soru ve Cevaplar</title>
@@ -2472,63 +2499,6 @@ systemctl stop NetworkManager-wait-online.service
                 <link>https://mertcangokgoz.com/network-manager-ipv6-sorunu-ve-cozumu/</link>
                 <guid>https://mertcangokgoz.com/network-manager-ipv6-sorunu-ve-cozumu</guid>
                 <pubDate>Sat, 29 Oct 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>Ubuntu Sunucular için LivePatch Özelliği</title>
-                <description>&lt;p&gt;&lt;strong&gt;Linux 4.0&lt;/strong&gt; serisi kernelli ile birlikte ubuntu hayatına giren bir özellikten bahsetmek istiyorum. Bu özellik sayesinde kritik güncellemeleri sorunsuz bir şekilde sistemi hiçbir şekilde yeniden başlatmadan yapabiliyoruz. Bu özellik &lt;strong&gt;REDHAT&lt;/strong&gt; tarafında ücretli olarak sunuluyor enterprise tarafında görmüşsünüzdür diye düşünüyorum. Ubuntuda bir değişiklik yapıp bu özelliğin bir farklı sürümünü ücretsiz olarak sunmaya başlamış bunu ben göreli yaklaşık 3 gün oluyor yani bu makele yayınlandığı günden 3 gün geriye geliyorsunuz.&lt;/p&gt;
-
-&lt;p&gt;Bu özelliği kullanabilmeniz için 16 serisi bir ubuntu kullanmanız gerekiyor kernel de en son güncel olan olması lazım ayrıca bu özellik 32 bitlerde çalışmıyor.&lt;/p&gt;
-
-&lt;p&gt;Peki bu özelliği nasıl aktif hale getiriyoruz. İlk önce &lt;a href=&quot;https://auth.livepatch.canonical.com/&quot;&gt;bu adresten&lt;/a&gt; kayıt oluyorsunuz. Ubuntu hesabınızın olması gerektiğini unutmayın. Sistem size bir API token sağlayacak bunu bir yere not edin&lt;/p&gt;
-
-&lt;p&gt;Ardından vakti zamanında sisteme gelen ve ulan ne işime yarayacak bu paket yöneticisi zaten apt varya dediğim o ilginç paket yöneticisini kullanacağız.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo snap install canonical-livepatch
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Şimdi bunu kurduktan hemen sonra yukarda aldığımız &lt;strong&gt;API Tokeni&lt;/strong&gt; tekrar elimize alıyoruz ve şu şekilde sisteme ekliyoruz.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo canonical-livepatch enable [API TOken]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Ardından aktif edildi işte şudur budur falan diyecek ve işlem son bulacak ancak burada dikkat etmeniz gereken üye olduğunuz hesap ile sadece 3 adet sistem üzerine ücretsiz olarak kurabiliyor olmanız.&lt;/p&gt;
-
-&lt;p&gt;İyi yanları&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ücretsiz bir şekilde sunuluyor olması&lt;/li&gt;
-  &lt;li&gt;Önemli güncelleştirmeleri sistemin otomatik olarak yapacak olması&lt;/li&gt;
-  &lt;li&gt;Belkide en önemlisi sistemi yeniden başlatma zahmetinin olmaması&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Kötü yanları&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;3 Sisteme kadar ücretsiz olması(benim kafamdaki sayı 6)&lt;/li&gt;
-  &lt;li&gt;Yıllık ücretinin 750 dolar olması(gider REDHAT alırız daha iyi)&lt;/li&gt;
-  &lt;li&gt;Herhangi bir yere üyelik gerektirmesi&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ücretsiz alacak olan adama üyelik gerektirebilirsin ek özellikler verirsin şudur budur dersin eyvallah ancak ücretsiz kullanacak olan arkadaşa tek cihaza sisteme kurulan uygulama üzerinden bir uuid verdirmek daha hoş ve daha pratik olurdu diye düşünüyorum.&lt;/p&gt;
-
-&lt;p&gt;Ayrıca unutmadan bahsedeyim sistemdeki &lt;strong&gt;livepatch&lt;/strong&gt; durumunu görmek isteyen arkadaşlar için&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;canonical-livepatch status --verbose
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;komutu oldukça işe yarayacak…&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;dipnot:&lt;/strong&gt; sisteme gelen güncelleştirmeleri otomatik olarak yapmaz sadece 3 haftada 1 kereye mahsus olmak üzere kritik kernel güncelleştirmelerini yapacak şekilde ayarlanmış bir özelliktir.&lt;/p&gt;
-
-&lt;p&gt;öptüm bye &amp;lt;3&lt;/p&gt;
-</description>
-                <link>https://mertcangokgoz.com/ubuntu-sunucular-icin-livepatch-ozelligi/</link>
-                <guid>https://mertcangokgoz.com/ubuntu-sunucular-icin-livepatch-ozelligi</guid>
-                <pubDate>Tue, 25 Oct 2016 00:00:00 +0300</pubDate>
         </item>
 
 

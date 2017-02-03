@@ -1,0 +1,308 @@
+<!doctype html>
+<html class="no-js" lang="tr-TR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>HTTP üzerinden Temel Kimlik Doğrulama kullanmayın | Mertcan GÖKGÖZ</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Jekyll">
+  <link href="https://plus.google.com/103305118431759296457" rel="publisher" />
+  <!-- Begin Jekyll SEO tag v2.1.0 -->
+<meta property="og:title" content="HTTP üzerinden Temel Kimlik Doğrulama kullanmayın" />
+<meta name="description" content="Temel kimlik doğrulama, uygulamanın basitliği ve kolaylığı nedeniyle son derece popüler bir kimlik doğrulama aracıdır. Maalesef, HTTP üzerinden" />
+<meta property="og:description" content="Temel kimlik doğrulama, uygulamanın basitliği ve kolaylığı nedeniyle son derece popüler bir kimlik doğrulama aracıdır. Maalesef, HTTP üzerinden" />
+<link rel="canonical" href="https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/" />
+<meta property="og:url" content="https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/" />
+<meta property="og:site_name" content="Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-03T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@mertcangokgoz" />
+<meta name="twitter:creator" content="@http://twitter.com/mertcangokgoz" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "HTTP üzerinden Temel Kimlik Doğrulama kullanmayın",
+"datePublished": "2017-02-03T00:00:00+03:00",
+"description": "Temel kimlik doğrulama, uygulamanın basitliği ve kolaylığı nedeniyle son derece popüler bir kimlik doğrulama aracıdır. Maalesef, HTTP üzerinden",
+"url": "https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <meta name="author" content="Mertcan GÖKGÖZ" />
+  <meta name="distribution" content="global"/>
+  <meta name="robots" content="follow, all"/>
+  <meta name="google-site-verification" content="72uYg4UxAer0YwWdtkU93OGqjNq7ZThpqe0M4KxyvIg"/>
+  <meta name='yandex-verification' content='410f2e33fe81ce80'/>
+  <meta name="msvalidate.01" content="2183CAED5258723C183F825A20DF9C4A"/>
+  <link rel="alternate" type="application/rss+xml" title="Mertcan GÖKGÖZ" href="https://mertcangokgoz.com/feed" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/all.css">
+  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <script type="text/javascript" src="/assets/js/jquery-1.12.4.min.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+</head>
+<body>
+<div class="container">
+    <div class="three columns sidebar">
+      <nav class="nav">
+  <a href="/">
+    <img src="/YeniResimBro.jpg" id="gravatar" alt="Mertcan GÖKGÖZ" width="200" height="200"/>
+  </a>
+  <h3><a href="/">Mertcan GÖKGÖZ</a></h3>
+  <div id="bio">
+    <p>
+        Kategoriler:<br>
+
+        <a href="/category/linux">Linux</a> &raquo; 239 Yazı<br><a href="/category/programlama">Programlama</a> &raquo; 79 Yazı<br><a href="/category/genel">Genel</a> &raquo; 70 Yazı<br><a href="/category/guvenlik">Guvenlik</a> &raquo; 56 Yazı<br><a href="/category/windows">Windows</a> &raquo; 38 Yazı<br><a href="/category/analiz">Analiz</a> &raquo; 21 Yazı<br><a href="/category/jekyll">Jekyll</a> &raquo; 16 Yazı<br><a href="/category/nginx">Nginx</a> &raquo; 15 Yazı<br><a href="/category/egitimler">Egitimler</a> &raquo; 6 Yazı<br>
+        <br>
+        Arkadaşlar:<br>
+        <a href="https://oztaser.com/" target="_blank" rel="nofollow">Adil ÖZTAŞER</a><br>
+        <a href="https://aligoren.com/" target="_blank" rel="nofollow">Ali GÖREN</a><br>
+        <a href="https://www.ceyhanmolla.com/" target="_blank" rel="nofollow">Ceyhan MOLLA</a><br>
+        <a href="https://0x6.pw/" target="_blank" rel="nofollow">Enes ERGÜN</a><br>
+        <a href="http://furkankalkan.com/" target="_blank" rel="nofollow">Furkan KALKAN</a><br>
+        <a href="http://www.hamdicatal.com/" target="_blank" rel="nofollow">Hamdi ÇATAL</a><br>
+        <a href="https://onur.im/" target="_blank" rel="nofollow">Onur ASLAN</a><br>
+        <a href="http://www.omeripek.com.tr" target="_blank" rel="nofollow">Ömer IPEK</a><br>
+        <a href="http://yasinyaman.org/" target="_blank" rel="nofollow">Yasin YAMAN</a><br>
+        <a href="https://yapaygerizeka.github.io/" target="_blank" rel="nofollow">Yapay Geri Zekâ</a><br>
+    </p>
+  </div>
+  <div id="social">
+    Takip Edin:
+<div id="stalker">
+   
+
+   
+   <a title="MertcanGokgoz on Academia" href="https://baskent.academia.edu/MertcanGokgoz" target="_blank" rel="nofollow">
+     <i class="fa fa-book"></i>
+   </a>
+   
+
+  
+  <a title="MertcanGokgoz on Github" href="https://github.com/MertcanGokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-github-square"></i>
+  </a>
+  
+
+  
+  <a title="MertcanGokgoz on Gitlab" href="https://gitlab.com/u/MertcanGokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-gitlab"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="mertcangokgoz on Twitter" href="https://twitter.com/mertcangokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-twitter-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+  <a title="Mertcan GÖKGÖZ on LinkedIn" href="https://www.linkedin.com/in/mertcangokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-linkedin-square"></i>
+  </a>
+  
+
+  
+  <a title="Mertcan GÖKGÖZ on Google Plus" href="https://plus.google.com/103305118431759296457" target="_blank" rel="nofollow">
+    <i class="fa fa-google-plus-square"></i>
+  </a>
+  
+
+  
+
+  
+  <a title="Mertcan GÖKGÖZ on Youtube" href="https://www.youtube.com/c/MertcanGokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-youtube"></i>
+  </a>
+  
+
+  
+  <a title="RSS feed" id="atom" href="/feed/">
+    <i class="fa fa-rss-square"></i>
+  </a>
+  
+</div>
+
+  </div>
+</nav>
+
+    </div>
+    <div class="nine columns content">
+        <div class="menuM">
+    <ul class="topnav">
+        <li><a class="active" href="https://mertcangokgoz.com/">Anasayfa</a></li>
+        <li><a href="https://mertcangokgoz.com/category/analiz/">Analiz</a></li>
+        <li><a href="https://mertcangokgoz.com/category/genel/">Genel</a></li>
+        <li><a href="https://mertcangokgoz.com/category/guvenlik/">Güvenlik</a></li>
+        <li><a href="https://mertcangokgoz.com/category/linux/">Linux</a></li>
+        <li><a href="https://mertcangokgoz.com/category/windows/">Windows</a></li>
+        <li><a href="https://mertcangokgoz.com/category/jekyll/">Jekyll</a></li>
+        <li><a href="https://mertcangokgoz.com/category/nginx/">Nginx</a></li>
+        <li><a href="https://mertcangokgoz.com/category/egitimler/">Egitimler</a></li>
+        <li><a href="https://mertcangokgoz.com/category/programlama/">Programlama</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    function myFunction() {
+        document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+    }
+</script>
+
+
+<p class="meta">
+  February 03, 2017
+  <a href="/">
+    <i class="home fa fa-home fa-2x"></i>
+  </a>
+  <a href="/search/">
+    <i class="home fa fa-search fa-2x"></i>
+  </a>
+  <a href="javascript:" onclick="window.print();return false;">
+    <i class="home fa fa-print fa-2x"></i>
+  </a>
+</p>
+
+<h1 class="title">HTTP üzerinden Temel Kimlik Doğrulama kullanmayın</h1>
+
+<div id="post">
+  <p>Temel kimlik doğrulama, uygulamanın basitliği ve kolaylığı nedeniyle son derece popüler bir kimlik doğrulama aracıdır. Maalesef, HTTP üzerinden aynı zamanda, kişilerin kimlik doğrulamalarını sağlamak güzel bir yöntem değildir! Temel kimlik doğrulama, istemcilerin kullanıcı adı ve parola kimlik bilgilerini iletmek için kimlik doğrulama HTTP başlık bilgisini(header) kullanır. İstemci verilen kullanıcı adını ve parolayı alır, <strong>base64</strong> olarak her ikisini de kodlar ve bir sunucuya istekte bulunurken bunları HTTP başlık bilgisine(header) ekler. Buraya kadar bir sorun yok hatta bu durum size normal bile geliyor olabilir.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>GET /admin-panel HTTP/1.1
+Authentication: Basic ZGVtbzpleGFtcGxl
+Host: mertcangokgoz.com
+</code></pre>
+</div>
+
+<p>Sunucu, doğrulama yapmak için kullanıcı adı ve parolanızı alır ve kimlik doğrulama başlık bilgisini(header) basitçe <strong>base64</strong> halini çözer. Sonuç olarak kişi benim doküman sistemime ulaşır. Maalesef, yukarıda belirttiğim gibi temel kimlik doğrulama <strong>HTTP</strong> protokolü üzerinden hiçbir zaman kullanılmamalıdır.</p>
+
+<p>HTTP protokolü, daha akıllı kardeşi olan HTTPS’den farklı olarak <strong>şifrelenmez</strong>. Bu da internette bulunan herkesin gönderdiğiniz her ne olursa olsun görebildiğini varsayabileceğimiz anlamına gelir. Doküman koleksiyonum hassas bilgi değilken, isteği yaptığımda kimlik doğrulama başlığında benim kimlik bilgilerimi göndermiş oldum; bu da benim kimlik bilgilerimi kötü niyetli bilgisayar korsanlarına veriyor olabileceğim anlamına geliyor, çünkü  şifrelenmemiş istek ile yapılan bu işlem oldukça kolay bir şekilde istismar edilebilir.</p>
+
+<p>İster aynı kafede oturuyor olun isterseniz dünyanın bir ucunda olun, kimlik bilgileriniz <strong>HTTPS</strong> dışında tamamen görülebileceği gibi kolayca parlolalarınız çözülecektir <strong>Base64</strong> bir şifreleme aracı kesinlikle değildir! Bu nedenle <strong>HTTP</strong> üzerinden temel kimlik doğrulamasını asla kullanmamalısınız! temel kimlik doğrulama yalnızca <strong>HTTPS</strong> üzerinden düşünülmeli ve kullanılmalıdır.</p>
+
+<p>Peki HTTPS üzerinden kullanılan temel kimlik doğrulama işlemi yeterlimidir ?</p>
+
+<p>Aslında hayır. Ama bu durum gerçekten sitenizin neye ve ne kadar güvenli olması durumuna bağlıdır. Parola her istek için tekrar tekrar gönderilebilir. Parola, web tarayıcısı tarafından, en azından işlem uzunluğu boyunca ön belleğe alınır. Buda sunucuya yapılan başka herhangi bir istekle sessizce yeniden kullanılabilir olabileceği anlamına gelir.</p>
+
+<p><strong>HTTPS</strong> kullanılması durumu bunlardan sadece bir tanesini çözer. Yani web sunucusundan istek gelene kadar korur herhangi bir iç yönlendirme, sunucu log vb. alanlarda parolalarınız düz metin olarak gözükür.</p>
+
+</div>
+
+<hr style="margin:20px;">
+<p><small class="edit">Bir şeyler bu yazıda doğru ya da eksik değil mi? <a href="https://github.com/MertcanGokgoz/mertcangokgoz.github.io/edit/jekyll/_posts/2017-02-03-http-uzerinden-temel-kimlik-dogrulama-kullanmayin.md" target="_blank">Düzenleyin ve pull request Oluşturun</a></small></p>
+
+
+<div id="paylasim">
+<h3>Bu yazıyı paylaş:</h3>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-facebook-square fa share-button"> Facebook</i>
+</a>
+<a href="https://twitter.com/intent/tweet?text=HTTP üzerinden Temel Kimlik Doğrulama kullanmayın&url=https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/&via=mertcangokgoz&related=mertcangokgoz" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+    <i class="fa fa-twitter-square fa share-button"> Twitter</i>
+</a>
+<a href="https://plus.google.com/share?url=https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-google-plus-square fa share-button"> Google</i>
+</a>
+<a href="http://www.reddit.com/submit?url=https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/&title=HTTP üzerinden Temel Kimlik Doğrulama kullanmayın" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-reddit-square fa share-button"> Reddit</i>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/&title=HTTP üzerinden Temel Kimlik Doğrulama kullanmayın&summary=&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-linkedin-square fa share-button"> Linkedin</i>
+</a>
+<a href="mailto:?subject=HTTP üzerinden Temel Kimlik Doğrulama kullanmayın&amp;body=Check out this site https://mertcangokgoz.com/http-uzerinden-temel-kimlik-dogrulama-kullanmayin/">
+    <i class="fa fa-envelope-square fa share-button"> Email</i>
+</a>
+</div>
+
+
+<div class="ajaxloadcomment"><button class="show-comments">Yorumları yükle</button></div>
+<div itemprop="comment" id="disqus_thread"></div>
+<script>
+$(document).ready(function() {
+    $('.show-comments').on('click', function(){
+          var disqus_shortname = 'mertcanofficial';
+
+          $.ajax({
+                  type: "GET",
+                  url: "//" + disqus_shortname + ".disqus.com/embed.js",
+                  dataType: "script",
+                  cache: true
+          });
+          $(this).fadeOut();
+    });
+});
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+      <div class="footer">
+        <div class="disclaimer">
+    
+    <p>
+        Bu sitedeki gönderiler bana aittir ve iş verenime ait pozisyonlar, stratejiler veya görüşler temsil edilmemektedir.<br>
+        <a href="/ders-notlari/">Ders Notları</a>
+        <span> | </span><a href="/gizlilik-politikasi/">Gizlilik Politikası</a>
+        <span> | </span><a href="/kullanim-kosullari/">Kullanım Koşulları</a>
+        <span> | </span><a href="/hakkimda/">Hakkımda</a>
+        <span> | </span><a href="/iletisim/">İletişim</a><br>
+        <a href="/hosted/">Hosted By </a> © Mertcan GÖKGÖZ, 2017 - Linux Hacısı
+    </p>
+    <div class="row">
+        <div class="three columns">
+            <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="/assets/misc/creativecommons.png">Creative Commons</a>
+        </div>
+        <div class="three columns">
+            <a href="http://www.kopimi.com/" target="_blank"><img src="/assets/misc/kopimi.gif">kopimi</a>
+        </div>
+        <div class="two columns">
+            <a href="/donate.html" target="_blank"><img src="/assets/misc/Bitcoin.png">Bağış</a>
+        </div>
+    </div>
+    
+</div>
+      </div>
+    </div>
+  </div>
+  <div id="up">
+    <a href="javascript:"><i class="fa fa-arrow-up fa-2x"></i></a>
+  </div>
+
+
+
+
+
+
+
+</body>
+</html>
