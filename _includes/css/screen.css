@@ -473,3 +473,14 @@ ul.topnav li.icon {display: none;}
     padding: 4px;
     border-radius: 3px;
 }
+
+.anaKutu{
+    width: 100%;
+    display: inline-flex;
+}
+
+.altKutu{
+	width: 33.33%;
+	display: inline-flex;
+	margin-right: 15px;
+}

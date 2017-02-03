@@ -11,12 +11,14 @@ Merhaba
 
 ### Neler biliyorum
 
-GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Server 2012), MsSQL Server (2012/2014) HTML5, PHP, Python, .NET, Shell Scripting(Bash, Sh vs), MySQL,  Couchbase, Redis, HAproxy, Keepalived, Apache, Nginx, Wordpress, OpenVPN, Alfresco, Zabbix, TCP/IP, SSL/TLS, MS DNS, PfSense, Iptables, Mod_Security, OpenVAS, FTP, Microsoft Office
+GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Server 2012), MsSQL Server (2012/2014), Routing, Switching, HTML5, PHP, Python, .NET, Shell Scripting(Bash, Sh vs), MySQL,  Couchbase, Redis, HAproxy, Keepalived, Apache, Nginx, Wordpress, OpenVPN, Alfresco, Zabbix, TCP/IP, SSL/TLS, MS DNS, PfSense, Iptables, Mod_Security, OpenVAS, FTP, Microsoft Office
 
 
 ## Kurslar
 
 - MCSD/MCPD - 51254
+- CCNA/CCNA Security - NaN
+- CEH - NaN
 - Stratejik insan Kaynakları Yönetimi - 151018106271
 
 ## Deneyim
@@ -29,6 +31,8 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 - Programlamaya Nasıl Başlanır Hosting Dergi Sayı 18, 23 Mayıs 2016
 - Ddos Saldırılarında Doğru Bilinen Yanlışlar Hosting Dergi Sayı 19, 21 Haziran 2016
 - Çocuklarınıza Kodlamayı Sevdirin Hosting Dergi Sayı 20, 25 Temmuz 2016
+- Tek IP Adresine Birden Fazla SSL Kurulumu Hosting Dergi Sayı 23, 23 Ekim 2016
+- DNSCurve Nedir Digerlerine Gore Avantajları Nelerdir Hosting Dergi Sayı 24, 24 Şubat 2017
 
 ## Verdiğim Eğitim ve Seminerler
 
@@ -51,8 +55,8 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 
 ### Bu blogun amacı
 
-Bu blogda yer alan tüm dokümanlar anlatıldığı gibi pratikte çalıştığını gözlemlediklerimi oluşturmaktadır. Sitede bulnan tüm içerik online doküman olması amacıyla daha sonradan kullanılması için yazılmakta ve her daim güncel tutulmaktadır. Dokümanlar ile yapılan herhangi bir şeyde sorun yaşarsanız hiçbir şekilde sorumluluk kabul etmiyorum. **Başarınızda başarısızlığınızda tamamen size aittir.**
+Bu blogda yer alan tüm dokümanlar anlatıldığı gibi pratikde çalıştığını gözlemlediklerimi oluşturmaktadır. Site de bulunan tüm içerik online doküman olması amacıyla daha sonradan kullanılması için yazılmakta ve her daim güncel tutulmaktadır. Dokümanlar ile yapılan herhangi bir işte sorun yaşarsanız hiçbir şekilde sorumluluk kabul etmiyorum. **Başarınızda başarısızlığınızda tamamen size aittir.**
 
-Bu blogda yazılan tüm yazılar başka platformlarda kaynak gösterilerek istenildiği gibi paylaşılabilir, kullanılabilir, dağıtılabilir ve değiştirilebilir.
+Bu blogda yazılan tüm yazılar başka platformlar da kaynak gösterilerek istenildiği gibi paylaşılabilir, kullanılabilir, dağıtılabilir ve değiştirilebilir.
 
-[CV_Mertcan_GÖKGÖZ](https://mertcangokgoz.com/CV_Mertcan_GOKGOZ.pdf)
+[CV_Mertcan_GÖKGÖZ](https://mertcangokgoz.com/CV_Mertcan_GOKGOZ_2017.pdf)

@@ -1,16 +1,24 @@
 <div class="disclaimer">
-  {% if site.data.theme.show_disclaimer %}
-  <p>
-    Bu sitedeki gönderiler bana aittir ve iş verenime ait pozisyonlar,
-    stratejiler veya görüşler temsil edilmemektedir.<br>
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Atıf-Paylaşım Lisansı</a> altındadır.<br>
+    {% if site.data.theme.show_disclaimer %}
+    <p>
+        Bu sitedeki gönderiler bana aittir ve iş verenime ait pozisyonlar, stratejiler veya görüşler temsil edilmemektedir.<br>
         <a href="/ders-notlari/">Ders Notları</a>
         <span> | </span><a href="/gizlilik-politikasi/">Gizlilik Politikası</a>
         <span> | </span><a href="/kullanim-kosullari/">Kullanım Koşulları</a>
         <span> | </span><a href="/hakkimda/">Hakkımda</a>
         <span> | </span><a href="/iletisim/">İletişim</a><br>
-        <b>BTC:</b> 36DFx4anTdsx3AnBiA1oqR3oHkMV3RJME1<br>
         <a href="/hosted/">Hosted By </a> © {{ site.data.theme.name }}, {{ site.time | date: '%Y' }} - Linux Hacısı
-  </p>
-  {% endif %}
+    </p>
+    <div class="row">
+        <div class="three columns">
+            <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="/assets/misc/creativecommons.png">Creative Commons</a>
+        </div>
+        <div class="three columns">
+            <a href="http://www.kopimi.com/" target="_blank"><img src="/assets/misc/kopimi.gif">kopimi</a>
+        </div>
+        <div class="two columns">
+            <a href="/donate.html" target="_blank"><img src="/assets/misc/Bitcoin.png">Bağış</a>
+        </div>
+    </div>
+    {% endif %}
 </div>

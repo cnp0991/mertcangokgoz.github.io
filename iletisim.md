@@ -16,6 +16,4 @@ ve diğer tüm konular için <br>
 </center>
 
 <center>
-E-Mail : <a href="mailto:{{ 'mertcan.gokgoz@gmail.com' | encode_email }}" title="Mail Gonder">mertcan.gokgoz@gmail.com</a><br><br>
-
-E-Mail : <a href="mailto:{{ 'admin@mertcangokgoz.com' | encode_email }}" title="Mail Gonder">admin@mertcangokgoz.com</a><br></center>
+E-Mail : <a href="mailto:{{ 'mertcan.gokgoz@gmail.com' | encode_email }}" title="Mail Gonder">mertcan.gokgoz@gmail.com</a></center>
