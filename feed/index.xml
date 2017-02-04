@@ -5,10 +5,85 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Fri, 03 Feb 2017 22:22:58 +0300</lastBuildDate>
-        <pubDate>Fri, 03 Feb 2017 22:22:58 +0300</pubDate>
+        <lastBuildDate>Sat, 04 Feb 2017 16:06:40 +0300</lastBuildDate>
+        <pubDate>Sat, 04 Feb 2017 16:06:40 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Linux'de Kullanıcı Gruplarının Düzeltilmesi</title>
+                <description>&lt;p&gt;Dün gece ben birkaç ayarlama yaparken yanlışlıkla kullanıcıya grup tanımlaması yapmak yerine kullanıcıyı tek bir gruba atamak gibi bir hataya düştüm. Gecenin 5 inde böyle bir hatayı yapma nedenim sanırım uykusuzluk bilemiyorum ancak var olan kullanıcıda hangi grup rollerinin olduğunu hatırlamak oldukça güç ne yapsam bu sorunun üstesinden gelirim diye düşündüm.&lt;/p&gt;
+
+&lt;p&gt;ama ilk önce güzel bir uyku uyumam gerekiyordu yoksa akıllıca bir hamle yapamayacaktım. Sabah kalktığımda ilk iş logları kurcalamak oldu kurulum sırasındaki loglar haliyle sistemde duruyordu çünkü&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo grep user-setup /var/log/installer/syslog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Komutunu verdim &lt;code class=&quot;highlighter-rouge&quot;&gt;user-setup&lt;/code&gt; ilk kullanıcı oluşturulduğunda loglar arasına güzel bir kayıt bırakıyor çünkü çıktısı da şu şekilde&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sep 23 21:41:05 anna[2534]: DEBUG: retrieving user-setup-udeb 1.64
+Sep 23 21:41:36 main-menu[450]: INFO: Menu item 'user-setup-udeb' selected
+Sep 23 23:24:52 finish-install: info: Running /usr/lib/finish-install.d/06user-setup
+Sep 23 23:24:52 user-setup: Shadow passwords are now on.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' ...
+Sep 23 23:24:52 user-setup: Adding new group `mertcan' (1000) ...
+Sep 23 23:24:52 user-setup: Adding new user `mertcan' (1000) with group `mertcan' ...
+Sep 23 23:24:52 user-setup: Creating home directory `/home/mertcan' ...
+Sep 23 23:24:52 user-setup: Copying files from `/etc/skel' ...
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `audio' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group audio
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `cdrom' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group cdrom
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `dip' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group dip
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `floppy' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group floppy
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `video' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group video
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `plugdev' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group plugdev
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `netdev' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group netdev
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `scanner' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group scanner
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `bluetooth' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group bluetooth
+Sep 23 23:24:52 user-setup: Done.
+Sep 23 23:24:52 user-setup: adduser: The group `debian-tor' does not exist.
+Sep 23 23:24:52 user-setup: Adding user `mertcan' to group `lpadmin' ...
+Sep 23 23:24:52 user-setup: Adding user mertcan to group lpadmin
+Sep 23 23:24:52 user-setup: Done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Şimdi burada pek çok default grubu öğrendik geriye bunları eklemeye ve varsa bir kaç tanede sizin kullandıklarını araya sıkıştırmaya&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo usermod -G audio,cdrom,dip,floppy,video,plugdev,netdev,scanner,bluetooth,lpadmin,vboxusers mertcan
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Şeklinde yapabilirsiniz buda bir yöntem ancak el ile eklemekten üşeniyorsanız bunu otomatize edebilirsiniz şöyle ki&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;grep &quot;user-setup: Adding user mertcan to group&quot; /var/log/installer/syslog | cut -d' ' -f11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mertcan&lt;/code&gt; denen kısıma kendi kullanıcı adınızı girmeyi unutmayın. Bunlar dışında kurtarma modundan da grupları geri getirebilirsiniz ancak pek gerek yok sistemde hangi grupların olduğunu ise aşağıdaki linkten öğrenebilirsiniz. Açıklamaları ile birlikte bulunuyor.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wiki.debian.org/SystemGroups&quot;&gt;SystemGroups&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>https://mertcangokgoz.com/linuxde-kullanici-gruplarinin-duzeltilmesi/</link>
+                <guid>https://mertcangokgoz.com/linuxde-kullanici-gruplarinin-duzeltilmesi</guid>
+                <pubDate>Sat, 04 Feb 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>HTTP üzerinden Temel Kimlik Doğrulama kullanmayın</title>
@@ -2415,90 +2490,6 @@ Liquid::Template.register_tag(&amp;#39;jsfiddle&amp;#39;, Jekyll::JsFiddle)
                 <link>https://mertcangokgoz.com/ipv6-egitim-seti/</link>
                 <guid>https://mertcangokgoz.com/ipv6-egitim-seti</guid>
                 <pubDate>Mon, 31 Oct 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>Network Manager IPv6 Sorunu ve Çözümü</title>
-                <description>&lt;p&gt;Geçtiğimiz günlerde her ne hikmet ise ipv6 yı bulamıyorum havarrrr gençler diye feryat eden ve kernel mesajlarında aşağıdaki gibi bir çıktı veren bu ilginç durumun çözümü için uğraşacağız.&lt;/p&gt;
-
-&lt;p&gt;Şimdi &lt;code class=&quot;highlighter-rouge&quot;&gt;dmesg&lt;/code&gt; de çıkan ve oldukça fazla olan çıktıya bir göz atalım&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Bunlar sadece bir kaçtı dmesg kayıtlarını oldukça şişiriyor ve üstüne üstlük birde &lt;code class=&quot;highlighter-rouge&quot;&gt;networkmanager&lt;/code&gt; kardeşi yeniden başlatmaya zorluyorlar yaklaşık 1 saat ile 10 dk da bir internetin kopmasına sebebiyet veriyor&lt;/p&gt;
-
-&lt;p&gt;Ben ilk olarak çözümü kernel ipv6 yı kapatarak bulduysam da ki şu şekildedir.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;şeklinde olan satıra şunu eklemiştik&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ipv6.disable=1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;ve son hali şu şekildeydi&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&quot;ipv6.disable=1  quiet&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Ancak bu tam olarak bir çözüm olamazdı ipv6 kullanmamızda gerekebilirdi gerçi kullanabildiğimiz zaman bu böceğin oluşacağını sanmıyorum ama herneyse&lt;/p&gt;
-
-&lt;p&gt;Şimdi gelelim daha güzel bir çözüm yöntemine şimdi sıkıntıyı yaratan bu arkadaş sistem başlangıcında başlayıp kapatılıncaya kadar devam ediyor. &lt;code class=&quot;highlighter-rouge&quot;&gt;boot&lt;/code&gt; olurken bir servis ile ortaya çıkıyordur illaki bizde buna bir göz atıcaz.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;systemd-analyze plot &amp;gt; /tmp/plot.svg
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.svg&lt;/code&gt; şeklinde grafiğimizi isteyelim. Bunun içerisinde hangi süreç kaç saniye uğraşmış debelenmiş ve aktif olmuş hepsini görebileceğiz&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/plot.jpg&quot; alt=&quot;plotgrafik&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;grafiğe baktığımızda en çok sıkıntı çıkartanın aşağıdakiler olduğunu görüyoruz.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;networking.service (1.724s)&lt;/li&gt;
-  &lt;li&gt;systemd-timesyncd.service (1.525s)&lt;/li&gt;
-  &lt;li&gt;NetworkManager-wait-online.service (9.324s)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Şimdi bu sıkıntıyı yapan &lt;code class=&quot;highlighter-rouge&quot;&gt;systemd-timesyncd.service&lt;/code&gt; servisi olamazdı geriye kalan iki tanesinden bir tanesiydi&lt;/p&gt;
-
-&lt;p&gt;hemen duruma bakmak için şöyle bir yol izledim.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;systemctl status NetworkManager-wait-online.service
-systemctl disable NetworkManager-wait-online.service
-systemctl stop NetworkManager-wait-online.service
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;şimdi durumuna baktık pek iç açıcı gözükmedi gözümüze bizde hemen boş durmadık servisi başlangıçtan kaldırıp durdurduk.&lt;/p&gt;
-
-&lt;p&gt;Bu sorun aslında şundan kaynaklanıyordu yukarda bahsi geçen &lt;code class=&quot;highlighter-rouge&quot;&gt;NetworkManager-wait-online.service&lt;/code&gt; devamlı süreçlerin online olmasını bekliyor ve buna göre davranıyor elimizdede IPv6 olmadığı için saçma salak bir şekilde &lt;code class=&quot;highlighter-rouge&quot;&gt;IPv6: ADDRCONF(NETDEV_UP): wlp3s0: link is not ready&lt;/code&gt; uyarısını çıktı olarak veriyor ve hazır değil diyordu&lt;/p&gt;
-
-&lt;p&gt;Network manager de bunu fırsat bilip restart atıyor ve belki gelir umudu ile bir takım davranışlar sergiliyordu.&lt;/p&gt;
-
-&lt;p&gt;dipnot: bağlantı kalitenizi olumsuz yönde etkileyebilir. Sonra bana sövmeyin deneme yanılma ile kontrol etmenizi öneririm.&lt;/p&gt;
-
-&lt;p&gt;öptüm bye &amp;lt;3&lt;/p&gt;
-</description>
-                <link>https://mertcangokgoz.com/network-manager-ipv6-sorunu-ve-cozumu/</link>
-                <guid>https://mertcangokgoz.com/network-manager-ipv6-sorunu-ve-cozumu</guid>
-                <pubDate>Sat, 29 Oct 2016 00:00:00 +0300</pubDate>
         </item>
 
 
