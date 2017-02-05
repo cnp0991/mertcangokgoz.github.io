@@ -1,51 +1,48 @@
 <!doctype html>
 <html class="no-js" lang="tr-TR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <title>{{ page.title }} | Mertcan GÖKGÖZ</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Jekyll">
-  <link href="https://plus.google.com/103305118431759296457" rel="publisher" />
-  {% seo title=false %}
-  {% if page.tag %}
-  <meta name="keywords" content="{{ page.tag }}">
-  {% endif %}
-  <meta name="author" content="{{ site.data.theme.name }}" />
-  <meta name="distribution" content="global"/>
-  <meta name="robots" content="follow, all"/>
-  <meta name="google-site-verification" content="72uYg4UxAer0YwWdtkU93OGqjNq7ZThpqe0M4KxyvIg"/>
-  <meta name='yandex-verification' content='410f2e33fe81ce80'/>
-  <meta name="msvalidate.01" content="2183CAED5258723C183F825A20DF9C4A"/>
-  <link rel="alternate" type="application/rss+xml" title="{{ site.data.theme.name }}" href="{{site.url}}/feed" />
-  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/all.css">
-  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
-  <script type="text/javascript" src="/assets/js/jquery-1.12.4.min.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" href="/favicon.png">
-  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
-</head>
-<body>
-<div class="container">
-    <div class="three columns sidebar">
-      {% include sidebar.html %}
-    </div>
-    <div class="nine columns content">
-        {{ content }}
 
-      <div class="footer">
-        {% include footer.html %}
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>{{ page.title }} | Mertcan GÖKGÖZ</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Jekyll">
+    <link href="https://plus.google.com/103305118431759296457" rel="publisher" /> {% seo title=false %} {% if page.tag %}
+    <meta name="keywords" content="{{ page.tag }}"> {% endif %}
+    <meta name="author" content="{{ site.data.theme.name }}" />
+    <meta name="distribution" content="global" />
+    <meta name="robots" content="follow, all" />
+    <meta name="google-site-verification" content="72uYg4UxAer0YwWdtkU93OGqjNq7ZThpqe0M4KxyvIg" />
+    <meta name="yandex-verification" content="67dfe7436c3122f7" />
+    <meta name="msvalidate.01" content="2183CAED5258723C183F825A20DF9C4A" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.data.theme.name }}" href="{{site.url}}/feed" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/all.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type="text/javascript" src="/assets/js/jquery-1.12.4.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="three columns sidebar">
+            {% include sidebar.html %}
+        </div>
+        <div class="nine columns content">
+            {{ content }}
+
+            <div class="footer">
+                {% include footer.html %}
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="up">
-    <a href="javascript:"><i class="fa fa-arrow-up fa-2x"></i></a>
-  </div>
-{% include analytics.html %}
+    {% include analytics.html %}
 </body>
+
 </html>
