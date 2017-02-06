@@ -5,10 +5,74 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Sun, 05 Feb 2017 04:22:33 +0300</lastBuildDate>
-        <pubDate>Sun, 05 Feb 2017 04:22:33 +0300</pubDate>
+        <lastBuildDate>Mon, 06 Feb 2017 17:56:16 +0300</lastBuildDate>
+        <pubDate>Mon, 06 Feb 2017 17:56:16 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Biri Bizi Gözetliyor E-Mail Tracking</title>
+                <description>&lt;p&gt;Çok sayıda şirket ve posta hizmetleri sağlayan kurumlar kişiselleştirilmiş bir url içeren postalarına küçük görünmez görüntüler koyuyor. Postalarını her açtığınızda, bu resim sunucudan yüklenir ve şirket size gönderilen bu postanın açıldığını bilir. Örnek olarak şu şekilde&lt;/p&gt;
+
+&lt;p&gt;Örnek 1&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;img src=&quot;http://tracker.com/trk?yourid=&amp;lt;some_random_string&amp;gt;&quot; 
+         width=&quot;1&quot; 
+         height=&quot;1&quot; 
+         style=&quot;display:none !important;&quot; 
+         alt=&quot;&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Örnek 2&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img src=3D&quot;https://mailing.g2a.com/open.html?x=3Da62e&amp;amp;m=3DVh=
+&amp;amp;mc=3Df&amp;amp;s=3DlytFt&amp;amp;u=3Dl&amp;amp;y=3D9&amp;amp;&quot; 
+		width=3D&quot;0&quot; 
+		height=3D&quot;0&quot; 
+		border=3D&quot;0&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Spam maillerin sana ulaştığını bu firmalar işte bu şekilde anlar sen maili açarsın çünkü ney olup bittiğini anlamak için - ve daha fazla mail göndermek için güzel bir başlangıç yakalamış olunur.&lt;/p&gt;
+
+&lt;h3 id=&quot;bunu-nasl-nleyeyebiliriz-&quot;&gt;Bunu nasıl önleyeyebiliriz ?&lt;/h3&gt;
+
+&lt;p&gt;Programların bağlanmak istediği yerleri gösteren araçlar vardır. Ancak çoğu zaman bu uygulamalar ücretlidir. Listede henüz bulunmayan yeni bir urlyi bu uygulamalar aracılığı ile keşfede bilirsiniz.&lt;/p&gt;
+
+&lt;p&gt;Bununla birlikte, izlemeyi engellemenin en kolay ve en kolay yolu, bilgisayarınızda bulunan&lt;code class=&quot;highlighter-rouge&quot;&gt;hosts&lt;/code&gt; dosyanıza URL’ler eklemenizdir. Bu, sisteminizin izleme bağlantılarını &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; yönlendirmenize yardımcı olacak ve bu bağlantılardan gelecek isteklere sisteminiz kulak asmayacaktır.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0.0.0.0   track.mixmax.com
+0.0.0.0   securepubads.g.doubleclick.net
+0.0.0.0   click.mailer.atlassian.com
+0.0.0.0   marketing.intercom-mail-200.com 
+0.0.0.0   mailchimp.com
+0.0.0.0   list-manage.com
+0.0.0.0   cl.exct.net
+0.0.0.0   emailtracking.azure.com
+0.0.0.0   trker1.azalead.com
+0.0.0.0   mkto-k0023.com
+0.0.0.0   maileon.com
+0.0.0.0   xqueue.de
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bu şekilde bazılarını engelleyebilirsiniz. Ancak bu hizmeti veren oldukça fazla firma var bunların her birinin url adreslerini tek tek tespit etmek ve engellemek gerekiyor ki e-postalarınızın açılıp açılmadığını göremesinler. Spam atılan her bir mesaj o mail adresinin kullanılıp kullanılmadığını anlamak için bile gönderiliyor olabilir. Bunu aklınızın bir köşesine not edin.&lt;/p&gt;
+
+&lt;p&gt;Bu iş için geliştirilmiş bir adet tarayıcı eklentisi mevcut &lt;a href=&quot;https://chrome.google.com/webstore/detail/pixelblock/jmpmfcjnflbcoidlgapblgpgbilinlem&quot;&gt;PixelBlock&lt;/a&gt; bu eklenti aracılığı ile mailler içerisinde eğer yukarda bahsi geçen bir içerik varsa hemen engelleyecek ve otomatik olarak size bildirim gönderecek&lt;/p&gt;
+
+&lt;p&gt;Yeni bir takım url tespit ederseniz lütfen &lt;code class=&quot;highlighter-rouge&quot;&gt;Pull Request&lt;/code&gt; isteği ile göndermeyi unutmayın. Peki en basiti bu url bilgilerini veya izlendiğimizi nasıl anlayacağız.&lt;/p&gt;
+
+&lt;h3 id=&quot;bunun-dnda-nasl-yardm-edebilirim&quot;&gt;Bunun dışında nasıl yardım edebilirim?&lt;/h3&gt;
+
+&lt;p&gt;Okuduğunuz mail bir şirket, kurum veya kuruluştan birisi tarafından bir e-posta alırsanız, kaynağa (*) bakın ve yukarıdaki kod gibi bir şeyler bulmaya çalışın. Genellikle postanın sonunda bulunur.&lt;/p&gt;
+
+&lt;p&gt;Aynı şekilde thunderbird kullanıyorsanız mailin kaynağına bakın kaynakta en sonra &lt;code class=&quot;highlighter-rouge&quot;&gt;click&lt;/code&gt; ve(veya) &lt;code class=&quot;highlighter-rouge&quot;&gt;open&lt;/code&gt; şeklinde yönlendirmelerde görebilirsiniz. Bu yönlendirmelere karşılık gelen domain bilgilerini bize gönderebilirsiniz.&lt;/p&gt;
+</description>
+                <link>https://mertcangokgoz.com/biri-bizi-gozetliyor-e-mail-tracking/</link>
+                <guid>https://mertcangokgoz.com/biri-bizi-gozetliyor-e-mail-tracking</guid>
+                <pubDate>Mon, 06 Feb 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>Linux'de Kullanıcı Gruplarının Düzeltilmesi</title>
@@ -2463,33 +2527,6 @@ Liquid::Template.register_tag(&amp;#39;jsfiddle&amp;#39;, Jekyll::JsFiddle)
                 <link>https://mertcangokgoz.com/jekyll-jsfiddle-eklentisi/</link>
                 <guid>https://mertcangokgoz.com/jekyll-jsfiddle-eklentisi</guid>
                 <pubDate>Tue, 01 Nov 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>IPv6 Eğitim Seti</title>
-                <description>&lt;p&gt;&lt;strong&gt;Cemal TANER&lt;/strong&gt; hocamızın hazırlamış olduğu &lt;strong&gt;IPv6 Eğitim Seti&lt;/strong&gt; 4 adet video serisinden oluşmaktadır. IPv6 hakkında öğrenmeniz gereken temel bir çok bilgiyi içermektedir.&lt;/p&gt;
-
-&lt;p&gt;IPv6 Eğitim Serisi: IPv4 Sınırlamaları,IPv6 Tanıtımı,IPv6 Başlığı&lt;/p&gt;
-
-&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/tUCIOhQG6L0?list=PLQMq5dvivt0UoMPqVJRgYlesiMZiurSWG&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;IPv6 Eğitim Serisi: IPv6 Gereksinimi,IPv4 ve IPv6’nın Birlikte Kullanılması,IPv6 Adres Gösterimi&lt;/p&gt;
-
-&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/FfIQ02JJdpY?list=PLQMq5dvivt0UoMPqVJRgYlesiMZiurSWG&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;IPv6 Eğitim Serisi: IPv6 Adresleri Kısaltma&lt;/p&gt;
-
-&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/zMPBL6caNmc?list=PLQMq5dvivt0UoMPqVJRgYlesiMZiurSWG&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;IPv6 Eğitim Serisi: IPv6 Adresler Türleri&lt;/p&gt;
-
-&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/cMLkNC-ONDc?list=PLQMq5dvivt0UoMPqVJRgYlesiMZiurSWG&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Eğitim Seti için kendisine ayrıca teşekkür ediyorum.&lt;/p&gt;
-</description>
-                <link>https://mertcangokgoz.com/ipv6-egitim-seti/</link>
-                <guid>https://mertcangokgoz.com/ipv6-egitim-seti</guid>
-                <pubDate>Mon, 31 Oct 2016 00:00:00 +0300</pubDate>
         </item>
 
 
