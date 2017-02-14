@@ -141,7 +141,16 @@ Liste her hafta Cuma günü güncellenecek tir. Rahatsız olduğunuz siteleri be
     RewriteCond %{HTTP_REFERER} .*traffic-cash.xyz.*$ [NC,OR]
     RewriteCond %{HTTP_REFERER} .*net-profits.xyz.*$ [NC,OR]
     RewriteCond %{HTTP_REFERER} .*top1-seo-service.com.*$ [NC,OR]
-    RewriteCond %{HTTP_REFERER} .*sitevaluation.org.*$ [NC]
+    RewriteCond %{HTTP_REFERER} .*sitevaluation.org.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*advokateg.xyz.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*biteg.xyz.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*boltalko.xyz.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*brateg.xyz.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*budilneg.xyz.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*vivilx.com.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*buketeg.xyz.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*abcdefh.xyz.*$ [NC,OR]
+    RewriteCond %{HTTP_REFERER} .*arendovalka.xyz.*$ [NC]
     RewriteRule .* - [F]
 ```
 
@@ -215,3 +224,17 @@ Tek yapmanız gereken yukarıda bulunan listeyi sitenizin .htaccess kurallarına
 ## 27.01.2016 Güncellemesi
 
 - net-profits eklendi
+
+## 14.02.2017 Güncellemesi
+
+Katkılarından dolayı [Gatsby34](https://disqus.com/by/Gatsby34/) Teşekkürler
+
+- advokateg eklendi
+- biteg eklendi
+- boltalko eklendi
+- brateg eklendi
+- budilneg eklendi
+- vivilx eklendi
+- buketeg eklendi
+- abcdefh eklendi
+- arendovalka eklendi
