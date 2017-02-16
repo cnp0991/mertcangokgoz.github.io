@@ -5,10 +5,102 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Tue, 14 Feb 2017 22:09:58 +0300</lastBuildDate>
-        <pubDate>Tue, 14 Feb 2017 22:09:58 +0300</pubDate>
+        <lastBuildDate>Thu, 16 Feb 2017 08:40:07 +0300</lastBuildDate>
+        <pubDate>Thu, 16 Feb 2017 08:40:07 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Debian İçin Samba Ayarlanması İşlemi</title>
+                <description>&lt;p&gt;Evde bulunan bilgisayarlar ile benim ana bilgisayarım arasında dosya transferi için USB kullanıyorduk. Bize vakit kaybettirdiğiniz düşündüğüm için bende samba kurayım da bu sorunu ortadan kaldırayım diye düşündüm. Öncelikli olarak sambanın gerekli olan tüm kütüphanelerini aşağıdaki müzik ile kurmaya başladım.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/K_fcvT_SLVg?list=PLcWykhEQl68Zk5Ws9FfhQzsMo1NH5k9Ns&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;“Müzik ruhun gıdasıdır” derler gerçekten de öyledir. siz bir şeyleri yaparken sizi dinlendirmesi oldukça güzeldir. Ben bu işlemleri gecenin 4 ünde yapıyordum.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt-get -y install samba 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Gerekli olan paketleri &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; kardeş bir güzel kuruyor. Şimdi geldim konfigürasyonlara oldukça basit ancak sistematik ilerliyoruz. Hem kafanızın karışmaması için hemde düzen iyidir.&lt;/p&gt;
+
+&lt;p&gt;İlk önce dizinleri oluşturup izinleri veriyoruz ayrıca bu iş için yenide bir grup oluşturdum ben&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;groupadd samba-user 
+mkdir /home/mertcan/samba-dosyalar 
+chgrp samba-user /home/mertcan/samba-dosyalar 
+chmod 770 /home/mertcan/samba-dosyalar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Şimdi bizim ana konfigürasyon dosyamız içerisinde &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/samba/smb.conf&lt;/code&gt; değişiklik yapacağız bunlar şu şekilde olacak&lt;/p&gt;
+
+&lt;p&gt;Karakter setini tanımlayalım&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;unix charset = UTF-8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Çalışma alanı adı tanımlayalım&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;workgroup = WORKGROUP
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kabul edilecek ip adreslerini network bazında&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;interfaces = 127.0.0.0/8 192.0.0.0/24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sadece &lt;code class=&quot;highlighter-rouge&quot;&gt;interfaces&lt;/code&gt; kullanılsın diye eklememizi yapalım&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bind interfaces only = yes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Şimdi geldik en güzel noktaya bu alanda sambada kullanılacak olan dosyayı ve izinlerini ayarlıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Dosyalar]
+   comment = Dosyalar
+   path = /home/mertcan/samba-dosyalar
+   writable = yes
+   create mode = 0770
+   directory mode = 0770
+   share modes = yes
+   guest ok = no
+   read only = no
+   locking = no
+   valid users = @samba-user
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kullanılacak olan kullanıcı için sambada şifre tanımlıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;smbpasswd -a mertcan 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kullanıcı için kullanılacak olan grubu ekliyoruz. Burada benim gibi hata yaparsanız. &lt;a href=&quot;https://mertcangokgoz.com/linuxde-kullanici-gruplarinin-duzeltilmesi/&quot;&gt;Linux’de Kullanıcı Gruplarının Düzeltilmesi&lt;/a&gt; makalesi aracılığı ile sorununuzu giderebilirsiniz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;usermod -aG samba-user mertcan
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Tüm işlemler bitti ise samba servisini yeniden başlatabilirsiniz. Hadi geçmiş olsun samba yapılandırmanız tamamdır.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/sbin/service smbd restart 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kapanışı da aşağıdaki müzik ile yapıyoruz.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/DK5CqIKzUyw?list=PLcWykhEQl68Zk5Ws9FfhQzsMo1NH5k9Ns&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+                <link>https://mertcangokgoz.com/debian-icin-samba-ayarlanmasi-islemi/</link>
+                <guid>https://mertcangokgoz.com/debian-icin-samba-ayarlanmasi-islemi</guid>
+                <pubDate>Thu, 16 Feb 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>Biri Bizi Gözetliyor E-Mail Tracking</title>
@@ -2560,56 +2652,6 @@ Liquid::Template.register_tag(&amp;#39;soundcloud_sound&amp;#39;, Jekyll::SoundC
                 <link>https://mertcangokgoz.com/cisco-ccna-network-egitim-seti/</link>
                 <guid>https://mertcangokgoz.com/cisco-ccna-network-egitim-seti</guid>
                 <pubDate>Wed, 02 Nov 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>Jekyll JSFiddle Eklentisi</title>
-                <description>&lt;p&gt;Jekyll de kullanabileceğiniz ve kodlarınızı github gist dışında gösterebileceğiniz bir platform olan JSfiddle’ı bu eklenti ile kolaylıkla kullanabilirsiniz.&lt;/p&gt;
-
-&lt;p&gt;Nasıl kullanılacağı ve neler yapılabileceği aşağıda bulunmaktadır. İstediğiniz şekillerde kullanabilmekte özgürsünüz&lt;/p&gt;
-
-&lt;noscript&gt;&lt;pre&gt;# Syntax: {% jsfiddle shorttag [tabs] [skin] [height] [width] %}
-#
-# Examples:
-#
-# Input: {% jsfiddle ccWP7 %}
-# Output: &amp;lt;iframe style=&amp;quot;width: 100%; height: 300px&amp;quot; src=&amp;quot;http://jsfiddle.net/ccWP7/embedded/js,resources,html,css,result/light/&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;
-#
-# Input: {% jsfiddle ccWP7 js,html,result %}
-# Output: &amp;lt;iframe style=&amp;quot;width: 100%; height: 300px&amp;quot; src=&amp;quot;http://jsfiddle.net/ccWP7/embedded/js,html,result/light/&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;
-#
-
-module Jekyll
-  class JsFiddle &amp;lt; Liquid::Tag
-    def initialize(tag_name, markup, tokens)
-      if /(?&amp;lt;fiddle&amp;gt;\w+\/?\d?)(?:\s+(?&amp;lt;sequence&amp;gt;[\w,]+))?(?:\s+(?&amp;lt;skin&amp;gt;\w+))?(?:\s+(?&amp;lt;height&amp;gt;\w+))?(?:\s+(?&amp;lt;width&amp;gt;\w+))?/ =~ markup
-        @fiddle   = fiddle
-        @sequence = (sequence unless sequence == &amp;#39;default&amp;#39;) || &amp;#39;js,resources,html,css,result&amp;#39;
-        @skin     = (skin unless skin == &amp;#39;default&amp;#39;) || &amp;#39;light&amp;#39;
-        @width    = width || &amp;#39;100%&amp;#39;
-        @height   = height || &amp;#39;300px&amp;#39;
-      end
-    end
-
-    def render(context)
-      if @fiddle
-        &amp;quot;&amp;lt;iframe style=\&amp;quot;width: #{@width}; height: #{@height}\&amp;quot; frameborder=\&amp;quot;0\&amp;quot; seamless=\&amp;quot;seamless\&amp;quot; src=\&amp;quot;http://jsfiddle.net/#{@fiddle}/embedded/#{@sequence}/#{@skin}/\&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;quot;
-      else
-        &amp;quot;Error processing input, expected syntax: {% jsfiddle shorttag [tabs] [skin] [height] [width] %}&amp;quot;
-      end
-    end
-  end
-end
-
-Liquid::Template.register_tag(&amp;#39;jsfiddle&amp;#39;, Jekyll::JsFiddle)
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/MertcanGokgoz/b232c0e0e31530dee1c4d7200e4711de.js&quot;&gt; &lt;/script&gt;
-
-&lt;p&gt;öptüm bye &amp;lt;3&lt;/p&gt;
-</description>
-                <link>https://mertcangokgoz.com/jekyll-jsfiddle-eklentisi/</link>
-                <guid>https://mertcangokgoz.com/jekyll-jsfiddle-eklentisi</guid>
-                <pubDate>Tue, 01 Nov 2016 00:00:00 +0300</pubDate>
         </item>
 
 
