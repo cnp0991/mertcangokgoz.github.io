@@ -188,34 +188,6 @@
 <div id="post">
   <p>Can sıkıntısından yazmış olduğum investing sitesi kullanılarak hazırladığım güncel döviz kuru uygulaması örneğimiz.Uygulama geliştirilirken BeautifulSoup ve Urllib kütüphanelerinden yararlanılmıştır.</p>
 
-<noscript><pre># /usr/bin/python3.4
-# -*- coding: utf-8 -*-
-__author__ = &#39;Mertcan Gökgöz&#39;
-
-from bs4 import BeautifulSoup
-from urllib.request import urlopen, Request
-
-
-def DolarParse():
-    pasteURL = &quot;http://tr.investing.com/currencies/usd-try&quot;
-    data = urlopen(Request(pasteURL, headers={&#39;User-Agent&#39;: &#39;Mozilla&#39;})).read()
-    parse = BeautifulSoup(data)
-    for dolar in parse.find_all(&#39;span&#39;, id=&quot;last_last&quot;):
-        liste = list(dolar)
-        print(&quot;Güncel Dolar Kuru: &quot; + str(liste))
-
-
-def EuroParse():
-    pasteURL = &quot;http://tr.investing.com/currencies/eur-try&quot;
-    data = urlopen(Request(pasteURL, headers={&#39;User-Agent&#39;: &#39;Mozilla&#39;})).read()
-    parse = BeautifulSoup(data)
-    for dolar in parse.find_all(&#39;span&#39;, id=&quot;last_last&quot;):
-        liste = list(dolar)
-        print(&quot;Güncel Euro Kuru: &quot; + str(liste))
-
-
-DolarParse()
-EuroParse()</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/28adf35f1e4ba3145e2d.js"> </script>
 
 

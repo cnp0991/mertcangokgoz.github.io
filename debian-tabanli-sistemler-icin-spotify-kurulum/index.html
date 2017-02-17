@@ -200,46 +200,6 @@ chmod +x InstallSpotify.sh
 
 <p>Kullandığımız Bash Scriptimizin içeriği ise şu şekilde</p>
 
-<noscript><pre>#! /bin/bash
-
-#Check root
-if [ $(id -u) != &quot;0&quot; ];
-then
-	echo &quot;Needs to be run by a user with root privilege.&quot;
-	exit 1
-fi
-
-# Check debian packages manager
-if [ -n &quot;$(command -v apt-get | wc -l)&quot; != &quot;1&quot; ]
-then
-	echo &quot;Please use Debian based system&quot;
-	exit 1
-fi
-
-# Check to see if Spotify repository
-echo &quot;  Checking /etc/apt/sources.list for repository.&quot;
-ssource=`grep -o -E &quot;deb http://repository.spotify.com stable non-free&quot; /etc/apt/sources.list | wc -l`
-if [ $ssource -eq 0 ]; then
-	echo &#39;&#39; | sudo tee -a /etc/apt/sources.list.d/spotify.list
-	echo &#39;## SPOTIFY-CLIENT&#39; | sudo tee -a /etc/apt/sources.list.d/spotify.list
-	echo &#39;deb http://repository.spotify.com stable non-free&#39; | sudo tee -a /etc/apt/sources.list.d/spotify.list
-else
-	echo &quot;  Skipping addition to /etc/apt/sources.list.d/sources.list.&quot;
-fi
-
-# Verify downloaded packages
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-
-# Run apt-get update
-sudo apt-get update
-
-# Install spotify!
-sudo apt-get install spotify-client
-
-echo &quot;  Done. Add Spotify to your system&quot;
-echo &quot;  Press any key to continue.&quot;
-read
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/8f94fc1fcb7faccdfc25bd301cbb0370.js"> </script>
 
 

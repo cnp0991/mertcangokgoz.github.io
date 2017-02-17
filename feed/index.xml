@@ -5,8 +5,8 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Thu, 16 Feb 2017 08:40:07 +0300</lastBuildDate>
-        <pubDate>Thu, 16 Feb 2017 08:40:07 +0300</pubDate>
+        <lastBuildDate>Fri, 17 Feb 2017 22:10:10 +0300</lastBuildDate>
+        <pubDate>Fri, 17 Feb 2017 22:10:10 +0300</pubDate>
         <ttl>1800</ttl>
 
 
@@ -128,7 +128,7 @@ chmod 770 /home/mertcan/samba-dosyalar
 
 &lt;p&gt;Spam maillerin sana ulaştığını bu firmalar işte bu şekilde anlar sen maili açarsın çünkü ney olup bittiğini anlamak için - ve daha fazla mail göndermek için güzel bir başlangıç yakalamış olunur.&lt;/p&gt;
 
-&lt;h3 id=&quot;bunu-nasl-nleyeyebiliriz-&quot;&gt;Bunu nasıl önleyeyebiliriz ?&lt;/h3&gt;
+&lt;h3 id=&quot;bunu-nasıl-önleyeyebiliriz-&quot;&gt;Bunu nasıl önleyeyebiliriz ?&lt;/h3&gt;
 
 &lt;p&gt;Programların bağlanmak istediği yerleri gösteren araçlar vardır. Ancak çoğu zaman bu uygulamalar ücretlidir. Listede henüz bulunmayan yeni bir urlyi bu uygulamalar aracılığı ile keşfede bilirsiniz.&lt;/p&gt;
 
@@ -238,7 +238,7 @@ chmod 770 /home/mertcan/samba-dosyalar
 
 &lt;p&gt;Yeni bir takım url tespit ederseniz lütfen &lt;code class=&quot;highlighter-rouge&quot;&gt;Pull Request&lt;/code&gt; isteği ile göndermeyi unutmayın. Peki en basiti bu url bilgilerini veya izlendiğimizi nasıl anlayacağız.&lt;/p&gt;
 
-&lt;h3 id=&quot;bunun-dnda-nasl-yardm-edebilirim&quot;&gt;Bunun dışında nasıl yardım edebilirim?&lt;/h3&gt;
+&lt;h3 id=&quot;bunun-dışında-nasıl-yardım-edebilirim&quot;&gt;Bunun dışında nasıl yardım edebilirim?&lt;/h3&gt;
 
 &lt;p&gt;Okuduğunuz mail bir şirket, kurum veya kuruluştan birisi tarafından bir e-posta alırsanız, kaynağa (*) bakın ve yukarıdaki kod gibi bir şeyler bulmaya çalışın. Genellikle postanın sonunda bulunur.&lt;/p&gt;
 
@@ -991,7 +991,7 @@ try.html
 
 &lt;p&gt;&lt;em&gt;Nedir bu sence ?&lt;/em&gt; Sorusunun ne olduğunu her ne kadar anlasak da cevaba ulaşamadık altın oran sorusu olup fibonacci ile rabbit seq arasında bir ilişki bulunmakta&lt;/p&gt;
 
-&lt;h3 id=&quot;yardmlarndan-dolay&quot;&gt;Yardımlarından dolayı&lt;/h3&gt;
+&lt;h3 id=&quot;yardımlarından-dolayı&quot;&gt;Yardımlarından dolayı&lt;/h3&gt;
 
 &lt;p&gt;Yasin YAMAN&lt;br /&gt;
 Ömer İPEK&lt;br /&gt;
@@ -1232,7 +1232,7 @@ sudo cp hosts /etc/hosts
 
 &lt;p&gt;İşlemimiz başarılı bir şekilde tamamlandı bundan sonra engellenen sitelere bir şekilde denk gelirseniz yönlendirmeden dolayı siteye erişim sağlayamayacaksınız.&lt;/p&gt;
 
-&lt;h3 id=&quot;peki-neden-127001-yerine-0000-adresine-ynlendirdik&quot;&gt;Peki neden &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt; yerine &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; adresine yönlendirdik&lt;/h3&gt;
+&lt;h3 id=&quot;peki-neden-127001-yerine-0000-adresine-yönlendirdik&quot;&gt;Peki neden &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt; yerine &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; adresine yönlendirdik&lt;/h3&gt;
 
 &lt;p&gt;Geleneksel olarak çoğu ana bilgisayar dosyası, yerel makineye IP bağlantısı kurmak için geri döngü adresi olan 127.0.0.1’i kullanır.&lt;/p&gt;
 
@@ -1280,7 +1280,7 @@ sudo cp hosts /etc/hosts
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Pg_dump&lt;/code&gt; aracıyla oluşturulan tar dosyası ve dizin biçimini geri yüklemek için &lt;code class=&quot;highlighter-rouge&quot;&gt;pg_restore&lt;/code&gt; kullanmak&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;psql-kullanarak-veritabanlarn-geri-ykleme&quot;&gt;Psql kullanarak veritabanlarını geri yükleme&lt;/h3&gt;
+&lt;h3 id=&quot;psql-kullanarak-veritabanlarını-geri-yükleme&quot;&gt;Psql kullanarak veritabanlarını geri yükleme&lt;/h3&gt;
 
 &lt;p&gt;Psql yardımcı programı, &lt;code class=&quot;highlighter-rouge&quot;&gt;pg_dump&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;pg_dumpall&lt;/code&gt; veya uyumlu yedek dosyalar üreten diğer araçlar tarafından oluşturulan SQL komut dosyasını geri yüklemenizi sağlar. Psql aracını kullanarak tüm komut dosyasını yürütmeniz gerekir.&lt;/p&gt;
 
@@ -1304,7 +1304,7 @@ sudo cp hosts /etc/hosts
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;pgrestore-kullanarak-veritabanlar-nasl-restore-edilir&quot;&gt;Pg_restore kullanarak veritabanları nasıl restore edilir&lt;/h3&gt;
+&lt;h3 id=&quot;pg_restore-kullanarak-veritabanları-nasıl-restore-edilir&quot;&gt;Pg_restore kullanarak veritabanları nasıl restore edilir&lt;/h3&gt;
 
 &lt;p&gt;Psqltool’un yanında, &lt;code class=&quot;highlighter-rouge&quot;&gt;pg_dump&lt;/code&gt; veya &lt;code class=&quot;highlighter-rouge&quot;&gt;pg_dumpalltools&lt;/code&gt; tarafından yedeklenen veritabanlarını geri yüklemek için &lt;code class=&quot;highlighter-rouge&quot;&gt;pg_restore&lt;/code&gt; programını kullanabilirsiniz. &lt;code class=&quot;highlighter-rouge&quot;&gt;Pg_restore&lt;/code&gt; programı ile, restorasyon edilecek veritabanları için çeşitli seçenekler bulunuyor bunları şu şekilde sıralayabiliriz.&lt;/p&gt;
 
@@ -1418,7 +1418,7 @@ gem -v
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;rails-gelitirmek-iin-postgresql-veritaban-ayarlamalarnn-yaplmas&quot;&gt;Rails Geliştirmek için PostgreSQL Veritabanı Ayarlamalarının yapılması&lt;/h3&gt;
+&lt;h3 id=&quot;rails-geliştirmek-için-postgresql-veritabanı-ayarlamalarının-yapılması&quot;&gt;Rails Geliştirmek için PostgreSQL Veritabanı Ayarlamalarının yapılması&lt;/h3&gt;
 
 &lt;p&gt;Bu adımda PostgreSQL’i rails’in geliştirilmesi için hazırlayacağız. Ruby on Rails, MySQL, SQLite (Varsayılan) ve PostgreSQL gibi birçok veritabanını desteklemektedir. Veritabanı olarak PostgreSQL’i kullanacağız.&lt;/p&gt;
 
@@ -1534,7 +1534,7 @@ rails db:migrate
 
 &lt;p&gt;Önceliklik olarak bu kuruluma başlamadan önce &lt;a href=&quot;https://www.authy.com/signup&quot;&gt;https://www.authy.com/signup&lt;/a&gt; adresinden üye olmanız ve size verilen &lt;strong&gt;token&lt;/strong&gt; bilgilerini kayıt etmeniz gerekmektedir. Kurulumu başarılı bir şekilde tamamladığınızda sistemlerinize girmek için 2FA doğrulaması yapmanız gerekmektedir.&lt;/p&gt;
 
-&lt;h2 id=&quot;kurulum-lemi&quot;&gt;Kurulum İşlemi&lt;/h2&gt;
+&lt;h2 id=&quot;kurulum-İşlemi&quot;&gt;Kurulum İşlemi&lt;/h2&gt;
 
 &lt;p&gt;Terminalde aşağıdaki komutları yazın:&lt;/p&gt;
 
@@ -1560,7 +1560,7 @@ sudo bash authy-ssh install /usr/local/bin
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;ssh-sunucunuzu-yeniden-balatma&quot;&gt;Ssh sunucunuzu yeniden başlatma&lt;/h4&gt;
+&lt;h4 id=&quot;ssh-sunucunuzu-yeniden-başlatma&quot;&gt;Ssh sunucunuzu yeniden başlatma&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;&lt;/p&gt;
 
@@ -1586,7 +1586,7 @@ sudo bash authy-ssh install /usr/local/bin
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;root-ayrcalklar-olmadan-kurulum-ilemi&quot;&gt;Root ayrıcalıkları olmadan kurulum işlemi&lt;/h3&gt;
+&lt;h3 id=&quot;root-ayrıcalıkları-olmadan-kurulum-işlemi&quot;&gt;Root ayrıcalıkları olmadan kurulum işlemi&lt;/h3&gt;
 
 &lt;p&gt;Terminalde aşağıdaki komutları yazın:&lt;/p&gt;
 
@@ -1601,7 +1601,7 @@ bash authy-ssh install ~/.authy-ssh/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;bir-kullanc-da-iki-faktrl-kimlik-dorulamay-etkinletirmek&quot;&gt;Bir kullanıcı da iki faktörlü kimlik doğrulamayı etkinleştirmek&lt;/h2&gt;
+&lt;h2 id=&quot;bir-kullanıcı-da-iki-faktörlü-kimlik-doğrulamayı-etkinleştirmek&quot;&gt;Bir kullanıcı da iki faktörlü kimlik doğrulamayı etkinleştirmek&lt;/h2&gt;
 
 &lt;p&gt;Kurulum bittikten sonra, korumak istediğiniz kullanıcılar için iki faktörlü kimlik doğrulamayı proaktif olarak etkinleştirmeniz gerekir.&lt;/p&gt;
 
@@ -1617,7 +1617,7 @@ bash authy-ssh install ~/.authy-ssh/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;nasl-alr&quot;&gt;Nasıl çalışır&lt;/h2&gt;
+&lt;h2 id=&quot;nasıl-çalışır&quot;&gt;Nasıl çalışır&lt;/h2&gt;
 
 &lt;p&gt;Authy-ssh, her girişten önce kendini çalıştırmak için &lt;code class=&quot;highlighter-rouge&quot;&gt;sshd_config&lt;/code&gt; yönergesine ` ForceCommand` kullanmaktadır. Yüklemeyi tamamladıktan sonra sshd_config dosyanızın görünümünü aşağıda görebilirsiniz:&lt;/p&gt;
 
@@ -1640,7 +1640,7 @@ user=daniel:1
 
 &lt;p&gt;Bu durumda kullanıcı rootu ve daniel’in iki faktörlü olduğu ve 1’in  &lt;code class=&quot;highlighter-rouge&quot;&gt;authy_id&lt;/code&gt; olduğu anlamına gelir. Bir kullanıcı bu listede yoksa, &lt;code class=&quot;highlighter-rouge&quot;&gt;authy-ssh&lt;/code&gt; otomatik olarak içeri girmesine izin verir.&lt;/p&gt;
 
-&lt;h2 id=&quot;ki-aamal-kimlik-dorulamasn-otomatik-datm-aralar-ile-kullanma&quot;&gt;İki aşamalı kimlik doğrulamasını otomatik dağıtım araçları ile kullanma.&lt;/h2&gt;
+&lt;h2 id=&quot;İki-aşamalı-kimlik-doğrulamasını-otomatik-dağıtım-araçları-ile-kullanma&quot;&gt;İki aşamalı kimlik doğrulamasını otomatik dağıtım araçları ile kullanma.&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;capybara&lt;/strong&gt;, &lt;strong&gt;chef&lt;/strong&gt;, &lt;strong&gt;puppet&lt;/strong&gt;, &lt;strong&gt;cfengine&lt;/strong&gt;, &lt;strong&gt;git&lt;/strong&gt; kullanırsanız, bu araçlarla ilgili yeni kullanıcılar oluşturabilirsiniz; böylece, ikş aşamalı kimlik doğrulamayı kullanabilirsiniz.
 Alternatif olarak, &lt;code class=&quot;highlighter-rouge&quot;&gt;ForceCommand&lt;/code&gt; yönergesini kullanarak kullanıcıları eşleştirebilirsiniz.&lt;/p&gt;
@@ -1666,7 +1666,7 @@ Starting sshd:                                             [  OK  ]
 
 &lt;p&gt;Şimdi &lt;code class=&quot;highlighter-rouge&quot;&gt;force&lt;/code&gt; komutu yalnızca iki faktörlü gruba ait kullanıcılar üzerinde çalışacaktır.&lt;/p&gt;
 
-&lt;h2 id=&quot;scp-sftp-mosh-ve-git-push-iki-aamal-kimlik-dorulama-kullanm&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Scp&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt; sftp&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;mosh&lt;/code&gt; ve &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; iki aşamalı kimlik doğrulama kullanımı.&lt;/h2&gt;
+&lt;h2 id=&quot;scp-sftp-mosh-ve-git-push-iki-aşamalı-kimlik-doğrulama-kullanımı&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Scp&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt; sftp&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;mosh&lt;/code&gt; ve &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; iki aşamalı kimlik doğrulama kullanımı.&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Scp&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt; sftp&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;mosh&lt;/code&gt; ve &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone | fetch | push&lt;/code&gt; gibi etkileşimli olmayan komutları etkinleştirmek için ortam değişkenini &lt;code class=&quot;highlighter-rouge&quot;&gt;AUTHY_TOKEN&lt;/code&gt; istemciden geçirmemize izin vermelisiniz. Bunu yapmak için &lt;code class=&quot;highlighter-rouge&quot;&gt;sshd_config&lt;/code&gt; düzenleyin (normalde&lt;code class=&quot;highlighter-rouge&quot;&gt; /etc&lt;/code&gt; veya &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/ssh/&lt;/code&gt; da bulunur) ve &lt;code class=&quot;highlighter-rouge&quot;&gt;AUTHY_TOKEN&lt;/code&gt; i AcceptEnv yönergesine ekleyin:&lt;/p&gt;
 
@@ -1693,7 +1693,7 @@ Starting sshd:                                             [  OK  ]
 
 &lt;p&gt;Geçersiz bir belirteç girerseniz &lt;code class=&quot;highlighter-rouge&quot;&gt;sftp&lt;/code&gt; gibi durumlarda, &lt;em&gt;“Received message too long 458961713”&lt;/em&gt; gibi bir yanıt alabilirsiniz. Bunun nedeni, etkileşimli komutun, program tarafından döndürülen uygun çıktı, metin mesajını oluşturamamasıdır.&lt;/p&gt;
 
-&lt;h2 id=&quot;ayn-unix-hesab-paylaan-birden-ok-kullanc&quot;&gt;Aynı unix hesabı paylaşan birden çok kullanıcı.&lt;/h2&gt;
+&lt;h2 id=&quot;aynı-unix-hesabı-paylaşan-birden-çok-kullanıcı&quot;&gt;Aynı unix hesabı paylaşan birden çok kullanıcı.&lt;/h2&gt;
 
 &lt;p&gt;Tek bir giriş bilgilerini paylaşmanız gereken birçok kullanıcınız varsa, aynı tokeni paylaşmadan güçlü iki faktörlü kimlik doğrulamasını kullanabilirsiniz. Bu, her kullanıcının kendi reddine izin vermeyecek şekilde kendi Authy Token’ine sahip olabileceği anlamına gelir.&lt;/p&gt;
 
@@ -1718,7 +1718,7 @@ command=&quot;/usr/local/bin/authy-ssh login 20&quot; ssh-rsa AAAAB3NzaC1yc2EAAA
 
 &lt;p&gt;Önceki komut ssh genel anahtarı, cep telefonu ve e-postayı kullanıcıdan isteyecektir.&lt;/p&gt;
 
-&lt;h2 id=&quot;kaldrma&quot;&gt;Kaldırma&lt;/h2&gt;
+&lt;h2 id=&quot;kaldırma&quot;&gt;Kaldırma&lt;/h2&gt;
 
 &lt;p&gt;Aşağıdaki komutların girilmesi halinde sistemden Authy SSH uygulaması tamamen kaldırılacaktır.&lt;/p&gt;
 
@@ -1860,36 +1860,6 @@ sudo dpkg -i hexorbase_1.0_all.deb
 
 &lt;p&gt;Optimizasyon problemlerinin önüne geçmek için sıkça kullanılan algoritmalardır. Her zaman en bariz ve anında fayda sağlayan bir sonraki parçayı seçer.&lt;/p&gt;
 
-&lt;noscript&gt;&lt;pre&gt;#include &amp;lt;stdio.h&amp;gt;
-#include &amp;lt;malloc.h&amp;gt;
-
-
-void ActivitySelection(int *s, int *f, int n, int *sol)
-{
-	sol[0] = 0;
-
-	int i, c = 0;
-	for(i = 1; i &amp;lt; n; i++)
-		if(f[sol[c]] &amp;lt;= s[i])
-			sol[++c] = i;
-
-	sol[++c] = -1;
-}
-
-
-void main()
-{
-	int s[] =  {1, 3, 0, 5, 8, 5};
-    int f[] =  {2, 4, 6, 7, 9, 9};
-    int n = sizeof(s)/sizeof(s[0]);
-
-    int *sol = malloc(sizeof(int)*n);
-    ActivitySelection(s, f, n, sol);
-
-    int i;
-    for(i = 0; sol[i] != -1; i++)
-    	printf(&amp;quot;%d\t%d\t%d\n&amp;quot;, sol[i], s[sol[i]], f[sol[i]]);
-}&lt;/pre&gt;&lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/MertcanGokgoz/6620972535cb7e4c65d701c25329d36c.js&quot;&gt; &lt;/script&gt;
 
 &lt;p&gt;Her biri bir başlangıç zamanı s ve bitiş zamanı f ile temsil edilen n aktivite bulunduğunu varsayalım. &lt;code class=&quot;highlighter-rouge&quot;&gt;S ≥ f&lt;/code&gt; veya &lt;code class=&quot;highlighter-rouge&quot;&gt;s ≥ f&lt;/code&gt; ise iki etkinlik i ve j’nin çelişkili olmadığı söylenir. Aktivite seçim problemi, çelişkili olmayan faaliyetlerin maksimum çözüm setini (S) bulmaktan ibarettir veya daha kesin bir ifadeyle, &lt;code class=&quot;highlighter-rouge&quot;&gt;|S'| &amp;gt; |S|&lt;/code&gt; Birden fazla maksimal çözümün eşit ebatlara sahip olması durumundadır..&lt;/p&gt;
@@ -1934,7 +1904,7 @@ log4j.appender.loggerId.layout.ConversionPattern=%d [%t] %-5p (%F:%L) - %m%n
 
 &lt;p&gt;&lt;img src=&quot;/assets/HFC-network-diagram.jpg&quot; alt=&quot;hfc-network-diagramı&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;fiber-optik-dmler&quot;&gt;Fiber optik düğümler&lt;/h3&gt;
+&lt;h3 id=&quot;fiber-optik-düğümler&quot;&gt;Fiber optik düğümler&lt;/h3&gt;
 
 &lt;p&gt;Fiber optik bir düğümün, geniş bantlı bir optik alıcısı vardır; bu alıcı, headend veya hub’tan gelen Downstream optik olarak modüle edilmiş sinyali evlere giden bir elektrik sinyaline çevirir. 2015 yılından itibaren, Downstream sinyali, tipik olarak 50 MHz’de başlayan ve üst ucunda 550-1000 MHz aralığında değişen RF modüle edilmiş bir sinyaldir. Fiber optik düğüm ayrıca, evden başlığa geri iletişimi gönderen bir ters veya dönüş yolu vericisi içerir.&lt;/p&gt;
 
@@ -1944,7 +1914,7 @@ log4j.appender.loggerId.layout.ConversionPattern=%d [%t] %-5p (%F:%L) - %m%n
 
 &lt;p&gt;Örneğin, Downstream 1490 nm’de bir dalga boyunda olabilir ve dönüş sinyali 1310 nm’de bir dalga boyunda olabilir.&lt;/p&gt;
 
-&lt;h3 id=&quot;mterilere-nihai-balant&quot;&gt;Müşterilere nihai bağlantı&lt;/h3&gt;
+&lt;h3 id=&quot;müşterilere-nihai-bağlantı&quot;&gt;Müşterilere nihai bağlantı&lt;/h3&gt;
 
 &lt;p&gt;Ağın koaksiyel kısmı, düğümün ağaç ve dal konfigürasyonunda 25-2000 ev (500 tipik) bağlar. RF amplifikatörleri, koaksiyel kabloyu bölme veya “tıkama” nedeniyle elektrik sinyallerinin pasif kayıplarını ve kablo zayıflamasını yenmek için aralıklarla kullanılır.&lt;/p&gt;
 
@@ -1960,7 +1930,7 @@ log4j.appender.loggerId.layout.ConversionPattern=%d [%t] %-5p (%F:%L) - %m%n
 
 &lt;p&gt;Damla daha sonra, toprak bloğunun sistemi gerilimden koruyan eve bağlanır. Şebeke tasarımına bağlı olarak, sinyal bir splitter üzerinden birden fazla TV’ye aktarılabilir. Birden çok TV’ye bağlanmak için çok sayıda bölücü kullanılıyorsa, sinyal seviyeleri düşecek ve bu bölücüleri aşan TV’lerin analog kanallarındaki görüntü kalitesi, “damla” veya “ev” amplifikatörünün kullanılmasını gerektiriyor veya daha da kabaca, çoklu Aynı binaya düşer.&lt;/p&gt;
 
-&lt;h3 id=&quot;hfc-ebekesi-zerinden-tama&quot;&gt;HFC şebekesi üzerinden taşıma&lt;/h3&gt;
+&lt;h3 id=&quot;hfc-şebekesi-üzerinden-taşıma&quot;&gt;HFC şebekesi üzerinden taşıma&lt;/h3&gt;
 
 &lt;p&gt;Frekans bölmeli çoğullamayı kullanarak, bir HFC şebekesi, analog TV, dijital TV (SDTV veya HDTV), isteğe bağlı video, telefon ve yüksek hızlı veriler de dahil olmak üzere çeşitli servisleri taşıyabilir. Bu sistemlerdeki servisler 5 MHz ila 1000 MHz frekans bandında radyo frekansı (RF) sinyalleriyle taşınır.&lt;/p&gt;
 
@@ -1974,7 +1944,7 @@ log4j.appender.loggerId.layout.ConversionPattern=%d [%t] %-5p (%F:%L) - %m%n
 
 &lt;p&gt;Geleneksel olarak, video içeriği yalnızca eve gönderildiğinden, HFC ağı asimetrik olarak yapılandırılmıştır: bir yönde, diğer yöne göre çok daha fazla veri taşıma kapasitesi vardır. Geri dönüş yolu başlangıçta sadece çok düşük bant genişliği gerektiren film, vb sipariş etmek için bazı kontrol sinyallerinde kullanılıyordu. Internet erişimi ve telefon gibi ek hizmetler HFC şebekesine eklenince, dönüş yolu daha çok kullanılıyor.&lt;/p&gt;
 
-&lt;h3 id=&quot;oklu-sistem-operatrleri&quot;&gt;Çoklu sistem operatörleri&lt;/h3&gt;
+&lt;h3 id=&quot;Çoklu-sistem-operatörleri&quot;&gt;Çoklu sistem operatörleri&lt;/h3&gt;
 
 &lt;p&gt;Çoklu sistem operatörleri (MSO’lar) çeşitli hizmetleri fiber optik ve koaksiyal bakır kablolar üzerinde RF sinyalleri üzerinden gönderme yöntemleri geliştirdi. HFC şebekesi üzerinden video aktarmak için asıl yöntem ve halen en yaygın kullanılan yöntem, havadaki yayın iletimi için kullanılan metoda benzer şekilde standart analog TV kanallarının modülasyonudur.&lt;/p&gt;
 
@@ -1984,7 +1954,7 @@ log4j.appender.loggerId.layout.ConversionPattern=%d [%t] %-5p (%F:%L) - %m%n
 
 &lt;p&gt;Dijital sıkıştırma tekniklerini kullanarak birden fazla standart ve yüksek tanımlı TV kanalı bir 6 veya 8 MHz frekans taşıyıcı üzerinde taşınabilir, böylece HFC ağının kanal taşıma kapasitesini tüm analog ağa oranla 10 kat veya daha fazla arttırır.&lt;/p&gt;
 
-&lt;h3 id=&quot;rekabeti-a-teknolojileri&quot;&gt;Rekabetçi ağ teknolojileri&lt;/h3&gt;
+&lt;h3 id=&quot;rekabetçi-ağ-teknolojileri&quot;&gt;Rekabetçi ağ teknolojileri&lt;/h3&gt;
 
 &lt;p&gt;Dijital abone hattı (DSL), geleneksel telefon şirketleri tarafından bükümlü çift bakır telefon kablolarında gelişmiş hizmetler (yüksek hızlı veri ve bazen video) sunmak için kullanılan bir teknolojidir. Genellikle HFC şebekelerinden daha düşük veri taşıma kapasitesine sahiptir ve veri hızları, hat uzunlukları ve kalitesi ile aralıklarla sınırlandırılabilir.&lt;/p&gt;
 
@@ -1994,7 +1964,7 @@ log4j.appender.loggerId.layout.ConversionPattern=%d [%t] %-5p (%F:%L) - %m%n
 
 &lt;p&gt;2000’li yıllarda, telekom şirketleri kablolu operatörler ile rekabet etmek için video, veri ve ses sunmak için pasif optik ağ çözümleri gibi x’e (FTTX) önemli bir fiber dağıtımı yapmaya başladı. Bunlar dağıtmak pahalı olabilir, ancak özellikle veri hizmetleri için geniş bant genişliği kapasitesi sağlayabilirler.&lt;/p&gt;
 
-&lt;h3 id=&quot;avantajlar&quot;&gt;Avantajları&lt;/h3&gt;
+&lt;h3 id=&quot;avantajları&quot;&gt;Avantajları&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Maliyet - Gerekli daha az amplifikatör sayesinde daha az bakım maliyeti. Aynı zamanda koaksiyalden daha az elektriğe, daha düşük maliyet anlamına gelir.&lt;/li&gt;
@@ -2007,7 +1977,7 @@ log4j.appender.loggerId.layout.ConversionPattern=%d [%t] %-5p (%F:%L) - %m%n
   &lt;li&gt;Kullanılabilirlik - Ayrı bir bağlantı kullandığı için telefon hattını çevirmeli bağlamaya gerek yok, Kablo İnternet’in sürekli bağlantısı var.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;dezavantajlar&quot;&gt;Dezavantajları&lt;/h3&gt;
+&lt;h3 id=&quot;dezavantajları&quot;&gt;Dezavantajları&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Maliyet - Koaksiyel Kablo’dan daha pahalı, özellikle uzun kablolar nedeniyle kırsal abonelere pahalı.&lt;/li&gt;
@@ -2157,7 +2127,7 @@ sudo apt-get install php5.6-xml
 
 &lt;p&gt;Bir başka CGN senaryosu, taşıyıcının ağının IPv6 kullandığı ve bu nedenle yalnızca iki IPv4 adresleme alanına ihtiyaç duyulan Dual-Stack Lite’dır.&lt;/p&gt;
 
-&lt;h2 id=&quot;paylalan-adres-alan&quot;&gt;Paylaşılan adres alanı&lt;/h2&gt;
+&lt;h2 id=&quot;paylaşılan-adres-alanı&quot;&gt;Paylaşılan adres alanı&lt;/h2&gt;
 
 &lt;p&gt;Bir &lt;strong&gt;ISS&lt;/strong&gt;(İnternet Servis Sağlayıcısı), bir CGN dağıttığında ve müşterilerini numaralandırmak için RFC 1918 adres alanını kullanıyorsa, müşteride bulunan donanım zaten RFC 1918 alanını kullanmanın durmasına neden olur. Bunun nedeni, aynı adreslerin hem ağ ara birimlerin içinde hem de dışında kullanılması durumunda yönlendirme ve NAT’ın çalışmamasıdır.&lt;/p&gt;
 
@@ -2174,7 +2144,7 @@ sudo apt-get install php5.6-xml
   &lt;li&gt;NAT aygıtları için daha fazla özel IPv4 adres alanı atamak, IPv6’ya geçiş sürecini uzatabilir.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;dezavantajlar&quot;&gt;Dezavantajları&lt;/h3&gt;
+&lt;h3 id=&quot;dezavantajları&quot;&gt;Dezavantajları&lt;/h3&gt;
 
 &lt;p&gt;Carrier-grade NAT, genellikle ISS müşterilerinin port yönlendirme özelliğini kullanmasını engeller, çünkü ağ adresi çevirisi (NAT) genellikle ağdaki NAT aygıtlarının bağlantı noktalarını harici ara birimdeki diğer bağlantı noktalarına eşleyerek gerçekleştirilir.&lt;/p&gt;
 
@@ -2356,7 +2326,7 @@ LocalAddress 127.0.0.31:53
   &lt;li&gt;&lt;strong&gt;Kullanılabilirlik&lt;/strong&gt; - normal DNS, saniyede birkaç sahte paket gönderen sniffing saldırganlarından ve hizmet reddine (DoS) lara karşı koruma sağlamaz. &lt;strong&gt;DNSCurve&lt;/strong&gt; ise sahte DNS paketlerini tanır ve atar; SMTP, HTTP, HTTPS gibi bazı protokoller DoS’a karşı savunmasızdırlar.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;gvenlik&quot;&gt;Güvenlik&lt;/h3&gt;
+&lt;h3 id=&quot;güvenlik&quot;&gt;Güvenlik&lt;/h3&gt;
 
 &lt;p&gt;DNSCurve, &lt;strong&gt;NIST&lt;/strong&gt;(Ulusal Standartlar ve Teknoloji Enstitüsü)’nin kabaca 3072-bit RSA’ya eşdeğer olduğunu tahmin ettiği 256-bit eliptik eğri şifrelemeyi kullanır. &lt;code class=&quot;highlighter-rouge&quot;&gt;ECRYPT&lt;/code&gt; benzer bir eşdeğerliği bildirir. Sorgu başına sorguya açık anahtarlı şifreleme (SSH ve SSL gibi) ve tekrar çalma saldırılarına karşı koruma sağlamak için 96 bitlik şifreler kullanır.&lt;/p&gt;
 
@@ -2368,7 +2338,7 @@ LocalAddress 127.0.0.31:53
 
 &lt;p&gt;diyor.&lt;/p&gt;
 
-&lt;h3 id=&quot;hz&quot;&gt;Hız&lt;/h3&gt;
+&lt;h3 id=&quot;hız&quot;&gt;Hız&lt;/h3&gt;
 
 &lt;p&gt;Adam Langley kişisel web sitesinde, test edilen eliptik eğriler arasında en hızlı olması için DNSCurve tarafından kullanılan &lt;strong&gt;curve25519&lt;/strong&gt;‘u gösteren hız testleri yayınladı. &lt;sup&gt;&lt;a href=&quot;https://www.imperialviolet.org/2010/12/21/eccspeed.html&quot;&gt;1&lt;/a&gt;&lt;sup&gt;&lt;/sup&gt;&lt;/sup&gt;&lt;/p&gt;
 
@@ -2545,79 +2515,6 @@ network={
 
 &lt;p&gt;Spotify eklentisinde olduğu gibi bununla da güzel siteler oluşturabilme imkanınız bulunuyor.&lt;/p&gt;
 
-&lt;noscript&gt;&lt;pre&gt;#  SoundCloud embed tag for Jekyll/Liquid
-#
-#  Usage: 
-#  
-#    {% soundcloud_sound 12345 %}
-#    {% soundcloud_sound 12345 widgetname %}
-#    {% soundcloud_sound 12345 widgetname ffffff %}
-#    {% soundcloud_sound 12345 widgetname ffffff small %}
-#
-#    ... where 12345 is the SoundCloud sound ID, widgetname is the sound&amp;#39;s visual 
-#    representation, ffffff is the color, and size is, well, the size (SoundCloud gives you 
-#    three options for the &amp;quot;artwork&amp;quot; widget).
-#
-#  Available SoundCloud widgets:
-#   
-#    html5 (default)
-#    flash *
-#    mini *
-#    artwork *
-#    
-#    * Requires a paid SoundCloud tier
-#
-#  Author: Chris Nunciato (@cnunciato)
-#  Source: http://github.com/cnunciato/jekyll-soundcloud
-
-require &amp;#39;shellwords&amp;#39;
-
-module Jekyll
-  class SoundCloudSoundTag &amp;lt; Liquid::Tag
-
-    def initialize(tag_name, markup, tokens)
-      super
-      params = Shellwords.shellwords markup
-      @sound = { :id =&amp;gt; params[0], :widget =&amp;gt; params[1] || &amp;quot;html5&amp;quot;, :color =&amp;gt; params[2] || &amp;quot;ff7700&amp;quot;, :size =&amp;gt; params[3] || &amp;quot;medium&amp;quot; }
-    end
-
-    def render(context)
-      case @sound[:widget]
-
-      when &amp;quot;html5&amp;quot;
-        &amp;quot;&amp;lt;iframe width=\&amp;quot;100%\&amp;quot; height=\&amp;quot;166\&amp;quot; scrolling=\&amp;quot;no\&amp;quot; frameborder=\&amp;quot;no\&amp;quot; src=\&amp;quot;http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{@sound[:id]}&amp;amp;show_artwork=true\&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;quot;
-      when &amp;quot;flash&amp;quot;
-        &amp;quot;&amp;lt;object height=\&amp;quot;81\&amp;quot; width=\&amp;quot;100%\&amp;quot;&amp;gt;&amp;lt;param name=\&amp;quot;movie\&amp;quot; value=\&amp;quot;https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{@sound[:id]}&amp;amp;amp;show_comments=false&amp;amp;amp;auto_play=false&amp;amp;amp;color=#{@sound[:color]}\&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;param name=\&amp;quot;allowscriptaccess\&amp;quot; value=\&amp;quot;always\&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;embed allowscriptaccess=\&amp;quot;always\&amp;quot; height=\&amp;quot;81\&amp;quot; src=\&amp;quot;https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{@sound[:id]}&amp;amp;amp;show_comments=false&amp;amp;amp;auto_play=false&amp;amp;amp;color=#{@sound[:color]}\&amp;quot; type=\&amp;quot;application/x-shockwave-flash\&amp;quot; width=\&amp;quot;100%\&amp;quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;/object&amp;gt;&amp;quot;
-      when &amp;quot;mini&amp;quot;
-        &amp;quot;&amp;lt;object height=\&amp;quot;18\&amp;quot; width=\&amp;quot;100%\&amp;quot;&amp;gt;&amp;lt;param name=\&amp;quot;movie\&amp;quot; value=\&amp;quot;https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{@sound[:id]}&amp;amp;amp;auto_play=false&amp;amp;amp;player_type=tiny&amp;amp;amp;font=Arial&amp;amp;amp;color=#{@sound[:color]}\&amp;quot;&amp;gt;&amp;lt;/param&amp;gt; &amp;lt;param name=\&amp;quot;allowscriptaccess\&amp;quot; value=\&amp;quot;always\&amp;quot;&amp;gt;&amp;lt;/param&amp;gt; &amp;lt;param name=\&amp;quot;wmode\&amp;quot; value=\&amp;quot;transparent\&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;embed wmode=\&amp;quot;transparent\&amp;quot; allowscriptaccess=\&amp;quot;always\&amp;quot; height=\&amp;quot;18\&amp;quot; src=\&amp;quot;https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{@sound[:id]}&amp;amp;amp;auto_play=false&amp;amp;amp;player_type=tiny&amp;amp;amp;font=Arial&amp;amp;amp;color=#{@sound[:color]}\&amp;quot; type=\&amp;quot;application/x-shockwave-flash\&amp;quot; width=\&amp;quot;100%\&amp;quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;/object&amp;gt;&amp;quot;
-      when &amp;quot;artwork&amp;quot;
-        &amp;quot;&amp;lt;object height=\&amp;quot;#{dimension}\&amp;quot; width=\&amp;quot;#{dimension}\&amp;quot;&amp;gt;&amp;lt;param name=\&amp;quot;movie\&amp;quot; value=\&amp;quot;https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{@sound[:id]}&amp;amp;amp;auto_play=false&amp;amp;amp;player_type=artwork&amp;amp;amp;color=#{@sound[:color]}\&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;param name=\&amp;quot;allowscriptaccess\&amp;quot; value=\&amp;quot;always\&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;embed allowscriptaccess=\&amp;quot;always\&amp;quot; height=\&amp;quot;220\&amp;quot; src=\&amp;quot;https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{@sound[:id]}&amp;amp;amp;auto_play=false&amp;amp;amp;player_type=artwork&amp;amp;amp;color=#{@sound[:color]}\&amp;quot; type=\&amp;quot;application/x-shockwave-flash\&amp;quot; width=\&amp;quot;220\&amp;quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;/object&amp;gt;&amp;quot;
-      else
-        &amp;quot;&amp;quot;
-      end
-    end
-
-    private
-
-      def dimension(size)
-        case @sound[:size]
-
-        when &amp;#39;small&amp;#39;
-          220
-        when &amp;#39;medium&amp;#39;
-          300
-        when &amp;#39;large&amp;#39;
-          425
-        else
-          0
-        end
-      end
-
-  end
-
-end
-
-Liquid::Template.register_tag(&amp;#39;soundcloud_sound&amp;#39;, Jekyll::SoundCloudSoundTag)&lt;/pre&gt;&lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/MertcanGokgoz/28a3363645af48b91cc757afcbe4dd03.js&quot;&gt; &lt;/script&gt;
 
 &lt;p&gt;öptüm bye &amp;lt;3&lt;/p&gt;

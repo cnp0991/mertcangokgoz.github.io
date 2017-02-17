@@ -198,22 +198,6 @@
 
 <p>Yukarıdaki koşullardan herhangi birisini yaşıyor olabilirsiniz. Bu gibi sorunların üstesinden gelmek için aşağıdaki betik oldukça işinize yarayacak kaç tane yazıcı var ise sisteminizde hepsini yeniden aktif hale getirecektir.</p>
 
-<noscript><pre>#!/bin/sh
-#
-# Author Mertcan GOKGOZ - 2016
-# Bir sistemdeki tüm yazicilar icin cupsenable komutunun calıstirilmasi
-
-set -e
-
-YAZICILAR=`lpstat -p | grep printer | grep -v enable | awk &#39;{print $2}&#39; | sed &#39;/^$/d&#39;`
-if [ &quot;x$YAZICILAR&quot; !=  &quot;x&quot; ]; then
-  for yaziciadi in $YAZICILAR; do
-    echo &quot;Lutfen Bekleyin $yaziciadi Yazici Etkinlestiriliyor&quot;
-    cupsenable -h 127.0.0.1:631 $yaziciadi &amp;&amp; logger &quot;$yaziciadi Yazici Etkinlestirildi&quot;
-  done
-fi
-sleep 2
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/b6eb3a7b350b46f276d036a4d01fc2da.js"> </script>
 
 <p>Betiği Çalıştırma işlemi;</p>

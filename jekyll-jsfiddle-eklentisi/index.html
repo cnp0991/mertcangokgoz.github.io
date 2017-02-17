@@ -190,41 +190,6 @@
 
 <p>Nasıl kullanılacağı ve neler yapılabileceği aşağıda bulunmaktadır. İstediğiniz şekillerde kullanabilmekte özgürsünüz</p>
 
-<noscript><pre># Syntax: {% jsfiddle shorttag [tabs] [skin] [height] [width] %}
-#
-# Examples:
-#
-# Input: {% jsfiddle ccWP7 %}
-# Output: &lt;iframe style=&quot;width: 100%; height: 300px&quot; src=&quot;http://jsfiddle.net/ccWP7/embedded/js,resources,html,css,result/light/&quot;&gt;&lt;/iframe&gt;
-#
-# Input: {% jsfiddle ccWP7 js,html,result %}
-# Output: &lt;iframe style=&quot;width: 100%; height: 300px&quot; src=&quot;http://jsfiddle.net/ccWP7/embedded/js,html,result/light/&quot;&gt;&lt;/iframe&gt;
-#
-
-module Jekyll
-  class JsFiddle &lt; Liquid::Tag
-    def initialize(tag_name, markup, tokens)
-      if /(?&lt;fiddle&gt;\w+\/?\d?)(?:\s+(?&lt;sequence&gt;[\w,]+))?(?:\s+(?&lt;skin&gt;\w+))?(?:\s+(?&lt;height&gt;\w+))?(?:\s+(?&lt;width&gt;\w+))?/ =~ markup
-        @fiddle   = fiddle
-        @sequence = (sequence unless sequence == &#39;default&#39;) || &#39;js,resources,html,css,result&#39;
-        @skin     = (skin unless skin == &#39;default&#39;) || &#39;light&#39;
-        @width    = width || &#39;100%&#39;
-        @height   = height || &#39;300px&#39;
-      end
-    end
-
-    def render(context)
-      if @fiddle
-        &quot;&lt;iframe style=\&quot;width: #{@width}; height: #{@height}\&quot; frameborder=\&quot;0\&quot; seamless=\&quot;seamless\&quot; src=\&quot;http://jsfiddle.net/#{@fiddle}/embedded/#{@sequence}/#{@skin}/\&quot;&gt;&lt;/iframe&gt;&quot;
-      else
-        &quot;Error processing input, expected syntax: {% jsfiddle shorttag [tabs] [skin] [height] [width] %}&quot;
-      end
-    end
-  end
-end
-
-Liquid::Template.register_tag(&#39;jsfiddle&#39;, Jekyll::JsFiddle)
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/b232c0e0e31530dee1c4d7200e4711de.js"> </script>
 
 <p>öptüm bye &lt;3</p>

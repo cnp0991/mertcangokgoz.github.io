@@ -273,7 +273,7 @@
   </tbody>
 </table>
 
-<h2 id="gvenlik-duvarlar-kapatlmas">Güvenlik Duvarları Kapatılması</h2>
+<h2 id="güvenlik-duvarları-kapatılması">Güvenlik Duvarları Kapatılması</h2>
 
 <p>Centos, CloudLinux, RHEL 6</p>
 
@@ -291,7 +291,7 @@ systemctl disable firewalld.service
 </code></pre>
 </div>
 
-<h2 id="networkmanagerin-kapatlmas">NetworkManager’in Kapatılması</h2>
+<h2 id="networkmanagerin-kapatılması">NetworkManager’in Kapatılması</h2>
 
 <p>Centos, CloudLinux, RHEL 5 ve 6</p>
 
@@ -313,7 +313,7 @@ systemctl start ipaliases.service
 </code></pre>
 </div>
 
-<h2 id="selinux-kapatlmas">SELinux Kapatılması</h2>
+<h2 id="selinux-kapatılması">SELinux Kapatılması</h2>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/selinux/config
 </code></pre>
@@ -340,7 +340,7 @@ systemctl start ipaliases.service
 </code></pre>
 </div>
 
-<h2 id="hostname-ayarlanmas">Hostname Ayarlanması</h2>
+<h2 id="hostname-ayarlanması">Hostname Ayarlanması</h2>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/sysconfig/network
 </code></pre>
@@ -350,11 +350,11 @@ systemctl start ipaliases.service
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>NETWORKING=yes
 HOSTNAME=venus.mertcangokgoz.com
- ```
-hemen ardından hosts dosyası düzenlemesi yapılır.
+</code></pre>
+</div>
+<p>hemen ardından hosts dosyası düzenlemesi yapılır.</p>
 
-```console
-sudo nano /etc/hosts
+<div class="language-console highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/hosts
 </code></pre>
 </div>
 

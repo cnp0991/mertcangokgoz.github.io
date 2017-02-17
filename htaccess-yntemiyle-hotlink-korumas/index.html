@@ -190,7 +190,7 @@
 
 <p>“Girdiği evde çalacak bir şey bulamayan hırsız ne çalar? Bozuk çalar.”</p>
 
-<h3 id="neyse-ki-bu-sorundan-kolaylkla-kurtulabiliriz-yapmanz-gereken-sitenizin-kk-dizinindeki-htaccess-dosyasna-aadaki-satrlar-eklemek">Neyse ki bu sorundan kolaylıkla kurtulabiliriz yapmanız gereken sitenizin kök dizinindeki htaccess dosyasına aşağıdaki satırları eklemek</h3>
+<h3 id="neyse-ki-bu-sorundan-kolaylıkla-kurtulabiliriz-yapmanız-gereken-sitenizin-kök-dizinindeki-htaccess-dosyasına-aşağıdaki-satırları-eklemek">Neyse ki bu sorundan kolaylıkla kurtulabiliriz yapmanız gereken sitenizin kök dizinindeki htaccess dosyasına aşağıdaki satırları eklemek</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code># Hotlink koruma www.mertcangokgoz.com
 &lt;IfModule mod_rewrite.c&gt;
@@ -203,7 +203,7 @@ RewriteRule .* - [F]
 </code></pre>
 </div>
 
-<h4 id="example-ksmn-kendi-sitenizin-ismi-olarak-deitirin-ardndan-hotlink-yaplmasn-engellemek-istediiniz-dosya-uzantlarn-belirleyin">Example kısmını kendi sitenizin ismi olarak değiştirin ardından hotlink yapılmasını engellemek istediğiniz dosya uzantılarını belirleyin.</h4>
+<h4 id="example-kısmını-kendi-sitenizin-ismi-olarak-değiştirin-ardından-hotlink-yapılmasını-engellemek-istediğiniz-dosya-uzantılarını-belirleyin">Example kısmını kendi sitenizin ismi olarak değiştirin ardından hotlink yapılmasını engellemek istediğiniz dosya uzantılarını belirleyin.</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>RewriteCond %{REQUEST_FILENAME} .(gif|jpe?g?|png|flv|mp3|mov|mkv)$ [NC]
 </code></pre>
@@ -215,7 +215,7 @@ RewriteRule .* - [F]
 </code></pre>
 </div>
 
-<h5 id="yukardaki-komutu-eklediimiz-anda-sitesine-ekledii-anda-karsna-sizin-belirlemi-olduunuz-resim-kacaktr">Yukarıdaki komutu eklediğimiz anda sitesine eklediği anda karşısına sizin belirlemiş olduğunuz resim çıkacaktır.</h5>
+<h5 id="yukarıdaki-komutu-eklediğimiz-anda-sitesine-eklediği-anda-karşısına-sizin-belirlemiş-olduğunuz-resim-çıkacaktır">Yukarıdaki komutu eklediğimiz anda sitesine eklediği anda karşısına sizin belirlemiş olduğunuz resim çıkacaktır.</h5>
 
 </div>
 

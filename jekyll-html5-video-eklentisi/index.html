@@ -190,59 +190,6 @@
 
 <p>Nasıl kullanabileceğinizide direk olarak aşağıdaki dosyaya ekledim <code class="highlighter-rouge">_plugins</code> klasörünüze atıp gösterildiği gibi ekleme yapmanız yeterli.</p>
 
-<noscript><pre># Syntax {% video url/to/video [width height] [url/to/poster] %}
-#
-# Example:
-# {% video http://site.com/video.mp4 720 480 http://site.com/poster-frame.jpg %}
-#
-
-module Jekyll
-
-  class VideoTag &lt; Liquid::Tag
-    @video = nil
-    @poster = &#39;&#39;
-    @height = &#39;&#39;
-    @width = &#39;&#39;
-
-    def initialize(tag_name, markup, tokens)
-      @videos = markup.scan(/((https?:\/\/|\/)\S+\.(webm|ogv|mp4)\S*)/i).map(&amp;:first).compact
-      @poster = markup.scan(/((https?:\/\/|\/)\S+\.(png|gif|jpe?g)\S*)/i).map(&amp;:first).compact.first
-      @sizes  = markup.scan(/\s(\d\S+)/i).map(&amp;:first).compact
-      super
-    end
-
-    def render(context)
-      output = super
-      types = {
-        &#39;.mp4&#39; =&gt; &quot;type=&#39;video/mp4; codecs=\&quot;avc1.42E01E, mp4a.40.2\&quot;&#39;&quot;,
-        &#39;.ogv&#39; =&gt; &quot;type=&#39;video/ogg; codecs=theora, vorbis&#39;&quot;,
-        &#39;.webm&#39; =&gt; &quot;type=&#39;video/webm; codecs=vp8, vorbis&#39;&quot;
-      }
-      if @videos.size &gt; 0
-        video =  &quot;&lt;video #{sizes} preload=&#39;metadata&#39; controls #{poster}&gt;&quot;
-        @videos.each do |v|
-          video &lt;&lt; &quot;&lt;source src=&#39;#{v}&#39; #{types[File.extname(v)]}&gt;&quot;
-        end
-        video += &quot;&lt;/video&gt;&quot;
-      else
-        &quot;Error processing input, expected syntax: {% video url/to/video [url/to/video] [url/to/video] [width height] [url/to/poster] %}&quot;
-      end
-    end
-
-    def poster
-      &quot;poster=&#39;#{@poster}&#39;&quot; if @poster
-    end
-
-    def sizes
-      attrs = &quot;width=&#39;#{@sizes[0]}&#39;&quot; if @sizes[0]
-      attrs += &quot; height=&#39;#{@sizes[1]}&#39;&quot; if @sizes[1]
-      attrs
-    end
-  end
-end
-
-Liquid::Template.register_tag(&#39;video&#39;, Jekyll::VideoTag)
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/cdd85fcb93dd48151ce99130e3683f68.js"> </script>
 
 

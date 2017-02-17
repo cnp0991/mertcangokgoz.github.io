@@ -210,7 +210,7 @@
   <li><strong>Kullanılabilirlik</strong> - normal DNS, saniyede birkaç sahte paket gönderen sniffing saldırganlarından ve hizmet reddine (DoS) lara karşı koruma sağlamaz. <strong>DNSCurve</strong> ise sahte DNS paketlerini tanır ve atar; SMTP, HTTP, HTTPS gibi bazı protokoller DoS’a karşı savunmasızdırlar.</li>
 </ul>
 
-<h3 id="gvenlik">Güvenlik</h3>
+<h3 id="güvenlik">Güvenlik</h3>
 
 <p>DNSCurve, <strong>NIST</strong>(Ulusal Standartlar ve Teknoloji Enstitüsü)’nin kabaca 3072-bit RSA’ya eşdeğer olduğunu tahmin ettiği 256-bit eliptik eğri şifrelemeyi kullanır. <code class="highlighter-rouge">ECRYPT</code> benzer bir eşdeğerliği bildirir. Sorgu başına sorguya açık anahtarlı şifreleme (SSH ve SSL gibi) ve tekrar çalma saldırılarına karşı koruma sağlamak için 96 bitlik şifreler kullanır.</p>
 
@@ -222,7 +222,7 @@
 
 <p>diyor.</p>
 
-<h3 id="hz">Hız</h3>
+<h3 id="hız">Hız</h3>
 
 <p>Adam Langley kişisel web sitesinde, test edilen eliptik eğriler arasında en hızlı olması için DNSCurve tarafından kullanılan <strong>curve25519</strong>‘u gösteren hız testleri yayınladı. <sup><a href="https://www.imperialviolet.org/2010/12/21/eccspeed.html">1</a><sup></sup></sup></p>
 

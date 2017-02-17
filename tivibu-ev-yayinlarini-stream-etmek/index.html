@@ -191,7 +191,7 @@
 <p>Tivibu, Türkiye’de internet üzerinden veri akışıyla gerçekleşen Internet TV alanında yapılmış çalışmalardan birisidir. Tivibu ev, mobil ve bilgisayar gibi kullanım seçenekleri vardır.<sup><a href="https://tr.wikipedia.org/wiki/Tivibu">[1]</a></sup>
 Bu anlatacağım yöntem için Tivibu Ev üyeliğinizin olması gerekmektedir.Çünkü Tivibu Ev, Tivibu’nun diğer platformlarının aksine <a href="https://tr.wikipedia.org/wiki/%C4%B0nternet_Grup_Y%C3%B6netim_Protokol%C3%BC">IGMP</a> adı verilen teknoloji kullanarak UDP Multicast Streaming ile çalışmaktadır.</p>
 
-<h4 id="biraz-elimizi-kirletme-zaman">Biraz Elimizi Kirletme Zamanı</h4>
+<h4 id="biraz-elimizi-kirletme-zamanı">Biraz Elimizi Kirletme Zamanı</h4>
 <p>Ağdaki IGMP paketlerini okumak için Wireshark yazği yazılımını kullanıyoruz. Çünkü Wireshark tüm trafik içerisinde IGMP paketlerini filtreleyebiliyor. Bunun için Wireshark’ı kullandığımız arayüzü dinleyecek şekilde başlatıp “Filter:” kısmına kısaca <code class="highlighter-rouge">igmp</code> yazmamız yeterli. Fakat gördüğünüz üzere bu karşımıza bir sürü IP adresi çıkıyor:</p>
 
 <p><img src="/assets/ExjelYz.png" alt="ttnetgorsel1" /></p>
@@ -219,7 +219,7 @@ Bu anlatacağım yöntem için Tivibu Ev üyeliğinizin olması gerekmektedir.Ç
 
 <p><img src="/assets/ejEJ7GU.png" alt="ttnetgorsel3" /></p>
 
-<h4 id="ufak-dzeltmeler">Ufak Düzeltmeler</h4>
+<h4 id="ufak-düzeltmeler">Ufak Düzeltmeler</h4>
 <p>Denemelerime göre RTP protokolü UDP’ye göre daha düzgün bir görüntü sunuyor fakat ne yazık ki her iki protokolde de aşırı hareketli görüntülerde görüntünün çizgi çizgi taranmış gibi gözükme problemi var. Bu problemiyse VLC -&gt; Görüntü -&gt; Taramasızlık -&gt; Açık  yolunu takip ederek çözdüm. Ayrıca işin güzel yanı televizyonda o kanal açık olmasa bile PC veya Telefonda o kanala ait akışı seyredebiliyorsunuz.</p>
 
 <p>Yayın akışı Androidli tablet ve telefonlarda MX Player ile sorunsuzca izlenebilir.</p>

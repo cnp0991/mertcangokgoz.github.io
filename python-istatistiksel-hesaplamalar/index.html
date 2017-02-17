@@ -188,67 +188,6 @@
 <div id="post">
   <p>Geçtiğimiz günlerde python ile yazmış olduğum.Betimsel İstatistiki hesaplamalar yapmaya yarayan örnek bir uygulamadır.Uygulama ile Mod,Medyan ve ortanca hesabını kolaylıkla bulabiliyoruz.</p>
 
-<noscript><pre># /usr/bin/python3.4
-# -*- coding: utf-8 -*-
-__author__ = &#39;Mertcan Gökgöz&#39;
-
-import sys
-
-
-def mod(sayilar):
-    try:
-        en_yuksek = 0
-        for s in sayilar:
-            if sayilar.count(s) &gt; sayilar.count(en_yuksek):
-                en_yuksek = s
-        return en_yuksek
-    except Exception as e:
-        print(&quot;\n[ mod(sayilar) Hata ]\n\t Hata Mesajı:\t &quot;, e, &quot;\n&quot;)
-        sys.exit(1)
-
-
-def medyan(sayilar):
-    try:
-        sayilar.sort()
-        uzunluk = len(sayilar)
-        aradakisayi = int(uzunluk / 2)
-        if uzunluk % 2 == 0:
-            return str(sayilar[aradakisayi - 1]) + &quot; &quot; + str(sayilar[aradakisayi])
-        else:
-            return sayilar[aradakisayi]
-    except Exception as e:
-        print(&quot;\n[ medyan(sayilar) Hata ]\n\t Hata Mesajı:\t &quot;, e, &quot;\n&quot;)
-        sys.exit(1)
-
-
-def ortanca(sayilar):
-    try:
-        stoplam = 0
-        for s in sayilar:
-            stoplam = stoplam + s
-        return stoplam / len(sayilar)
-    except Exception as e:
-        print(&quot;\n[ ortanca(sayilar) Hata ]\n\t Hata Mesajı:\t &quot;, e, &quot;\n&quot;)
-        sys.exit(1)
-
-
-def about():
-    print(&quot;--- &quot;)
-    print(&quot;Temel İstatistiki işlemler için geliştirilmiş algoritmaları içerir.&quot;)
-    print(&quot;--- &quot;)
-    print(&quot;&quot;)
-
-
-def islemler():
-    girdiler = input(&quot;İşlem yapılacak sayıları teker teker giriniz: &quot;)
-    sayilar = sorted(map(int, girdiler.split()))
-    print(&quot;Ortanca:   &quot;, ortanca(sayilar))
-    print(&quot;Medyan: &quot;, medyan(sayilar))
-    print(&quot;Mod:   &quot;, mod(sayilar))
-
-
-about()
-islemler()</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/60aba7dd63bfd03f26d4.js"> </script>
 
 

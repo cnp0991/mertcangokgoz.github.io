@@ -198,28 +198,6 @@
 </span></code></pre>
 </div>
 
-<noscript><pre># Jekyll plugin for generating Git hash
-#
-# Place this file in the _plugins directory and
-# use {{ site.data[&#39;hash&#39;] }} in your Liquid templates
-#
-# Author: Yegor Bugayenko &lt;yegor@tpc2.com&gt;
-# Source: http://github.com/yegor256/jekyll-git-hash
-#
-# Distributed under the MIT license
-# Copyright Yegor Bugayenko, 2014
-
-module Jekyll
-  class GitHashGenerator &lt; Generator
-    priority :high
-    safe true
-    def generate(site)
-      hash = %x( git rev-parse --short HEAD ).strip
-      site.data[&#39;hash&#39;] = hash
-    end
-  end
-end
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/3847f91c92dd8e7ea5bede0a29cc1c56.js"> </script>
 
 <p>Uygulamanın yaptığı şey ise çok basit <code class="highlighter-rouge">git rev-parse --short HEAD</code> komu çalıştırıyor ve o anki git de kullanılan hash değerinin kısa halini getiriyor. Siz bu eklentiyi baz olarak daha farklı birşeyler yapabilirsiniz.</p>

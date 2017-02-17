@@ -190,38 +190,6 @@
 
 <p>Dosya içerisinde gösterilen şekilde kullanabilirsiniz. <code class="highlighter-rouge">_plugins</code> klasörü içerisine atmayı unutmayın</p>
 
-<noscript><pre># An example Jekyll generator. Utilizes the new plugin system.
-#
-# 1. Make a _plugins directory in your jekyll site, and put this class in a file there.
-# #  the deprecate of Jekyll that generated it
-# exp: {{ page.date | render_deprecate: 6 }}
-
-module Jekyll
-  module RenderDeprecate
-
-    def render_deprecate(pageTime, numOfMonth)
-
-      if pageTime == nil
-        return
-      end
-
-      currentMonths = (Time.now.year*12) + (Time.now.mon)
-      articleMonths = (pageTime.year*12) + (pageTime.mon)
-      diffMonth     = currentMonths - articleMonths
-
-      if diffMonth &gt;= numOfMonth
-        &quot;&lt;span class=\&quot;deprecate\&quot;&gt; DIKKAT!!! Bu makale çok eski olabilir.&lt;/span&gt;&quot;
-      else
-        &quot;&quot;
-      end
-
-    end
-
-  end
-end
-
-Liquid::Template.register_filter(Jekyll::RenderDeprecate)
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/e6f0233f1aa13b3191dc8f3f81e37a9d.js"> </script>
 
 <p>Makelelerinizi güncelleyemiyorsanız bile bu eklenti ile ziyaretçilerinize makale hakkında son durumu belirtebilirsiniz. Özellikle çalışmasından şüphe duyduğunuz yada güncelliğinden emin olamadıklarınız için önerilir. 3, 6, 9 aylık olarak ayarlayabilirsiniz.</p>

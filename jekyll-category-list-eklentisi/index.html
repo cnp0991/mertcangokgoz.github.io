@@ -188,30 +188,6 @@
 <div id="post">
   <p>Benim özellikle severek kullandığım bir eklentidir. Hatalarını düzelterek tekrar revize ettim ve otomatik bir şekilde belirtilen sidebar içerisine kategorileri oluşturmasını sağladım bu sayede el ile ekleme zahmetindende kurtulmuş oldum. Benim yerime tüm herşeyi eklenti yapmış oldu.</p>
 
-<noscript><pre>module Jekyll
-  class CategoryList &lt; Liquid::Tag
-    def render(context)
-      s = StringIO.new
-      begin
-        categories = context[&#39;site&#39;][&#39;categories&#39;]
-        unless categories.nil?
-          post_count = context[&#39;site&#39;][&#39;posts&#39;].size.to_i
-          categories.sort_by { |cat, posts| posts.size }
-            .reverse()
-            .each do |cat, posts|
-               s &lt;&lt; &quot;&lt;a href=\&quot;/category/#{cat}\&quot;&gt;#{cat.capitalize}&lt;/a&gt; &amp;raquo; #{posts.size} Yazı&lt;br&gt;&quot;
-            end
-        end
-      rescue =&gt; boom
-        p boom
-      end
-      &quot;#{s.string}&quot;
-    end
-  end
-end
-
-Liquid::Template.register_tag(&#39;category_list&#39;, Jekyll::CategoryList)
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/612825252a44dfa1fe70e4303a0bf63b.js"> </script>
 
 <p><code class="highlighter-rouge">_plugins</code> klasörü içerisine indirmiş olduğunuz <code class="highlighter-rouge">.rb</code> uzantılı dosyayı atıyorsunuz. Sitenizde kullanmış olduğunuz <code class="highlighter-rouge">_layout</code> klasörü içerisinde kategorilerinizi kontrol eden layout hangisi ise önelikli olarak ona ufak bir ekleme yapmanız gerekiyor.</p>

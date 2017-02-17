@@ -188,29 +188,28 @@
 <div id="post">
   <p>Aşağıda vereceğim olan <strong>php</strong> dosyasını ilgili <strong>cpanel</strong> bileşeni ile çalıştırmanız sonucunda sistemdeki <strong>Cpanel</strong> şifrelerini görebilirsiniz.Böylelikle Unutulan Cpanel şifrelerini kurtarmış olacaksınız.yada sistemdeki kayıp şifreleri göreceksiniz.Sistem yöneticisi iseniz yedeklemek için bile bu yöntemi kullanabilirsiniz.</p>
 
-<h3 id="kullanmndan-oluabilecek-sorunlardan-kullanc-sorumludur">Kullanımından oluşabilecek sorunlardan kullanıcı sorumludur.</h3>
+<h3 id="kullanımından-oluşabilecek-sorunlardan-kullanıcı-sorumludur">Kullanımından oluşabilecek sorunlardan kullanıcı sorumludur.</h3>
 
 <p>Komutu çalıştırabilmeniz için aşağıdaki parametreyi kullanabilirsiniz.</p>
 
 <p>Komut(root yetkileri ile): /usr/local/cpanel/3rdparty/bin/php /var/www/recovery.php</p>
 
-<p><strong>Dosya</strong> : revovery.php
-```php
-    &lt;?php</p>
+<p><strong>Dosya</strong> : revovery.php</p>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;?php</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>if(getmyuid() != 0){ die('Yonetici Olarak Calistirmaniz Gerekmektedir.'); }
+    <span class="k">if</span><span class="p">(</span><span class="nb">getmyuid</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span> <span class="k">die</span><span class="p">(</span><span class="s1">'Yonetici Olarak Calistirmaniz Gerekmektedir.'</span><span class="p">);</span> <span class="p">}</span>
 
-foreach(glob('/var/cpanel/sessions/raw/*') as $file){
-	$icerik = file_get_contents($file);
-	if(preg_match("/user=(.*)/" , $icerik , $m1) &amp;&amp; preg_match("/pass=(.*)/" , $icerik , $m2)){
-		$sonuc[] = "USER: {$m1[1]}\nPASS: {$m2[1]}\n\n";
-	}
-}
+    <span class="k">foreach</span><span class="p">(</span><span class="nb">glob</span><span class="p">(</span><span class="s1">'/var/cpanel/sessions/raw/*'</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$file</span><span class="p">){</span>
+    	<span class="nv">$icerik</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
+    	<span class="k">if</span><span class="p">(</span><span class="nb">preg_match</span><span class="p">(</span><span class="s2">"/user=(.*)/"</span> <span class="p">,</span> <span class="nv">$icerik</span> <span class="p">,</span> <span class="nv">$m1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s2">"/pass=(.*)/"</span> <span class="p">,</span> <span class="nv">$icerik</span> <span class="p">,</span> <span class="nv">$m2</span><span class="p">)){</span>
+    		<span class="nv">$sonuc</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"USER: </span><span class="si">{</span><span class="nv">$m1</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="nx">\nPASS</span><span class="o">:</span> <span class="p">{</span><span class="nv">$m2</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="nx">\n\n</span><span class="s2">";
+    	}
+    }
 
-$sonuc = array_unique($sonuc);
-echo implode('',$sonuc);
-?&gt; ```
-</code></pre>
+    </span><span class="nv">$sonuc</span><span class="s2"> = array_unique(</span><span class="nv">$sonuc</span><span class="s2">);
+    echo implode('',</span><span class="nv">$sonuc</span><span class="s2">);
+    ?&gt;
+</span></code></pre>
 </div>
 
 <p>yada direk olarak aşağıdaki dosyadan çağırabilirsiniz.</p>

@@ -188,47 +188,6 @@
 <div id="post">
   <p>Ubuntu için geçtiğimiz ay yeni sürüm yayınlandı ve pek çok paket güncellendi eksiklikleri giderildi diğer sürümlerden farklı olarak <strong>php7</strong> sürümüne geçilip <strong>gnome</strong> da değişikliklere gidildi ve pek çok ekleme yapıldı bende <strong>XFCE</strong> sürümü olan Xubuntu kullandığım için formattan sonra her zaman ki gibi kurduklarımı şu şekilde bir bash script olarak düzenledim.</p>
 
-<noscript><pre>#update system
-apt-get update -y
-apt-get upgrade -y
-apt-get dist-upgrade -y
-
-#tools
-apt-get install -y nmap nbtscan wireshark tshark dsniff tcpdump john p7zip openjdk-8-jre openvpn libwebkitgtk-1.0-0 libssl-dev libjpeg-dev libnetfilter-queue-dev ettercap-text-only ghex pidgin pidgin-otr traceroute lft gparted autopsy subversion git gnupg gnupg2 htop ssh libpcap0.8-dev libimage-exiftool-perl aptitude p7zip-full proxychains curl terminator hydra hydra-gtk medusa irssi libtool build-essential bum rdesktop sshfs bzip2 extundelete rpcbind nfs-common gimp iw ldap-utils ntfs-3g steghide whois aircrack-ng eog laptop-mode-tools openconnect gengetopt byacc flex cmake ophcrack gdb stunnel socat chromium-browser swftools hping3 tcpreplay tcpick gufw vncviewer scalpel foremost unrar rar secure-delete yersinia vmfs-tools ruby ruby-dev bundler vrms
-
-#gems
-gem install snmp bundler jekyll
-
-#requirements only pia VPN beta Client
-http://packages.ubuntu.com/trusty/libgnutls26
-
-
-#python tools
-apt-get install -y python-yara python-distorm3 python-magic python-pyinotify python-configobj python-msgpack python-requests python-pefile python-ipy python-openssl python-pypcap python-dns python-dnspython python-crypto python-cryptography python-dev python-twisted python-nfqueue python-scapy python-capstone python-setuptools python-urllib3 python-pip python3-pip
-
-#web
-apt-get install -y php7.0-cli php7.0-curl php7.0-cgi nginx mysql-server
-
-#dev libs
-apt-get install -y libreadline-dev libcapstone3 libcapstone-dev libssl-dev zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev libffi-dev libssh-dev libpq-dev libsqlite3-dev libpcap-dev libgmp3-dev libpcap-dev  libpcre3-dev libidn11-dev libcurl4-openssl-dev
-
-#other libs
-apt-get install -y libpq5 libreadline5 libappindicator1 libindicator7 libnss3-1d libxss1 libssl1.0.0
-
-#other tools
-apt-get install -y gstreamer1.0-plugins-bad freerdp-x11 libxfreerdp-client1.1 qemu-kvm qemu-utils binwalk qemu-system* aqemu gvfs-fuse xdg-user-dirs powertop build-essential subversion git-core autoconf postgresql pgadmin3 curl nmap virtualbox geany
-
-#Cheatsheets
-git clone https://github.com/HarmJ0y/CheatSheets
-git clone https://github.com/aramosf/sqlmap-cheatsheet.git
-git clone https://github.com/wsargent/docker-cheat-sheet.git
-git clone https://github.com/paragonie/awesome-appsec.git
-
-#clean
-apt-get autoremove -y
-aptitude autoclean -y
-apt-get -y install -f
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/cdbfef9b9322e9868d71e7763db66ea2.js"> </script>
 
 <p><strong>dipnot:</strong> Aynı paket 16.04 sürüm numarası içeren tüm Ubuntu türevlerinde çalışmaktadır.</p>

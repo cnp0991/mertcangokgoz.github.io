@@ -190,46 +190,6 @@
 
 <p>Herneyse direk olarak aşağıdaki dosyayı <code class="highlighter-rouge">_plugins</code> klasörüne atım içerisindeki kullanım talimatlarına göre kullanabilirsiniz.</p>
 
-<noscript><pre># Title: Simple Spotify tag for Jekyll
-# Author: Mertcan GOKGOZ https://mertcangokgoz.com
-# Description: Easily output Spotify Embed Player.
-#
-# Syntax: {% spotify [spotify-uri] [width height] %}
-#
-# Example: {% spotify spotify:track:3fuNydG9kg2Y09i8Foqq0p  %}
-# Example2: {% spotify spotify:track:3fuNydG9kg2Y09i8Foqq0p 200 300 %}
-#
-#
-# Output: &lt;iframe src=&quot;https://embed.spotify.com/?uri=spotify%3Atrack%3A3fuNydG9kg2Y09i8Foqq0p&quot;
-#           width=&quot;100%&quot; height=&quot;300&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
-#
-
-module Jekyll
-  class Spotify &lt; Liquid::Tag
-
-    def initialize(tag_name, id, tokens)
-        super
-        @id       = id
-    end
-
-    def render(context)
-      @id, @width, @height = @id.split(&#39; &#39;).map(&amp;:strip)
-
-      if @width.nil? &amp;&amp; @height.nil?
-        @width = &#39;100%&#39;
-        @height = &#39;300&#39;
-      end
-
-      if @id
-        %(&lt;iframe src=\&quot;https://embed.spotify.com/?uri=#{@id}\&quot; width=\&quot;#{@width}\&quot; height=\&quot;#{@height}\&quot; frameborder=\&quot;0\&quot; allowtransparency=\&quot;true\&quot;&gt;&lt;/iframe&gt;)
-      else
-        %(Error input, expected syntax: {% spotify id [width] [height] %})
-      end
-    end
-  end
-end
-
-Liquid::Template.register_tag(&#39;spotify&#39;, Jekyll::Spotify)</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/16dfcee705979f0bb91c5f0df0eb8ccf.js"> </script>
 
 <p>Aynı zamanda direk rubygem den sisteme dahil ederekte kullanma imkanınız bulunuyor.</p>

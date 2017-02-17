@@ -208,47 +208,6 @@
 
 <p>Kurulum tamamlanınca artık hazırsınız <code class="highlighter-rouge">ditaa</code> uygulaması java ile yazıldığı için yüklenecek paketler çok olabilir gözünüz korkmasın.</p>
 
-<noscript><pre>require &#39;fileutils&#39;
-require &#39;digest/md5&#39;
-
-module Jekyll
-  class DitaaBlock &lt; Liquid::Block
-    def initialize(tag_name, markup, tokens)
-      super
-
-      @ditaa_exists = system(&#39;which ditaa &gt; /dev/null 2&gt;&amp;1&#39;)
-      @result = True
-
-      if @ditaa_exists
-        # No cheesy separations and shadows
-        options = &#39; -E -S -o&#39;
-
-        # There is always a blank line at the beginning, so we remove to get rid
-        # of that undesired top padding in the ditaa output
-        ditaa = @nodelist.to_s.gsub(/^$\n/, &#39;&#39;)
-
-        hash = Digest::MD5.hexdigest(@nodelist.to_s)
-        @png_name = &#39;assets/ditaa/ditaa-&#39; + hash + &#39;.png&#39;
-
-        if not File.exists?(@png_name)
-          File.open(&#39;/tmp/ditaa-foo.txt&#39;, &#39;w&#39;) {|f| f.write(ditaa)}
-          @result = system(&#39;ditaa /tmp/ditaa-foo.txt &#39; + @png_name + options)
-        end
-      end
-    end
-
-    def render(context)
-      if @ditaa_exists and @result
-        &#39;&lt;figure&gt;&lt;img src=&quot;/&#39; + @png_name + &#39;&quot; /&gt;&lt;/figure&gt;&#39;
-      else
-        &#39;&lt;code&gt;&lt;pre&gt;&#39; + super + &#39;&lt;/pre&gt;&lt;/code&gt;&#39;
-      end
-    end
-  end
-end
-
-Liquid::Template.register_tag(&#39;ditaa&#39;, Jekyll::DitaaBlock)
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/9c9d4325b5ab3d9e2541be8bf0b0247a.js"> </script>
 
 <p>Oluşturulan resimler <code class="highlighter-rouge">assets/ditaa/</code> klasörüne atılacağını unutmayın.</p>

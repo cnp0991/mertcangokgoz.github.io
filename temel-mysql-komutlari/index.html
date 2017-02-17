@@ -192,7 +192,7 @@
 
 <p><a href="https://github.com/TurkishCheatSheets/MySQLCheatSheet">Ulaşmak İçin Tıklayın</a></p>
 
-<h1 id="veritaban-ile-balant-kurma">Veritabanı ile bağlantı kurma</h1>
+<h1 id="veritabanı-ile-bağlantı-kurma">Veritabanı ile bağlantı kurma</h1>
 
 <p>Local sunucuda kurulu olan MySQL komut satırı aracılığı ile bağlanabilmek için aşağıdaki komutu kullanmanız yeterlidir.</p>
 
@@ -200,7 +200,7 @@
 </code></pre>
 </div>
 
-<h2 id="mevcut-veritabanlarn-listeleme">Mevcut Veritabanlarını Listeleme</h2>
+<h2 id="mevcut-veritabanlarını-listeleme">Mevcut Veritabanlarını Listeleme</h2>
 
 <p>Aşağıdaki komut aracılığı ile veritabanındaki mevcut veritabalarını listeleyebilirsiniz.</p>
 
@@ -208,7 +208,7 @@
 </code></pre>
 </div>
 
-<h2 id="veritaban-oluturma">Veritabanı Oluşturma</h2>
+<h2 id="veritabanı-oluşturma">Veritabanı Oluşturma</h2>
 
 <p>Aşağıdaki komut aracılığı ile istediğiniz bir isim ile veritabanı oluşturabilirsiniz.</p>
 
@@ -216,7 +216,7 @@
 </code></pre>
 </div>
 
-<h2 id="oluturulan-veritabann-kullanma">Oluşturulan Veritabanını Kullanma</h2>
+<h2 id="oluşturulan-veritabanını-kullanma">Oluşturulan Veritabanını Kullanma</h2>
 
 <p>Aşağıdaki komut aracılığı ile oluşturulan veritabanı içerisinde istediğiniz komutları kullanma imkanı tanınır.</p>
 
@@ -224,7 +224,7 @@
 </code></pre>
 </div>
 
-<h2 id="tablo-oluturma">Tablo Oluşturma</h2>
+<h2 id="tablo-oluşturma">Tablo Oluşturma</h2>
 
 <p>Aşağıdaki komutu kullanarak veritabanı içerisinde tablo oluşturabilirsiniz.</p>
 
@@ -232,7 +232,7 @@
 </code></pre>
 </div>
 
-<h2 id="tablolar-gsterme">Tabloları Gösterme</h2>
+<h2 id="tabloları-gösterme">Tabloları Gösterme</h2>
 
 <p>Veritabanı içerisinde oluştruduğunuz veya varolan tabloları göstermeye yarar.</p>
 
@@ -240,7 +240,7 @@
 </code></pre>
 </div>
 
-<h2 id="tablo-detaylandrma">Tablo Detaylandırma</h2>
+<h2 id="tablo-detaylandırma">Tablo Detaylandırma</h2>
 
 <p>Veritabanı içerisindeki tabloları ve bu tablolara ait olan değerlerin tanımlamalarını göstermektedir.</p>
 
@@ -270,11 +270,11 @@
 </code></pre>
 </div>
 
-<h1 id="sql-fadeleri">SQL İfadeleri</h1>
+<h1 id="sql-İfadeleri">SQL İfadeleri</h1>
 
 <hr />
 
-<h2 id="tablodaki-kaytlar-gsterme">Tablodaki Kayıtları Gösterme</h2>
+<h2 id="tablodaki-kayıtları-gösterme">Tablodaki Kayıtları Gösterme</h2>
 
 <p>Veritabanı içerisinde bulunan tablolar içerisindeki kayıtları ekrana getirir.</p>
 
@@ -288,7 +288,7 @@
 </code></pre>
 </div>
 
-<h2 id="tablodaki-kaytlarn-saysn-gsterme">Tablodaki Kayıtların Sayısını Gösterme</h2>
+<h2 id="tablodaki-kayıtların-sayısını-gösterme">Tablodaki Kayıtların Sayısını Gösterme</h2>
 
 <p>Tablo içerisinde belirtilen kolona ait kaç adet kayıt olduğunu gösterir</p>
 
@@ -296,7 +296,7 @@
 </code></pre>
 </div>
 
-<h2 id="tablodaki-kaytlar-sayma-ve-gruplandrlm-kaytlar-seme">Tablodaki Kayıtları Sayma ve gruplandırılmış kayıtları seçme</h2>
+<h2 id="tablodaki-kayıtları-sayma-ve-gruplandırılmış-kayıtları-seçme">Tablodaki Kayıtları Sayma ve gruplandırılmış kayıtları seçme</h2>
 
 <p>Kayıtları sayar ve gruplandırılmış bir şekilde kayıtları gösterir.</p>
 
@@ -304,43 +304,43 @@
 </code></pre>
 </div>
 
-<h2 id="eren-kaytlar-getir">İçeren kayıtları getir</h2>
+<h2 id="İçeren-kayıtları-getir">İçeren kayıtları getir</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * FROM [tabloadı] WHERE [kolon] LIKE '%[deger]%';
 </code></pre>
 </div>
 
-<h2 id="deger-ile-balayanlar-getir">[deger] ile başlayanları getir</h2>
+<h2 id="deger-ile-başlayanları-getir">[deger] ile başlayanları getir</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * FROM [tabloadı] WHERE [kolon] LIKE '[deger]%';
 </code></pre>
 </div>
 
-<h2 id="deg-ile-balayan-ve-er-ile-bitenleri-getir">deg ile başlayan ve er ile bitenleri getir</h2>
+<h2 id="deg-ile-başlayan-ve-er-ile-bitenleri-getir">deg ile başlayan ve er ile bitenleri getir</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * FROM [tabloadı] WHERE [kolon] LIKE '[deg_er]';
 </code></pre>
 </div>
 
-<h2 id="bir-aralk-seme">Bir Aralık Seçme</h2>
+<h2 id="bir-aralık-seçme">Bir Aralık Seçme</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * FROM [tabloadı] WHERE [kolon] BETWEEN [deger1] and [deger2];
 </code></pre>
 </div>
 
-<h2 id="zel-srayla-ve-limitli-bir-ekilde-seim">Özel Sırayla ve Limitli Bir Şekilde Seçim</h2>
+<h2 id="Özel-sırayla-ve-limitli-bir-Şekilde-seçim">Özel Sırayla ve Limitli Bir Şekilde Seçim</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * FROM [tabloadı] WHERE [kolon] ORDER BY [kolon] ASC LIMIT [deger];
 </code></pre>
 </div>
 
-<h2 id="kayt-gncelleme">Kayıt Güncelleme</h2>
+<h2 id="kayıt-güncelleme">Kayıt Güncelleme</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>UPDATE [tabloadı] SET [kolon] = '[guncellenencek-deger]' WHERE [kolon] = [deger];
 </code></pre>
 </div>
 
-<h2 id="kayt-silme">Kayıt Silme</h2>
+<h2 id="kayıt-silme">Kayıt Silme</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>DELETE FROM [tabloadı] WHERE [kolon] = [deger];
 </code></pre>
@@ -358,25 +358,25 @@
 </code></pre>
 </div>
 
-<h2 id="veritaban-silme">Veritabanı Silme</h2>
+<h2 id="veritabanı-silme">Veritabanı Silme</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>DROP DATABASE [veritabanıadı];
 </code></pre>
 </div>
 
-<h2 id="zel-kolon-isimleri-tanmlama">Özel Kolon isimleri tanımlama</h2>
+<h2 id="Özel-kolon-isimleri-tanımlama">Özel Kolon isimleri tanımlama</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT [kolon] AS [özel-kolon-adı] FROM [tabloadı];
 </code></pre>
 </div>
 
-<h2 id="veritabannn-yedeini-alma">Veritabanının Yedeğini Alma</h2>
+<h2 id="veritabanının-yedeğini-alma">Veritabanının Yedeğini Alma</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -u [kullanıcıadı] -p [veritabanıadı] &gt; yedekadi.sql
 </code></pre>
 </div>
 
-<h2 id="veritabannn-yedeini-ykleme">Veritabanının Yedeğini Yükleme</h2>
+<h2 id="veritabanının-yedeğini-yükleme">Veritabanının Yedeğini Yükleme</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u [kullanıcıadı] -p -h localhost [veritabanıadı] &lt; yedekadi.sql
 </code></pre>
@@ -386,59 +386,59 @@
 
 <hr />
 
-<h2 id="yineleme-olmadan-seim">Yineleme Olmadan Seçim</h2>
+<h2 id="yineleme-olmadan-seçim">Yineleme Olmadan Seçim</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT distinct name, email, acception FROM owners WHERE acception = 1 AND date &gt;= 2015-01-01 00:00:00
 </code></pre>
 </div>
 
-<h2 id="kaytlarn-toplam-saysn-hesaplama">Kayıtların Toplam Sayısını Hesaplama</h2>
+<h2 id="kayıtların-toplam-sayısını-hesaplama">Kayıtların Toplam Sayısını Hesaplama</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT SUM([kolon]) FROM [tabloadı];
 </code></pre>
 </div>
 
-<h2 id="toplam-stun-saysn-alma-ve-grublama-ara-kolonlu">Toplam [sütun] sayısını alma ve grublama [ara kolonlu]</h2>
+<h2 id="toplam-sütun-sayısını-alma-ve-grublama-ara-kolonlu">Toplam [sütun] sayısını alma ve grublama [ara kolonlu]</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT [arakolon], SUM([kolon]) FROM [tablo] GROUP BY [arakolon];
 </code></pre>
 </div>
 
-<h2 id="kolondaki-en-byk-deer">Kolondaki en büyük değer</h2>
+<h2 id="kolondaki-en-büyük-değer">Kolondaki en büyük değer</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT MAX([kolon]) FROM [tabloadı];
 </code></pre>
 </div>
 
-<h2 id="kolondaki-en-kk-deer">Kolondaki en küçük değer</h2>
+<h2 id="kolondaki-en-küçük-değer">Kolondaki en küçük değer</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT MIN([kolon]) FROM [tabloadı];
 </code></pre>
 </div>
 
-<h2 id="kolon-ortalamas">Kolon Ortalaması</h2>
+<h2 id="kolon-ortalaması">Kolon Ortalaması</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT AVG([kolon]) FROM [tabloadı];
 </code></pre>
 </div>
 
-<h2 id="yuvarlanm-ortalama-deer-ile-gruplama">Yuvarlanmış ortalama değer ile gruplama</h2>
+<h2 id="yuvarlanmış-ortalama-değer-ile-gruplama">Yuvarlanmış ortalama değer ile gruplama</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>SELECT [carakolon], ROUND(AVG([kolon]), 2) FROM [tabloadı] GROUP BY [arakolon];
 </code></pre>
 </div>
 
-<h1 id="kullanc-komutlar">Kullanıcı Komutları</h1>
+<h1 id="kullanıcı-komutları">Kullanıcı Komutları</h1>
 
 <hr />
 
-<h2 id="kullanc-oluturma">Kullanıcı Oluşturma</h2>
+<h2 id="kullanıcı-oluşturma">Kullanıcı Oluşturma</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>CREATE USER 'kullanıcı_adı'@'localhost' IDENTIFIED BY 'şifresi';
 </code></pre>
 </div>
 
-<h2 id="kullanc-yetkilendirme">Kullanıcı Yetkilendirme</h2>
+<h2 id="kullanıcı-yetkilendirme">Kullanıcı Yetkilendirme</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>GRANT ALL PRIVILEGES ON * . * TO 'kullanıcı_adi'@'localhost';
 </code></pre>

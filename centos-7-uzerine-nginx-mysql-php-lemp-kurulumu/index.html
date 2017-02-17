@@ -352,31 +352,31 @@ Reloading privilege tables..
 </code></pre>
 </div>
 
-<p>Görmüş olduğunuz bu kısmı aşağıdaki gibi düzenliyorsunuz.
-```console
-server {
+<p>Görmüş olduğunuz bu kısmı aşağıdaki gibi düzenliyorsunuz.</p>
+<div class="language-console highlighter-rouge"><pre class="highlight"><code>server {
     listen 80;
     server_name ip adresiniz;
     root /usr/share/nginx/html;
-    index index.php index.html index.htm;</p>
+    index index.php index.html index.htm;
 
-<div class="highlighter-rouge"><pre class="highlight"><code>location / {
-  try_files $uri $uri/ =404;
+    location / {
+      try_files $uri $uri/ =404;
+    }
+    error_page 404 /404.html;
+    error_page 500 502 503 504 /50x.html;
+
+    location = /50x.html {
+      root /usr/share/nginx/html;
+      }
+
+    location ~ \.php$ {
+      try_files $uri =404;
+      fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
+      fastcgi_index index.php;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      include fastcgi_params;
+    }
 }
-error_page 404 /404.html;
-error_page 500 502 503 504 /50x.html;
-
-location = /50x.html {
-  root /usr/share/nginx/html;
-  }
-
-location ~ \.php$ {
-  try_files $uri =404;
-  fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
-  fastcgi_index index.php;
-  fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-  include fastcgi_params;
-} } ```
 </code></pre>
 </div>
 
@@ -386,7 +386,7 @@ location ~ \.php$ {
 </code></pre>
 </div>
 
-<h3 id="test-aamas">Test Aşaması</h3>
+<h3 id="test-aşaması">Test Aşaması</h3>
 
 <p>Nginx in phpsi olduysa bu aşamada yapacağımız ekranı görebilmeniz gerekiyor göremiyorsanız bir yerde yanlışlık yapmışsınızdır geri dönüp bunu düzelttikten sonra işleminize devam edeceksiniz.</p>
 

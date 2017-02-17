@@ -197,17 +197,17 @@
 
 <p>oldukça stabil bir panel olan <strong>Ajenti</strong> kaynak tüketimi konusunda da rakiplerine göre oldukça az kaynak tüketiyor.</p>
 
-<h2 id="debian-iin-kurulum">Debian için Kurulum</h2>
+<h2 id="debian-için-kurulum">Debian için Kurulum</h2>
 
 <p>Aşağıdaki komut ve(veya) komutlar ile <strong>Debian</strong> sistemler için oldukça kolay bir şekilde kurulum gerçekleştirebilirsiniz.</p>
 
-<h3 id="yntem">1.Yöntem</h3>
+<h3 id="1yöntem">1.Yöntem</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>wget -O- https://raw.github.com/ajenti/ajenti/1.x/scripts/install-debian.sh | sh
 </code></pre>
 </div>
 
-<h3 id="yntem-1">2.Yöntem</h3>
+<h3 id="2yöntem">2.Yöntem</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>wget http://repo.ajenti.org/debian/key -O- | apt-key add -
 echo "deb http://repo.ajenti.org/debian main main debian" &gt;&gt; /etc/apt/sources.list
@@ -218,17 +218,17 @@ service ajenti restart
 
 <p>Kurulumlar tamamlandıktan sonra panele <strong>HTTPS</strong> olarak güvenli bir şekilde <strong>8000</strong> portundan ulaşabilirsiniz öntanımlı olarak gelen kullanıcı adı <strong>root</strong> şifre ise <strong>admin</strong> dir.</p>
 
-<h2 id="ubuntu-iin-kurulum">Ubuntu için Kurulum</h2>
+<h2 id="ubuntu-için-kurulum">Ubuntu için Kurulum</h2>
 
 <p>Aşağıdaki komut ve(veya) komutlar ile <strong>Ubuntu</strong> sistemler için oldukça kolay bir şekilde kurulum gerçekleştirebilirsiniz.</p>
 
-<h3 id="yntem-2">1.Yöntem</h3>
+<h3 id="1yöntem-1">1.Yöntem</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>wget -O- https://raw.github.com/ajenti/ajenti/1.x/scripts/install-ubuntu.sh | sudo sh
 </code></pre>
 </div>
 
-<h3 id="yntem-3">2.Yöntem</h3>
+<h3 id="2yöntem-1">2.Yöntem</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>wget http://repo.ajenti.org/debian/key -O- | sudo apt-key add -
 echo "deb http://repo.ajenti.org/ng/debian main main ubuntu" | sudo tee -a /etc/apt/sources.list
@@ -240,17 +240,17 @@ ufw allow 8000
 
 <p>Kurulumlar tamamlandıktan sonra panele <strong>HTTPS</strong> olarak güvenli bir şekilde <strong>8000</strong> portundan ulaşabilirsiniz öntanımlı olarak gelen kullanıcı adı <strong>root</strong> şifre ise <strong>admin</strong> dir.</p>
 
-<h2 id="rhelcentos-iin-kurulumcentos-7">RHEL/Centos için Kurulum(Centos 7)</h2>
+<h2 id="rhelcentos-için-kurulumcentos-7">RHEL/Centos için Kurulum(Centos 7)</h2>
 
 <p>Aşağıdaki komut ve(veya) komutlar ile <strong>RHEL/Centos</strong> sistemler için oldukça kolay bir şekilde kurulum gerçekleştirebilirsiniz.</p>
 
-<h3 id="yntem-4">1.Yöntem</h3>
+<h3 id="1yöntem-2">1.Yöntem</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>curl https://raw.githubusercontent.com/ajenti/ajenti/1.x/scripts/install-rhel7.sh | sh
 </code></pre>
 </div>
 
-<h3 id="yntem-5">2.Yöntem</h3>
+<h3 id="2yöntem-2">2.Yöntem</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>wget http://repo.ajenti.org/ajenti-repo-1.0-1.noarch.rpm
 rpm -i ajenti-repo-1.0-1.noarch.rpm
@@ -276,7 +276,7 @@ firewall-cmd --reload
 </code></pre>
 </div>
 
-<h2 id="freebsd-iin-kurulumdeneysel">FreeBSD için Kurulum(Deneysel)</h2>
+<h2 id="freebsd-için-kurulumdeneysel">FreeBSD için Kurulum(Deneysel)</h2>
 
 <p>Aşağıdaki komut ve(veya) komutlar ile <strong>FreeBSD </strong> sistemler için oldukça kolay bir şekilde kurulum gerçekleştirebilirsiniz. FreeBSD için geliştirilen deneysel sürümle olmakla beraber bir takım hatalar alabilirsiniz.</p>
 
@@ -302,7 +302,7 @@ cd /usr/ports/devel/libffi; make install clean;
 
 <p>Kurulumlar tamamlandıktan sonra panele <strong>HTTPS</strong> olarak güvenli bir şekilde <strong>8000</strong> portundan ulaşabilirsiniz öntanımlı olarak gelen kullanıcı adı <strong>root</strong> şifre ise <strong>admin</strong> dir.</p>
 
-<h3 id="ajentiye-ait-bir-ka-grsel">Ajenti’ye Ait bir kaç görsel</h3>
+<h3 id="ajentiye-ait-bir-kaç-görsel">Ajenti’ye Ait bir kaç görsel</h3>
 
 <p><img src="/assets/ajentianagorsel1.png" alt="ajentianagorsel1" /></p>
 

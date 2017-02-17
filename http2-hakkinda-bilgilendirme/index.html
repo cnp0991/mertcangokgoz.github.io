@@ -190,13 +190,13 @@
 
 <p><strong>HTTP/1.1</strong> istemcisi 1999 yılında tanıtılan ve günümüze kadar kullanılan bir <strong>HTTP</strong> istemcisidir.Ancak gelişen teknolojiye ayak uydurması açısından geçtiğimiz yıllarda HTTP/2 formatı duyurulmuştur.Daha fazla insan web sitelerine giriş yaptığında sayfa yüklenme boyutlarının artması,mobil web sitelerinin artması,nispeden daha yavaş bir web keyfi olmasından bıkan insanlar bu <strong>HTTP/2</strong> formatını geliştirdiler aslına bakarsanız.</p>
 
-<h2 id="spdy-ile-http--2-arasndaki-fark-ne-"><strong>SPDY ile HTTP / 2 Arasındaki Fark Ne ?</strong></h2>
+<h2 id="spdy-ile-http--2-arasındaki-fark-ne-"><strong>SPDY ile HTTP / 2 Arasındaki Fark Ne ?</strong></h2>
 
 <p>SPDY <strong>Google</strong> tarafından 2009 yılında duyurulan web gecikme sürelerini azaltmak ve güvenliği arttırmak amacıyla geliştirilmiş bir network protokolüdür.(istek ve yanıt arasındaki zaman aralığının minimuma indirilmesi)</p>
 
 <p>HTTP/2 SPDY nin bir klonudur.Google <strong>SPDY</strong> nin geliştirilmesi aşamasına bir son verip aynı fikirler ile <strong>HTTP/2</strong> üzerinde çalışmalarını yoğunlaştırmıştır.</p>
 
-<h2 id="http2-amalar"><strong>HTTP/2 Amaçları</strong></h2>
+<h2 id="http2-amaçları"><strong>HTTP/2 Amaçları</strong></h2>
 
 <ul>
   <li>Gecikmeyi Azaltmak</li>
@@ -207,7 +207,7 @@
   <li>Daha hızlı web deneyimi</li>
 </ul>
 
-<h2 id="http2-zellikleri"><strong>HTTP/2 Özellikleri</strong></h2>
+<h2 id="http2-Özellikleri"><strong>HTTP/2 Özellikleri</strong></h2>
 
 <ul>
   <li><strong>Multiplexing:</strong> Tek bir TCP Bağlantısı üzerinden asenkron HTTP istekleri</li>
@@ -217,7 +217,7 @@
   <li><strong>Binary Protocol:</strong> HTTP/2 0 ve 1 gibi ikilik bir protokoldür HTTP/1.1 ise bir metinsel protokoldür</li>
 </ul>
 
-<h2 id="http2-protokol-http11-de-bulunan-hangi-sorunlar-gideriyor"><strong>HTTP/2 Protokolü HTTP/1.1 de bulunan hangi sorunları gideriyor.</strong></h2>
+<h2 id="http2-protokolü-http11-de-bulunan-hangi-sorunları-gideriyor"><strong>HTTP/2 Protokolü HTTP/1.1 de bulunan hangi sorunları gideriyor.</strong></h2>
 
 <ul>
   <li><strong>HTTP Pipelining</strong> : HTTP/1.1 de TCP bağlantılarını sınırlamak adına bir takım işlemler yapıldığını biliyoruz.Ardışık ve birden çok gelen TCP bağlantılarında sistemin hepsine yanıt vermesi gerekmekte ve buda sistemi kitlemekle kalmayıp sitenin çalışılmaz hale gelmesini sağlamaktadır.Muhasebedeki gibi ilk giren ilk çıkar mantığı ile hareket etmekte aslında muhasebedeki sistemden farklı olsada burada gönderilen cevabın gecikmesi diğer tüm isteklerin gecikmesi demektir.İşte bu uyumsuzluğu HTTP/2 çözemektedir ve ardışık yapılan isteklere asenkron bir şekilde network cevap verebilecek hale gelecektir.</li>

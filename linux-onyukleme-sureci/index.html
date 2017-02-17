@@ -201,27 +201,27 @@
 
 <p><img src="/assets/linuxonyuklemeislemi.jpg" alt="linuxonyuklemeislemi" /></p>
 
-<h3 id="bos-kontrol">1.BİOS Kontrolü</h3>
+<h3 id="1bİos-kontrolü">1.BİOS Kontrolü</h3>
 
 <p>Sunucu,Masaüstü bilgisayar yada dizüstü bilgisayarınız açılırken ilk önce işlemci giriş/çıkış ve çalıştırılacak basit ekipmanları belirler .Çalışıyor mu her şey yolunda mı diye bakar.Hata varsa neyden kaynaklandığı sizlere gösterir ve <strong>BİOS</strong> donanım ve sistem arasındaki ilişkileri düzenler uyumluluklarını sağlar.Bu aşamada 512 bayt boyutunda ve tamamen makine kodundan oluşan kodlar sistemde tutulur.Tüm yönergeler bu 512 baytlık dosya içerisindedir buna da <strong>MBR</strong> (Master Boot Record) denmektedir.İlk açılma işlemini yerine getirir.Bilgisayar başlatıldığında BIOS’ un ilk işi fare, klavye, HDD gibi sistem aygıtlarını tanıtmak ve kullanıma hazırlamaktır.</p>
 
-<h3 id="birinci-aama-nykleyici">2.Birinci Aşama Önyükleyici</h3>
+<h3 id="2birinci-aşama-Önyükleyici">2.Birinci Aşama Önyükleyici</h3>
 
 <p>Boot Loader ilk aşaması <strong>MBR</strong> üzerinde bulunan verilerin doğrulanması yapılacak işlemlerin onaylanmasıdır.Bu aşamadan sonra boot loader kendini belleğe yükler ve ardından gelecek olan boot loader aşamasını beklemeye başlar.</p>
 
-<h3 id="kinci-aama-nykleyici">3.İkinci Aşama önyükleyici</h3>
+<h3 id="3İkinci-aşama-önyükleyici">3.İkinci Aşama önyükleyici</h3>
 
 <p>Beklenen ön yükleyici dosyaları belleğe yerleşmiş olarak bu aşamaya gelir kök bölümünü salt okunur bir hale getirilen bu aşamada modülleri ve gerekli olan yazılımlar sisteme tekrardan dahil edilir.İkinci aşama ön yükleyici bellekte farklı işletim sistemleri veya boot yapılandırılmış mı diye kontrol eder ve bir grafik kullanıcıya sunulur(genelde gördüğünüz kısım budur.). İşletim sistemini bu aşamada seçebilirsin eğer sistemde birden çok işletim sistemi kurulu ise ikinci aşama ön yükleyici devreye girmiş olacaktır.</p>
 
-<h3 id="init-aamas">4.INIT Aşaması</h3>
+<h3 id="4init-aşaması">4.INIT Aşaması</h3>
 
 <p>Linux işletim sistem çekirdeği(kernel) <strong>/sbin/init</strong> kısımlarını önyükleme işleminin denetimini aktarır. Yani <strong>/sbin/init</strong> kısımları önyükleme işleminin geri kalanını koordine eder ve kullanıcı için bir ortam yapılandırmaya başlar.</p>
 
-<h3 id="kullanc-ortam-ayarlar">5.Kullanıcı Ortam Ayarları</h3>
+<h3 id="5kullanıcı-ortam-ayarları">5.Kullanıcı Ortam Ayarları</h3>
 
 <p>Init programı yükler <strong>/etc/fstab</strong> de listelenen tüm hizmetleri ve kullanıcı alanını sisteme dahil eder. Init komutu başladığında, sistem üzerinde otomatik olarak devreye girer ,tüm süreçleri başlatır. İlk olarak ortam yolunu belirler,takas alanını başlatır,dosya sistemlerini kontrol eder ve sistem başlatma için gerekli tüm diğer adımları yürütür. <strong>/etc/rc.d/rc</strong> öncelikli olarak çalıştırılır. Init komutu daha sonra sisteme Sys init çalışma seviyesinde yapılması gerekenleri açıklar. Init programı <strong>/etc/inittab</strong> da ki varsayılan olarak belirlenmiş çalışma seviyesi için uygun dizine bakarak arka plan süreçlerinin tamamının başlatılmasını sağlar.</p>
 
-<h3 id="giri-ekran">6.Giriş Ekranı</h3>
+<h3 id="6giriş-ekranı">6.Giriş Ekranı</h3>
 
 <p>Tüm işlemlerin tamamlandığını gösterir ve kullanıcı bu ekran sayesinde bilgilerini girerek sisteme giriş yapar.Tebrikler başarılı bir şekilde sisteminizi başlatabildiniz.</p>
 

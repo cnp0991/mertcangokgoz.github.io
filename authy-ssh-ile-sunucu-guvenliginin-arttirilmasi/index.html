@@ -190,7 +190,7 @@
 
 <p>Önceliklik olarak bu kuruluma başlamadan önce <a href="https://www.authy.com/signup">https://www.authy.com/signup</a> adresinden üye olmanız ve size verilen <strong>token</strong> bilgilerini kayıt etmeniz gerekmektedir. Kurulumu başarılı bir şekilde tamamladığınızda sistemlerinize girmek için 2FA doğrulaması yapmanız gerekmektedir.</p>
 
-<h2 id="kurulum-lemi">Kurulum İşlemi</h2>
+<h2 id="kurulum-İşlemi">Kurulum İşlemi</h2>
 
 <p>Terminalde aşağıdaki komutları yazın:</p>
 
@@ -216,7 +216,7 @@ sudo bash authy-ssh install /usr/local/bin
 </code></pre>
 </div>
 
-<h4 id="ssh-sunucunuzu-yeniden-balatma">Ssh sunucunuzu yeniden başlatma</h4>
+<h4 id="ssh-sunucunuzu-yeniden-başlatma">Ssh sunucunuzu yeniden başlatma</h4>
 
 <p><strong>Ubuntu</strong></p>
 
@@ -242,7 +242,7 @@ sudo bash authy-ssh install /usr/local/bin
 </code></pre>
 </div>
 
-<h3 id="root-ayrcalklar-olmadan-kurulum-ilemi">Root ayrıcalıkları olmadan kurulum işlemi</h3>
+<h3 id="root-ayrıcalıkları-olmadan-kurulum-işlemi">Root ayrıcalıkları olmadan kurulum işlemi</h3>
 
 <p>Terminalde aşağıdaki komutları yazın:</p>
 
@@ -257,7 +257,7 @@ bash authy-ssh install ~/.authy-ssh/
 </code></pre>
 </div>
 
-<h2 id="bir-kullanc-da-iki-faktrl-kimlik-dorulamay-etkinletirmek">Bir kullanıcı da iki faktörlü kimlik doğrulamayı etkinleştirmek</h2>
+<h2 id="bir-kullanıcı-da-iki-faktörlü-kimlik-doğrulamayı-etkinleştirmek">Bir kullanıcı da iki faktörlü kimlik doğrulamayı etkinleştirmek</h2>
 
 <p>Kurulum bittikten sonra, korumak istediğiniz kullanıcılar için iki faktörlü kimlik doğrulamayı proaktif olarak etkinleştirmeniz gerekir.</p>
 
@@ -273,7 +273,7 @@ bash authy-ssh install ~/.authy-ssh/
 </code></pre>
 </div>
 
-<h2 id="nasl-alr">Nasıl çalışır</h2>
+<h2 id="nasıl-çalışır">Nasıl çalışır</h2>
 
 <p>Authy-ssh, her girişten önce kendini çalıştırmak için <code class="highlighter-rouge">sshd_config</code> yönergesine ` ForceCommand` kullanmaktadır. Yüklemeyi tamamladıktan sonra sshd_config dosyanızın görünümünü aşağıda görebilirsiniz:</p>
 
@@ -296,7 +296,7 @@ user=daniel:1
 
 <p>Bu durumda kullanıcı rootu ve daniel’in iki faktörlü olduğu ve 1’in  <code class="highlighter-rouge">authy_id</code> olduğu anlamına gelir. Bir kullanıcı bu listede yoksa, <code class="highlighter-rouge">authy-ssh</code> otomatik olarak içeri girmesine izin verir.</p>
 
-<h2 id="ki-aamal-kimlik-dorulamasn-otomatik-datm-aralar-ile-kullanma">İki aşamalı kimlik doğrulamasını otomatik dağıtım araçları ile kullanma.</h2>
+<h2 id="İki-aşamalı-kimlik-doğrulamasını-otomatik-dağıtım-araçları-ile-kullanma">İki aşamalı kimlik doğrulamasını otomatik dağıtım araçları ile kullanma.</h2>
 
 <p><strong>capybara</strong>, <strong>chef</strong>, <strong>puppet</strong>, <strong>cfengine</strong>, <strong>git</strong> kullanırsanız, bu araçlarla ilgili yeni kullanıcılar oluşturabilirsiniz; böylece, ikş aşamalı kimlik doğrulamayı kullanabilirsiniz.
 Alternatif olarak, <code class="highlighter-rouge">ForceCommand</code> yönergesini kullanarak kullanıcıları eşleştirebilirsiniz.</p>
@@ -322,7 +322,7 @@ Starting sshd:                                             [  OK  ]
 
 <p>Şimdi <code class="highlighter-rouge">force</code> komutu yalnızca iki faktörlü gruba ait kullanıcılar üzerinde çalışacaktır.</p>
 
-<h2 id="scp-sftp-mosh-ve-git-push-iki-aamal-kimlik-dorulama-kullanm"><code class="highlighter-rouge">Scp</code>,<code class="highlighter-rouge"> sftp</code>, <code class="highlighter-rouge">mosh</code> ve <code class="highlighter-rouge">git push</code> iki aşamalı kimlik doğrulama kullanımı.</h2>
+<h2 id="scp-sftp-mosh-ve-git-push-iki-aşamalı-kimlik-doğrulama-kullanımı"><code class="highlighter-rouge">Scp</code>,<code class="highlighter-rouge"> sftp</code>, <code class="highlighter-rouge">mosh</code> ve <code class="highlighter-rouge">git push</code> iki aşamalı kimlik doğrulama kullanımı.</h2>
 
 <p><code class="highlighter-rouge">Scp</code>,<code class="highlighter-rouge"> sftp</code>, <code class="highlighter-rouge">mosh</code> ve <code class="highlighter-rouge">git clone | fetch | push</code> gibi etkileşimli olmayan komutları etkinleştirmek için ortam değişkenini <code class="highlighter-rouge">AUTHY_TOKEN</code> istemciden geçirmemize izin vermelisiniz. Bunu yapmak için <code class="highlighter-rouge">sshd_config</code> düzenleyin (normalde<code class="highlighter-rouge"> /etc</code> veya <code class="highlighter-rouge">/etc/ssh/</code> da bulunur) ve <code class="highlighter-rouge">AUTHY_TOKEN</code> i AcceptEnv yönergesine ekleyin:</p>
 
@@ -349,7 +349,7 @@ Starting sshd:                                             [  OK  ]
 
 <p>Geçersiz bir belirteç girerseniz <code class="highlighter-rouge">sftp</code> gibi durumlarda, <em>“Received message too long 458961713”</em> gibi bir yanıt alabilirsiniz. Bunun nedeni, etkileşimli komutun, program tarafından döndürülen uygun çıktı, metin mesajını oluşturamamasıdır.</p>
 
-<h2 id="ayn-unix-hesab-paylaan-birden-ok-kullanc">Aynı unix hesabı paylaşan birden çok kullanıcı.</h2>
+<h2 id="aynı-unix-hesabı-paylaşan-birden-çok-kullanıcı">Aynı unix hesabı paylaşan birden çok kullanıcı.</h2>
 
 <p>Tek bir giriş bilgilerini paylaşmanız gereken birçok kullanıcınız varsa, aynı tokeni paylaşmadan güçlü iki faktörlü kimlik doğrulamasını kullanabilirsiniz. Bu, her kullanıcının kendi reddine izin vermeyecek şekilde kendi Authy Token’ine sahip olabileceği anlamına gelir.</p>
 
@@ -374,7 +374,7 @@ command="/usr/local/bin/authy-ssh login 20" ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA
 
 <p>Önceki komut ssh genel anahtarı, cep telefonu ve e-postayı kullanıcıdan isteyecektir.</p>
 
-<h2 id="kaldrma">Kaldırma</h2>
+<h2 id="kaldırma">Kaldırma</h2>
 
 <p>Aşağıdaki komutların girilmesi halinde sistemden Authy SSH uygulaması tamamen kaldırılacaktır.</p>
 

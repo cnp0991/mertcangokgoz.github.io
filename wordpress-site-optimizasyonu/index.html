@@ -188,7 +188,7 @@
 <div id="post">
   <p>Bu makalemizde Wordpress <strong>CMS</strong> kullanan web sitelerini daha performanslı hale nasıl getirebileceği <strong>daha az nasıl CPU kullanılabileceği</strong> gibi bir takım bilgiler vereceğim böylelikle Host firmanızdan <strong>Aşırı CPU</strong> kullanıyorsunuz sitenizi optimize ediniz laflarınıda duymamış olacaksınız <strong>Wordpress</strong> site sahipleri illaki duymuşlardır.</p>
 
-<h2 id="nbellek-eklentileri-kurun"><strong>1.Önbellek Eklentileri Kurun</strong></h2>
+<h2 id="1Önbellek-eklentileri-kurun"><strong>1.Önbellek Eklentileri Kurun</strong></h2>
 
 <p>Cache Eklentileri(önbellek) sitenizin her sayfa gösterim işleminde MySQL sunucusuna istek göndermeksizin verinin 1 defa alınıp işlenmesi aşamasıdır.Bu aşamadan sonra bir daha MySQL sorgusuna kullanıcı takılmaz ve önbellekden herşey gösterilir.Sitenin kaynaklarını daha iyi kullanmada önemli ölçüde etkilidir.Kullanabileceğiniz Popüler Cache Eklentileri</p>
 
@@ -198,19 +198,19 @@
   <li><a href="https://wordpress.org/plugins/wp-super-cache/">WP Super Cache</a></li>
 </ol>
 
-<h2 id="gereksiz-eklentilerden-ve-sorgulardan-kurtulun"><strong>2.Gereksiz Eklentilerden ve Sorgulardan Kurtulun</strong></h2>
+<h2 id="2gereksiz-eklentilerden-ve-sorgulardan-kurtulun"><strong>2.Gereksiz Eklentilerden ve Sorgulardan Kurtulun</strong></h2>
 
 <p>PHP de bazı kütüphaneleri kullanan eklentiler var öncelikle bunlardan bi kurtulun boş yere sorgu gönderip kasılmasına sebebiyet vermeyin.Wordpress temalarına entegre olarak gelen ve sitenin kasmasına sebep olan Timthumb gibi kütüphaneleri temanızdan silin.Cache eklentileri bu tarz temaya entegre olan kütüphanelere etki etmemekdedir.Buda sitenizde sorunlara sebebiyet verebilir.Gereksiz sorgulardanda MySQL sorgu gönderen genelde temada bulunan satırları el ile girebilirsiniz bunlar meta,site desq,blog urli,bazı csslerin yolları vs</p>
 
-<h2 id="grselleri-boyutlandrn"><strong>3.Görselleri Boyutlandırın</strong></h2>
+<h2 id="3görselleri-boyutlandırın"><strong>3.Görselleri Boyutlandırın</strong></h2>
 
 <p>İlk olarak temanıda kullanılan default görsel boyutlarına bir bakın.Yükleyeceğiniz resimleri bu boyuta göre şekillendirin bu şekilde resimlerin kapladığı alanı azaltabilirsiniz.Aynı şekilde resimlerinizi sıkıştırabilirsiniz bunu Photoshop ile yapabilirsiniz dilersenizde sıkıştırma eklentilerini kullanabilirsiniz.</p>
 
-<h2 id="ok-fazla-eklenti-kullanmayn"><strong>4.Çok Fazla Eklenti Kullanmayın</strong></h2>
+<h2 id="4Çok-fazla-eklenti-kullanmayın"><strong>4.Çok Fazla Eklenti Kullanmayın</strong></h2>
 
 <p>Sitenizde her yaptığınız işi ilk olarak eklentiler ile yapmaya çalışmayın eğer bir iletişim formu ekleyeceksiniz sitenizi eklenti kullanmayın sayfa şablonu ile yapmaya çalışın yada ücretini ödeyerek yaptırın.Sitenin istatistiklerini alması için kullanacağınız sistemlerin eklentilerini kesinlikle kullanmayın izleme kodlarını el ile ekleyin bu sitenizde performansı büyük ölçüde arttıracaktır.</p>
 
-<h2 id="cdn-kullann"><strong>5.CDN Kullanın</strong></h2>
+<h2 id="5cdn-kullanın"><strong>5.CDN Kullanın</strong></h2>
 
 <p>Sitenizin Açılma hızı için büyük oranda önemli olan CDN aynı zamanda sitenizin kaynakları içinde oldukça etkilidir.peki bu ne demek oluyor.Kullanıcılar sizin site dizininiz yerine dosyaları eğer CDN den çekerse sitenizden hiç kaynak tüketilmeyecek istekler CDN den yanıtlanacak ve sitenizdeki CPU oranı oynamayacak yazdıklarımdan birşey anlamamış olabilirsiniz ama imkanınız varsa kullanın CDN içinde yukarıdaki popüler cache eklentilerinin CDN özelliklerini kullanabilirsiniz.</p>
 

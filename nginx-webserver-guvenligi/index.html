@@ -211,7 +211,7 @@ configuration file /usr/local/nginx/conf/nginx.conf test is successful
 </code></pre>
 </div>
 
-<h2 id="selinux-sisteminizde-aktif-olsun"><strong>1.SELinux Sisteminizde aktif olsun</strong></h2>
+<h2 id="1selinux-sisteminizde-aktif-olsun"><strong>1.SELinux Sisteminizde aktif olsun</strong></h2>
 
 <p>Şimdi yum komutumuz ile 2 paket kurmamız lazım ama baştan söyleyim enforcing şeklinde açmayacağız yoksa başımızı ağrıtır bunun yerine permissive yapacaz ki uyarı verse bile sorun olmayacak</p>
 
@@ -233,7 +233,7 @@ SELINUXTYPE=targeted
 </code></pre>
 </div>
 
-<h2 id="disk-yetkilerini-kstlayn"><strong>2.Disk yetkilerini Kısıtlayın</strong></h2>
+<h2 id="2disk-yetkilerini-kısıtlayın"><strong>2.Disk yetkilerini Kısıtlayın</strong></h2>
 
 <p>Nasıl disk oluşturacağınızı anlatmak isterdim ama herşeyi devletden beklemeyin oluşturun /etc/fstab da benim zamanında yapmış olduğum satırı sizlerle paylaşacağım önemli olan satır sonlarında bulunan komutlar zaten</p>
 
@@ -243,7 +243,7 @@ SELINUXTYPE=targeted
 
 <p>kısıtlamalarımızı yaptık bi tık daha güvenliğimizi arttırdık.</p>
 
-<h2 id="ufak-apl-ddoslardan-korunun"><strong>3.Ufak çaplı DDOSlardan korunun</strong></h2>
+<h2 id="3ufak-çaplı-ddoslardan-korunun"><strong>3.Ufak çaplı DDOSlardan korunun</strong></h2>
 
 <p>Ben bu ayarları internetden bulup kullandım nedir ne değildir yazıyor.Ancak teker teker açıklamayacağım ufak çaplı ddoslardan koruduğunu bilin yeter.Büyük çapta saldırı alıyorsanız ama işinize asla yaramaz</p>
 
@@ -322,7 +322,7 @@ net.ipv4.tcp_window_scaling = 1
 </code></pre>
 </div>
 
-<h2 id="kullanlmayan-modlleri-kaldrn"><strong>4.Kullanılmayan Modülleri Kaldırın</strong></h2>
+<h2 id="4kullanılmayan-modülleri-kaldırın"><strong>4.Kullanılmayan Modülleri Kaldırın</strong></h2>
 
 <p>Nginx hafif ve yüksek performanslı bir webserver olabilir ancak kullanmadığımız modülleri tutmanın ne anlamı var bu yüzden kullanmadıklarınızı kaldırın gitsin.ben mesela autoindex ve ssı kullanmıyorum durmasının ne anlamı var.dikkat edin nginx tekrar derliyor olacağız hatalı bir işlem yapmayın derleyemezsiniz mazallah.</p>
 
@@ -334,7 +334,7 @@ make install
 
 <p>tekrar söylüyorum işinize yaramayan <strong>Nginx modüllerini kaldırın.</strong></p>
 
-<h2 id="modsecurity-kullannbackend-apache-ise"><strong>5.Mod_Security Kullanın(backend Apache ise)</strong></h2>
+<h2 id="5mod_security-kullanınbackend-apache-ise"><strong>5.Mod_Security Kullanın(backend Apache ise)</strong></h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>yum install mod_security
 </code></pre>
@@ -370,7 +370,7 @@ make install
 </code></pre>
 </div>
 
-<h2 id="selinux-nginx-in-zorlayn"><strong>6.SELinux Nginx İçin Zorlayın</strong></h2>
+<h2 id="6selinux-nginx-İçin-zorlayın"><strong>6.SELinux Nginx İçin Zorlayın</strong></h2>
 
 <p>şimdi yukarıda ne dedik targeted olarak ayarladık dedik heh işte orda dns apache gibi tanımlı servislerde çalışıyor ama bu şey nginx için özel ayar istiyor illa yapacan yoksa çalışmıyor.</p>
 
@@ -399,7 +399,7 @@ make
 </code></pre>
 </div>
 
-<h2 id="gvenlik-duvar-kurallarn-belirleyin"><strong>7.Güvenlik Duvarı Kurallarını belirleyin</strong></h2>
+<h2 id="7güvenlik-duvarı-kurallarını-belirleyin"><strong>7.Güvenlik Duvarı Kurallarını belirleyin</strong></h2>
 
 <p>Gene internetten bulduğum bir güvenlik duvarı shını atmak istiyorum tek tek yapacaklarımızı yapıyor diye arşivime ekledim şimdi kim uğraşacak bunları tek tek el ile yazmaya direk olarak bunu bi .sh olarak kayıt edip sistemde çalıştırın.yada kendinize göre düzenleyip çalıştırabilirsiniz.</p>
 
@@ -528,7 +528,7 @@ make
 </code></pre>
 </div>
 
-<h2 id="ssl-kullanmna-zen-gsterin"><strong>8.SSL Kullanımına özen gösterin</strong></h2>
+<h2 id="8ssl-kullanımına-özen-gösterin"><strong>8.SSL Kullanımına özen gösterin</strong></h2>
 
 <p>SSL kullanmanız güvenliğinizi bir tık daha yukarıya çıkartıcaktır aynı zamanda son zamanlarda googlenin söylediği gibi SEO da önemli bir noktada bulunuyor SSL.</p>
 
@@ -550,7 +550,7 @@ make
 </code></pre>
 </div>
 
-<h2 id="php-de-gvenliinizi-arttrn"><strong>9. PHP de Güvenliğinizi arttırın</strong></h2>
+<h2 id="9-php-de-güvenliğinizi-arttırın"><strong>9. PHP de Güvenliğinizi arttırın</strong></h2>
 
 <p>php.ini içerisindeki ayarları aşağıdaki yönergelere göre mutlaka değiştirin.</p>
 
@@ -615,7 +615,7 @@ allow_url_fopen = Off
 </code></pre>
 </div>
 
-<h2 id="eriiniz-ve-dosyalarnz-kolay-kolay-indirilemesin"><strong>10.İçeriğiniz ve Dosyalarınız kolay kolay indirilemesin</strong></h2>
+<h2 id="10İçeriğiniz-ve-dosyalarınız-kolay-kolay-indirilemesin"><strong>10.İçeriğiniz ve Dosyalarınız kolay kolay indirilemesin</strong></h2>
 
 <p>adam wget ile çatır çutur sitenizdeki içeriklerden tutam tutam alıyor ise aşağıdaki komutumuz size çok iyi gelicek User-Agentleri yakalıyorsunuz.Sonrasında aşağıdaki gibi düzenliyorsunuz sonrasını onlar düşünsün</p>
 

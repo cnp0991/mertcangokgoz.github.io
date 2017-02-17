@@ -200,7 +200,7 @@
 
 <p>Diğer sistemler de kullanmak isteyenler <a href="http://pkgs.org/download/sshguard">Tıklayın</a></p>
 
-<h1 id="sshguard-iin-iptablesnetfilter-yaplandrmas">SSHGuard için iptables/Netfilter yapılandırması</h1>
+<h1 id="sshguard-için-iptablesnetfilter-yapılandırması">SSHGuard için iptables/Netfilter yapılandırması</h1>
 
 <p>SSHGuard için ipfilterde yapılandırma dosyası yoktur.yapılacak tek şey engelleme kurallarını engellemek için SSHGuarda izin vermek ve gereken ayarlamaları yapmaktır.</p>
 
@@ -218,7 +218,7 @@
 
 <p>Girişleri güncelledikten sonra –dport özelliğini kullanarak portları da koruyabilirsiniz yada portlara erişimi tamamen kapatmak isteyebilirsiniz.</p>
 
-<h2 id="saldrganlara-kar-tm-trafiin-engellenmesi">Saldırganlara karşı tüm trafiğin engellenmesi</h2>
+<h2 id="saldırganlara-karşı-tüm-trafiğin-engellenmesi">Saldırganlara karşı tüm trafiğin engellenmesi</h2>
 
 <p>ipv4 için</p>
 
@@ -232,7 +232,7 @@
   <p>ip6tables -A INPUT -j sshguard</p>
 </blockquote>
 
-<h2 id="saldrganlara-kar-ssh-ftp-pop-imap-belirli-hizmetlerin-engellenmesi">Saldırganlara karşı SSH, FTP, POP, IMAP belirli hizmetlerin engellenmesi</h2>
+<h2 id="saldırganlara-karşı-ssh-ftp-pop-imap-belirli-hizmetlerin-engellenmesi">Saldırganlara karşı SSH, FTP, POP, IMAP belirli hizmetlerin engellenmesi</h2>
 
 <p>ipv4 için</p>
 
@@ -257,15 +257,15 @@
   <li>Varsayılan güvenlik duvarı ayarlarını mutlaka kendinize göre düzenlemeyi unutmayın</li>
 </ul>
 
-<h2 id="bir-ka-iptables-rnei">Bir kaç iptables Örneği</h2>
+<h2 id="bir-kaç-iptables-Örneği">Bir kaç iptables Örneği</h2>
 
-<h4 id="sshguardn-kt-dedii-hereyi-yasaklatmak">SSHGuardın kötü dediği herşeyi yasaklatmak</h4>
+<h4 id="sshguardın-kötü-dediği-herşeyi-yasaklatmak">SSHGuardın kötü dediği herşeyi yasaklatmak</h4>
 
 <blockquote>
   <p>iptables -A INPUT -j sshguard</p>
 </blockquote>
 
-<h4 id="trafie-amak-isterseniz">Trafiğe açmak isterseniz</h4>
+<h4 id="trafiğe-açmak-isterseniz">Trafiğe açmak isterseniz</h4>
 
 <blockquote>
   <p>iptables -A INPUT -p tcp –dport 22 -j ACCEPT
@@ -274,11 +274,11 @@ iptables -A INPUT -p tcp –dport 80 -j ACCEPT
 iptables -A INPUT -p tcp –dport 443 -j ACCEPT</p>
 </blockquote>
 
-<h5 id="hereyi-yasaklamak-iin">Herşeyi Yasaklamak için</h5>
+<h5 id="herşeyi-yasaklamak-için">Herşeyi Yasaklamak için</h5>
 
 <blockquote>
-  <p>iptables -P INPUT DROP
-# iptables/netfilter kullanmadan SSHGuard yapılandırma</p>
+  <p>iptables -P INPUT DROP</p>
+  <h1 id="iptablesnetfilter-kullanmadan-sshguard-yapılandırma">iptables/netfilter kullanmadan SSHGuard yapılandırma</h1>
 </blockquote>
 
 <p>eğer detaylı bir şekilde iptables kullanmak istemezseniz aşağıdaki komutları kullanarak sshguard izinleri dışında kimsenin işlem yapamamasını sağlayabilirsiniz.</p>

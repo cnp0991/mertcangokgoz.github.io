@@ -194,31 +194,31 @@
 </code></pre>
 </div>
 
-<h3 id="en-ok-kullanlan-komutlar-kullanm-saysna-gre-sralamak">En çok kullanılan komutları kullanım sayısına göre sıralamak</h3>
+<h3 id="en-çok-kullanılan-komutları-kullanım-sayısına-göre-sıralamak">En çok kullanılan komutları kullanım sayısına göre sıralamak</h3>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>history | awk '{a[$2]++}END{for(i in a){print a[i]" "i}}' | sort -rn | head
 </code></pre>
 </div>
 
-<h3 id="uptime-orann-renme-saniye-cinsinden">Uptime oranını öğrenme saniye cinsinden</h3>
+<h3 id="uptime-oranını-öğrenme-saniye-cinsinden">Uptime oranını öğrenme saniye cinsinden</h3>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>cat /proc/uptime | awk '{print $1}'
 </code></pre>
 </div>
 
-<h3 id="bilgisayarn-ka-ekirdek-olduunu-renme">Bilgisayarın kaç çekirdek olduğunu öğrenme</h3>
+<h3 id="bilgisayarın-kaç-çekirdek-olduğunu-öğrenme">Bilgisayarın kaç çekirdek olduğunu öğrenme</h3>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>cat /proc/cpuinfo | grep processor | wc -l
 </code></pre>
 </div>
 
-<h3 id="gelen-trafiin-toplam-boyutu">Gelen Trafiğin toplam boyutu</h3>
+<h3 id="gelen-trafiğin-toplam-boyutu">Gelen Trafiğin toplam boyutu</h3>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>ifconfig eth0 | awk '/RX bytes/ {print $3, $4}'
 </code></pre>
 </div>
 
-<h3 id="giden-trafiin-toplam-boyutu">Giden Trafiğin toplam boyutu</h3>
+<h3 id="giden-trafiğin-toplam-boyutu">Giden Trafiğin toplam boyutu</h3>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>ifconfig eth0 | awk '/RX bytes/ {print $7, $8}'
 </code></pre>
@@ -235,7 +235,7 @@ alias sources='(gksudo geany /etc/apt/sources.list &amp;)'
 </code></pre>
 </div>
 
-<h3 id="tm-dosya-adlarn-kltme">Tüm dosya adlarını küçültme</h3>
+<h3 id="tüm-dosya-adlarını-küçültme">Tüm dosya adlarını küçültme</h3>
 
 <div class="language-console highlighter-rouge"><pre class="highlight"><code>for i in *.mp4; do mv "$i" "`echo $i| tr [A-Z] [a-z]`"; done
 </code></pre>

@@ -190,34 +190,6 @@
 
 <p>bu eklentiye ben ufak bir ekleme yaptım ve gizlilik korunsun diye cookie bırakmayan embed oluşturması için tekrar linki düzenledim. <code class="highlighter-rouge">_plugins</code> klasörü içerisine indirmiş olduğunuz <code class="highlighter-rouge">.rb</code> uzantılı dosyayı atıp gerekli dosyanın içerisinde belirtildiği gibi kullandığınız taktirde güzel bir şekilde eklentimiz çalışacaktır.</p>
 
-<noscript><pre>#
-#
-#Syntax: {% youtube [video-id] %}
-#
-#
-#Example: {% yaoutube D18ge1ZyGyw %}
-#
-#
-
-
-module Jekyll
-  class Youtube &lt; Liquid::Tag
-    @width = 640
-    @height = 390
-
-    def initialize(name, id, tokens)
-      super
-      @id = id
-    end
-
-    def render(context)
-      %(&lt;iframe width=&quot;#{@width}&quot; height=&quot;#{@height}&quot; src=&quot;https://www.youtube-nocookie.com/embed/#{@id}&quot; frameborder=&quot;0&quot; allowFullScreen&gt;&lt;/iframe&gt;)
-    end
-  end
-end
-
-Liquid::Template.register_tag(&#39;youtube&#39;, Jekyll::Youtube)
-</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/cc824208425077aad174a0f4f5e58fce.js"> </script>
 
 <p>Eklentinin yaptığı tek şey belirtilen boyutlar ve belirtilen youtube linkleri ile kolay bir şekilde belirtilen yere embed kodları oluşturmaktır.</p>

@@ -190,36 +190,6 @@
 
 <p>Optimizasyon problemlerinin önüne geçmek için sıkça kullanılan algoritmalardır. Her zaman en bariz ve anında fayda sağlayan bir sonraki parçayı seçer.</p>
 
-<noscript><pre>#include &lt;stdio.h&gt;
-#include &lt;malloc.h&gt;
-
-
-void ActivitySelection(int *s, int *f, int n, int *sol)
-{
-	sol[0] = 0;
-
-	int i, c = 0;
-	for(i = 1; i &lt; n; i++)
-		if(f[sol[c]] &lt;= s[i])
-			sol[++c] = i;
-
-	sol[++c] = -1;
-}
-
-
-void main()
-{
-	int s[] =  {1, 3, 0, 5, 8, 5};
-    int f[] =  {2, 4, 6, 7, 9, 9};
-    int n = sizeof(s)/sizeof(s[0]);
-
-    int *sol = malloc(sizeof(int)*n);
-    ActivitySelection(s, f, n, sol);
-
-    int i;
-    for(i = 0; sol[i] != -1; i++)
-    	printf(&quot;%d\t%d\t%d\n&quot;, sol[i], s[sol[i]], f[sol[i]]);
-}</pre></noscript>
 <script src="https://gist.github.com/MertcanGokgoz/6620972535cb7e4c65d701c25329d36c.js"> </script>
 
 <p>Her biri bir başlangıç zamanı s ve bitiş zamanı f ile temsil edilen n aktivite bulunduğunu varsayalım. <code class="highlighter-rouge">S ≥ f</code> veya <code class="highlighter-rouge">s ≥ f</code> ise iki etkinlik i ve j’nin çelişkili olmadığı söylenir. Aktivite seçim problemi, çelişkili olmayan faaliyetlerin maksimum çözüm setini (S) bulmaktan ibarettir veya daha kesin bir ifadeyle, <code class="highlighter-rouge">|S'| &gt; |S|</code> Birden fazla maksimal çözümün eşit ebatlara sahip olması durumundadır..</p>
