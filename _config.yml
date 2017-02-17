@@ -3,7 +3,9 @@ permalink: /:title/
 paginate_path: /page/:num/
 highlighter: rouge
 lsi: false
+
 gems:
+#  - amp-jekyll
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
@@ -15,6 +17,13 @@ gems:
 
 #Ditaaa Settings
 ditaa_output_directory: /assets/ditaa
+
+#Jekyll AMP
+#ampdir: amp
+
+#Jekyll gist
+gist:
+  noscript: false
 
 #Archives Settings
 jekyll-archives:
