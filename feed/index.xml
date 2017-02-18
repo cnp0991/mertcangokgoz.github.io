@@ -5,10 +5,89 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Fri, 17 Feb 2017 22:10:10 +0300</lastBuildDate>
-        <pubDate>Fri, 17 Feb 2017 22:10:10 +0300</pubDate>
+        <lastBuildDate>Sat, 18 Feb 2017 08:32:34 +0300</lastBuildDate>
+        <pubDate>Sat, 18 Feb 2017 08:32:34 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Debian için İphone Yapılandırması</title>
+                <description>&lt;p&gt;İOS(iPhone, iPod Touch, iPad, Apple TV) cihazlar bilindiği gibi direk olarak USB ile takılıp herhangi bir şekilde içerisindeki dosyalar alınamıyor yada içerisine dosya atılabiliyor. Bende bir İphone kullanıcısı olarak bu soruna bir çözüm getirmek istiyorum. Bunun için aşağıdaki parçayı seçtim&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/PHo5U9Rios0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Gerekli olan paketlerin kurulumunu yapıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;aptitude install libimobiledevice-utils ipheth-utils ideviceinstaller libimobiledevice-dev gvfs-backends gvfs-bin gvfs-fuse
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Şimdi bu kurduklarımız içerisinde Telefonu modem olarak kullanmamıza yarayacak ekipman ile telefonu sisteme mount edebilmemize imkan sağlayan &lt;code class=&quot;highlighter-rouge&quot;&gt;libimobiledevice&lt;/code&gt; kadar tüm her şey var.&lt;/p&gt;
+
+&lt;p&gt;Şimdi kurulum tamamlandıktan sonra &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/fuse.conf&lt;/code&gt; yoluna geçiş yapıyoruz ve &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; kullanıcı izinleri ile aşağıdaki değişikliği yapıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; #user_allow_other
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Olarak gözüken satırın başında bulunan &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; kaldırıp kayıt ediyoruz. İşlemimiz tamamlanıyor. Şimdi sistemimizi zorunlu yeniden başlatmamız gerekiyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo reboot -h now
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Yeniden cihaz açıldığında direk olarak telefonunuzu elinize alıyorsunuz ve USB den bağlıyorsunuz. Ekranda bir anda güven yada güvenme diye bir ekran beliriyor. Sizde hemen o ekranda gördüğünüz &lt;code class=&quot;highlighter-rouge&quot;&gt;Güven&lt;/code&gt; butonuna basıyorsunuz. İşlem böylelikle son buluyor.&lt;/p&gt;
+
+&lt;p&gt;Artık sorunsuz bir şekilde telefonunuz sisteme mount edilmiş oluyor.&lt;/p&gt;
+
+&lt;p&gt;Kernel mesajlarında ise şu şekilde gözüküyor durum&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[   56.437823] usb 3-3: new high-speed USB device number 4 using xhci_hcd
+[   56.579739] usb 3-3: New USB device found, idVendor=05ac, idProduct=12a8
+[   56.579741] usb 3-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[   56.579742] usb 3-3: Product: iPhone
+[   56.579742] usb 3-3: Manufacturer: Apple Inc.
+[   56.579743] usb 3-3: SerialNumber: 9ea3cfff5882e13a769878222151625db5a5cdc0
+[   56.606852] ipheth 3-3:4.2: Apple iPhone USB Ethernet device attached
+[   56.606868] usbcore: registered new interface driver ipheth
+[   56.608989] ipheth 3-3:4.2 enp0s20u3c4i2: renamed from eth0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Yukarıdaki mesaj ile aynı zamanda cihazımızın modem olarak da kullanılabileceğini görmüş oluyoruz. Bu özelliği kullanabilmek için ise &lt;code class=&quot;highlighter-rouge&quot;&gt;Internet Tethering&lt;/code&gt; özelliğini kullanacaksınız artık onuda sistemden arayıp bulabilirsiniz. Genelde zaten otomatik network tarafında gözüküyor.&lt;/p&gt;
+
+&lt;p&gt;Peki ya kullanmıyorsak ? yani network için herhangi bir grafik ara yüzümüz yok ve &lt;code class=&quot;highlighter-rouge&quot;&gt;Internet Tethering&lt;/code&gt; yapılandırmamız gerekiyorsa ne yapacağız.&lt;/p&gt;
+
+&lt;p&gt;Bunun için ilk &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; izinleri ile &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/udev/rules.d/90-iphone-tethering.rules&lt;/code&gt; olarak kural girmemiz gerekiyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ACTION==&quot;add|remove&quot;, SUBSYSTEM==&quot;net&quot;, ATTR{idVendor}==&quot;05ac&quot;, ENV{ID_USB_DRIVER}==&quot;ipheth&quot;, SYMLINK+=&quot;iPhone&quot;, RUN+=&quot;/usr/bin/systemctl restart systemd-networkd.service&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Yukarda diyoruz ki Vendor kodu &lt;code class=&quot;highlighter-rouge&quot;&gt;05ac&lt;/code&gt; ile gelen ve sürücü olarak &lt;code class=&quot;highlighter-rouge&quot;&gt;ipheth&lt;/code&gt; kullanan aynı zamanda &lt;code class=&quot;highlighter-rouge&quot;&gt;iPhone&lt;/code&gt; olan bir şey gelirse networkd kardeşin servisini benim belirttiğim şekilde yeniden başlat&lt;/p&gt;
+
+&lt;p&gt;Şimdi gereken kural setinin son aşamasında &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/network/&lt;/code&gt; yoluna gidelim ve şunları yapalım&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano enp0s20u3c4i2.network
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ve içerisini şu şekilde düzenleyelim.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Match]
+Name=enp0s20u3c4i2
+
+[Network]
+DHCP=ipv4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Burada da adı &lt;code class=&quot;highlighter-rouge&quot;&gt;enp0s20u3c4i2&lt;/code&gt; ile eşleşiyor ise networkden ipv4 aracılığı ile otomatik ip alma işlemini yap. Bu tüm işlemler son bulduğunda otomatik olarak İphoneyi her taktığınızda eğer iphonede tethering açık ise modem olarak bağlar.&lt;/p&gt;
+</description>
+                <link>https://mertcangokgoz.com/debian-icin-iphone-yapilandirmasi/</link>
+                <guid>https://mertcangokgoz.com/debian-icin-iphone-yapilandirmasi</guid>
+                <pubDate>Sat, 18 Feb 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>Debian İçin Samba Ayarlanması İşlemi</title>
@@ -2535,20 +2614,6 @@ network={
                 <link>https://mertcangokgoz.com/ruby-egitim-seti/</link>
                 <guid>https://mertcangokgoz.com/ruby-egitim-seti</guid>
                 <pubDate>Fri, 04 Nov 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>Cisco CCNA Network Eğitim Seti</title>
-                <description>&lt;p&gt;Cisco CCNA network eğitim seti her biri 2 saat ile 30 dk arasında olup toplamda 34 videodan oluşmaktadır. &lt;strong&gt;Cemal TANER&lt;/strong&gt; hocamızın anlatımıyla bu eğitim setini kullanarak &lt;strong&gt;CISCO CCNA Routing&amp;amp;Switching 200-125&lt;/strong&gt; sınavlarını geçebilirsiniz.&lt;/p&gt;
-
-&lt;p&gt;34 Videoluk eğitim Setine aşağıdaki playlist aracılığı ile ulaşabilirsiniz.&lt;/p&gt;
-
-&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/videoseries?list=PLQMq5dvivt0VeodeBs_cOhPQC_ZHoG2Ap&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-</description>
-                <link>https://mertcangokgoz.com/cisco-ccna-network-egitim-seti/</link>
-                <guid>https://mertcangokgoz.com/cisco-ccna-network-egitim-seti</guid>
-                <pubDate>Wed, 02 Nov 2016 00:00:00 +0300</pubDate>
         </item>
 
 
