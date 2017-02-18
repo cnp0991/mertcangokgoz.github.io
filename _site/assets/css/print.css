@@ -1,0 +1,76 @@
+@page {
+    size: A4;
+}
+
+@media only print {
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+        background: none;
+        color: black;
+        font-size: 12pt;
+        text-align: justify;
+        font-family: 'Times New Roman', serif;
+    }
+    .content h1 {
+        font-size: 28pt;
+        text-align: center;
+    }
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+    .content {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        color: black;
+        float: none !important;
+    }
+    #nav,
+    #sidebar,
+    #paylasim,
+    #related,
+    #disqus_thread,
+    #up,
+    #style-changer {
+        display: none;
+    }
+    .sidebar,
+    .disclaimer,
+    .meta,
+    .seo,
+    .pagination,
+    .menuM,
+    .noprint,
+    .ajaxloadcomment,
+    .show-comments,
+    .edit {
+        display: none;
+    }
+    hr {
+        display: none;
+    }
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100% !important;
+    }
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border: 1pt solid #000000;
+        padding: 2px 4px;
+        border-radius: 4px;
+        margin-bottom: 15px !important;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+}

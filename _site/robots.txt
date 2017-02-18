@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Google Image
+User-agent: Googlebot-Image
+Allow: /
+
+# Google AdSense
+User-agent: Mediapartners-Google*
+Allow: /
+
+# Google Adsbot
+User-agent: Adsbot-Google
+Allow: /
+
+Sitemap: https://mertcangokgoz.com/sitemap.xml

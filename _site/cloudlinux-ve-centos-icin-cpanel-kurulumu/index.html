@@ -1,0 +1,350 @@
+<!doctype html>
+<html class="no-js" lang="tr-TR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CloudLinux ve Centos için cPanel Kurulumu | Mertcan GÖKGÖZ</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Jekyll">
+    <link href="https://plus.google.com/103305118431759296457" rel="publisher" /> <!-- Begin Jekyll SEO tag v2.1.0 -->
+<meta property="og:title" content="CloudLinux ve Centos için cPanel Kurulumu" />
+<meta name="description" content="cPanel dünyada ve Türkiye’de linux işletim sistemlerini yönetmek için kullanılan oldukça popüler bir kontrol panelidir. Kolaylıkla sitelerinizi" />
+<meta property="og:description" content="cPanel dünyada ve Türkiye’de linux işletim sistemlerini yönetmek için kullanılan oldukça popüler bir kontrol panelidir. Kolaylıkla sitelerinizi" />
+<link rel="canonical" href="http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/" />
+<meta property="og:url" content="http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/" />
+<meta property="og:site_name" content="Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-07-09T22:53:34+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@mertcangokgoz" />
+<meta name="twitter:creator" content="@http://twitter.com/mertcangokgoz" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "CloudLinux ve Centos için cPanel Kurulumu",
+"datePublished": "2015-07-09T22:53:34+03:00",
+"description": "cPanel dünyada ve Türkiye’de linux işletim sistemlerini yönetmek için kullanılan oldukça popüler bir kontrol panelidir. Kolaylıkla sitelerinizi",
+"url": "http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/"}</script>
+<!-- End Jekyll SEO tag -->
+ 
+    <meta name="author" content="Mertcan GÖKGÖZ" />
+    <meta name="distribution" content="global" />
+    <meta name="robots" content="follow, all" />
+    <meta name="google-site-verification" content="72uYg4UxAer0YwWdtkU93OGqjNq7ZThpqe0M4KxyvIg" />
+    <meta name="yandex-verification" content="67dfe7436c3122f7" />
+    <meta name="msvalidate.01" content="2183CAED5258723C183F825A20DF9C4A" />
+    <link rel="alternate" type="application/rss+xml" title="Mertcan GÖKGÖZ" href="http://localhost:4000/feed" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/all.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type="text/javascript" src="/assets/js/jquery-1.12.4.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="three columns sidebar">
+            <nav class="nav">
+    <a href="/">
+
+        <img src="data:image/jpeg;base64,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"
+            id="gravatar" alt="Mertcan GÖKGÖZ" width="200" height="200" />
+    </a>
+    <h3><a href="/">Mertcan GÖKGÖZ</a></h3>
+    <div id="bio">
+        <p>
+            Kategoriler:<br> <a href="/category/linux">Linux</a> &raquo; 242 Yazı<br><a href="/category/programlama">Programlama</a> &raquo; 79 Yazı<br><a href="/category/genel">Genel</a> &raquo; 70 Yazı<br><a href="/category/guvenlik">Guvenlik</a> &raquo; 57 Yazı<br><a href="/category/windows">Windows</a> &raquo; 38 Yazı<br><a href="/category/analiz">Analiz</a> &raquo; 21 Yazı<br><a href="/category/jekyll">Jekyll</a> &raquo; 16 Yazı<br><a href="/category/nginx">Nginx</a> &raquo; 15 Yazı<br><a href="/category/egitimler">Egitimler</a> &raquo; 6 Yazı<br>
+            <br> Arkadaşlar:
+            <br>
+            <a href="https://oztaser.com/" target="_blank" rel="nofollow">Adil ÖZTAŞER</a><br>
+            <a href="https://aligoren.com/" target="_blank" rel="nofollow">Ali GÖREN</a><br>
+            <a href="https://www.ceyhanmolla.com/" target="_blank" rel="nofollow">Ceyhan MOLLA</a><br>
+            <a href="https://0x6.pw/" target="_blank" rel="nofollow">Enes ERGÜN</a><br>
+            <a href="http://furkankalkan.com/" target="_blank" rel="nofollow">Furkan KALKAN</a><br>
+            <a href="http://www.hamdicatal.com/" target="_blank" rel="nofollow">Hamdi ÇATAL</a><br>
+            <a href="https://onur.im/" target="_blank" rel="nofollow">Onur ASLAN</a><br>
+            <a href="http://www.omeripek.com.tr" target="_blank" rel="nofollow">Ömer IPEK</a><br>
+            <a href="http://yasinyaman.org/" target="_blank" rel="nofollow">Yasin YAMAN</a><br>
+            <a href="https://yapaygerizeka.github.io/" target="_blank" rel="nofollow">Yapay Geri Zekâ</a><br>
+        </p>
+    </div>
+    <div id="social">
+        Takip Edin:
+<div id="stalker">
+   
+
+   
+   <a title="MertcanGokgoz on Academia" href="https://baskent.academia.edu/MertcanGokgoz" target="_blank" rel="nofollow">
+     <i class="fa fa-book"></i>
+   </a>
+   
+
+  
+  <a title="MertcanGokgoz on Github" href="https://github.com/MertcanGokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-github-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="mertcangokgoz on Twitter" href="https://twitter.com/mertcangokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-twitter-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+  <a title="Mertcan GÖKGÖZ on LinkedIn" href="https://www.linkedin.com/in/mertcangokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-linkedin-square"></i>
+  </a>
+  
+
+  
+  <a title="Mertcan GÖKGÖZ on Google Plus" href="https://plus.google.com/103305118431759296457" target="_blank" rel="nofollow">
+    <i class="fa fa-google-plus-square"></i>
+  </a>
+  
+
+  
+
+  
+  <a title="Mertcan GÖKGÖZ on Youtube" href="https://www.youtube.com/c/MertcanGokgoz" target="_blank" rel="nofollow">
+    <i class="fa fa-youtube"></i>
+  </a>
+  
+
+  
+  <a title="RSS feed" id="atom" href="/feed/">
+    <i class="fa fa-rss-square"></i>
+  </a>
+  
+</div>
+
+    </div>
+</nav>
+        </div>
+        <div class="nine columns content">
+            <div class="menuM">
+    <ul class="topnav">
+        <li><a class="active" href="https://mertcangokgoz.com/">Anasayfa</a></li>
+        <li><a href="https://mertcangokgoz.com/category/analiz/">Analiz</a></li>
+        <li><a href="https://mertcangokgoz.com/category/genel/">Genel</a></li>
+        <li><a href="https://mertcangokgoz.com/category/guvenlik/">Güvenlik</a></li>
+        <li><a href="https://mertcangokgoz.com/category/linux/">Linux</a></li>
+        <li><a href="https://mertcangokgoz.com/category/windows/">Windows</a></li>
+        <li><a href="https://mertcangokgoz.com/category/jekyll/">Jekyll</a></li>
+        <li><a href="https://mertcangokgoz.com/category/nginx/">Nginx</a></li>
+        <li><a href="https://mertcangokgoz.com/category/egitimler/">Egitimler</a></li>
+        <li><a href="https://mertcangokgoz.com/category/programlama/">Programlama</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    function myFunction() {
+        document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+    }
+</script>
+
+
+<p class="meta">
+  July 09, 2015
+  <a href="/">
+    <i class="home fa fa-home fa-2x"></i>
+  </a>
+  <a href="/search/">
+    <i class="home fa fa-search fa-2x"></i>
+  </a>
+  <a href="javascript:" onclick="window.print();return false;">
+    <i class="home fa fa-print fa-2x"></i>
+  </a>
+</p>
+
+<h1 class="title">CloudLinux ve Centos için cPanel Kurulumu</h1>
+
+<div id="post">
+  <p><strong>cPanel</strong> dünyada ve Türkiye’de linux işletim sistemlerini yönetmek için kullanılan oldukça popüler bir kontrol panelidir. Kolaylıkla sitelerinizi yönetebilir siteleriniz arası aklınıza gelebilen her şeyi neredeyse hemen hemen yapabilirsiniz.Ancak kurduğunuz bu panel 2 ye ayrılmıştır bunlardan ilki <strong>WHM</strong> bu kısımda sisteminizi yönetebilir eklentiler kurabilir güvenlik ayarlamaları yapabilir ve sisteme kullanıcı tanımlayarak birden çok siteyi sunucu üzerinde barındırabilirsiniz. İşte bu noktada devreye <strong>cPanel</strong> giriyor kullanıcıların kendi sistemlerini yönetmesi ve gereken ayarlamaları yapabilmelerine imkan sağlıyor.</p>
+
+<h2 id="minimum-sistem-gereksinimleri">Minimum Sistem gereksinimleri</h2>
+
+<ul>
+  <li>1GB Bellek</li>
+  <li>20GB Disk alanı</li>
+  <li>Hali hazırda perl uygulamasının kurulu olması</li>
+  <li>CentOS 7/6/5 , RHEL 6/5 , CloudLinux 6/5 sistemlerinden herhangi birisinin kurulu olması yeterlidir.</li>
+</ul>
+
+<h2 id="ana-bilgisayar-adı-tanımlanmasıhostname">Ana Bilgisayar Adı Tanımlanması(Hostname)</h2>
+
+<p>Bu kısımda düzenleyeceğiniz <strong>hostname</strong> ile sisteminize giriş yapacak <strong>WHM/cPanel</strong> kullanacağız bu yüzden yapacağınız bu işlemler sonunda bir yere not edin yada unutmayacağınız bir şeyler yazın örnek olarak bir firmanız var ve sunucularınıza farklı isimler vermek istiyorsunuz. Bunun için şöyle bir yol izleyebilirsiniz venus.mertcangokgoz.com yada mercy.mertcangokgoz.com sistem yada sunucu adlarında değişiklik olabilir standartlara uyumlu olması yeterli</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>hostname venus.mertcangokgoz.com
+</code></pre>
+</div>
+
+<p>bu aşamadan sonra kalıcı bir hale gelebilmesi için  <strong>/etc/sysconfig/network</strong> deki ana bilgisayar adını kalıcı olarak değiştirmeniz gerekiyor. İçerisine tanımlamayı yapmanız yeterli şöyleki</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HOSTNAME=venus.mertcangokgoz.com
+</code></pre>
+</div>
+
+<p>Şimdi bu Ana bilgisayar adına ip adresini atayalım ki daha sonradan dışarıdan bu yola ulaşabilelim. <strong>/etc/hosts</strong> herhangi bir metin editörü ile açın içerisine şu tanımlamayı mutlaka yapın</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sunucu ip adresi venus.mertcangokgoz.com
+</code></pre>
+</div>
+
+<h2 id="selinux-devredışı-bırakın">SELinux Devredışı bırakın</h2>
+
+<p>Kurulum işlemi gerçekleştirilirken Selinuxün açık olması kurulum esnasında bazı komutların çalışmamasına sebep olacaktır.Özellikle enforce modu da sıkıntılar çıkıyor bazı komutlar işlemiyor bu yüzden en iyisi devre dışı bırakmak bunun için ise</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>setenforce 0
+</code></pre>
+</div>
+
+<p>komutunu verdik kapattık ama kalıcı olmasını istiyoruz bunun için <strong>/etc/sysconfig/selinux</strong> herhangi bir metin editörü ile açıyoruz ve aşağıdaki değişikliği yapıyoruz.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>SELINUX=disabled
+</code></pre>
+</div>
+
+<h2 id="whmcpanel-kurulumu">WHM/cPanel Kurulumu</h2>
+
+<p>Yukarıda bahsettiğim işletim sistemlerinden bir tanesine sahipseniz <strong>WHM/cPanel</strong> kolaylıkla kurabilirsiniz.Bunun için tek yapmanız gereken aşağıdaki kurulum parametresini girmek daha sonra gerekli olan tüm herşeyi kendisi otomatik olarak yapacaktır. Size de kurulumun keyfini çıkartmak kalıyor.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd /home
+curl -o latest -L http://httpupdate.cpanel.net/latest
+sh latest
+</code></pre>
+</div>
+
+<p>Sistem hızınıza göre kurulum süresi uzayıp kısalabilir genelde ise kurulum 1 saat yada 45 dakika sürmekte kurulumlar tamamlandıktan sonra tanımlamış olduğunuz hostname ile panelinize giriş yapabilirsiniz.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>https://venus.mertcangokgoz.com:2087/
+</code></pre>
+</div>
+
+<h2 id="lisans-aktifleştirme">Lisans Aktifleştirme</h2>
+
+<p>Tüm aşamaları yaptıktan sonra size yaklaşık 15 günlük bir deneme sürümü verir.Bu sürümü kullandıktan sonra sistemde hiçbir işlem yapamazsınız yeni lisans almak içinde yeni bir ip adresi gerekmektedir.Bu yüzden herhangi bir yerel satıcıdan lisans alıp paneli kullanmaya devam edebilirsiniz.Aldıktan sonra ise aktifleştirme işlemini aşağıdaki komut ile yapabilirsiniz.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/usr/local/cpanel/cpkeyclt
+</code></pre>
+</div>
+
+<p>Daha sonrasında ise durumu <a href="https://verify.cpanel.net/">buradan kontrol edebilirsiniz.</a></p>
+
+</div>
+
+<hr style="margin:20px;">
+<p><small class="edit">Bir şeyler bu yazıda doğru ya da eksik değil mi? <a href="https://github.com/MertcanGokgoz/mertcangokgoz.github.io/edit/jekyll/_posts/2015-07-09-cloudlinux-ve-centos-icin-cpanel-kurulumu.md" target="_blank">Düzenleyin ve pull request Oluşturun</a></small></p>
+
+
+<div id="paylasim">
+<h3>Bu yazıyı paylaş:</h3>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-facebook-square fa share-button"> Facebook</i>
+</a>
+<a href="https://twitter.com/intent/tweet?text=CloudLinux ve Centos için cPanel Kurulumu&url=http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/&via=mertcangokgoz&related=mertcangokgoz" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+    <i class="fa fa-twitter-square fa share-button"> Twitter</i>
+</a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-google-plus-square fa share-button"> Google</i>
+</a>
+<a href="http://www.reddit.com/submit?url=http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/&title=CloudLinux ve Centos için cPanel Kurulumu" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-reddit-square fa share-button"> Reddit</i>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/&title=CloudLinux ve Centos için cPanel Kurulumu&summary=&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+    <i class="fa fa-linkedin-square fa share-button"> Linkedin</i>
+</a>
+<a href="mailto:?subject=CloudLinux ve Centos için cPanel Kurulumu&amp;body=Check out this site http://localhost:4000/cloudlinux-ve-centos-icin-cpanel-kurulumu/">
+    <i class="fa fa-envelope-square fa share-button"> Email</i>
+</a>
+</div>
+
+
+<div class="ajaxloadcomment"><button class="show-comments">Yorumları yükle</button></div>
+<div itemprop="comment" id="disqus_thread"></div>
+<script>
+$(document).ready(function() {
+    $('.show-comments').on('click', function(){
+          var disqus_shortname = 'mertcanofficial';
+
+          $.ajax({
+                  type: "GET",
+                  url: "//" + disqus_shortname + ".disqus.com/embed.js",
+                  dataType: "script",
+                  cache: true
+          });
+          $(this).fadeOut();
+    });
+});
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+            <div class="footer">
+                <div class="disclaimer">
+    
+    <p>
+        Bu sitedeki gönderiler bana aittir ve iş verenime ait pozisyonlar, stratejiler veya görüşler temsil edilmemektedir.<br>
+        <a href="/ders-notlari/">Ders Notları</a>
+        <span> | </span><a href="/doc/">Dokümanlar</a>
+        <span> | </span><a href="/gizlilik-politikasi/">Gizlilik Politikası</a>
+        <span> | </span><a href="/kullanim-kosullari/">Kullanım Koşulları</a>
+        <span> | </span><a href="/hakkimda/">Hakkımda</a>
+        <span> | </span><a href="/iletisim/">İletişim</a><br>
+        <a href="/hosted/">Hosted By </a><i class="fa fa-copyright" aria-hidden="true"></i> Mertcan GÖKGÖZ, 2017 - Linux Hacısı
+    </p>
+    <div class="row" style="text-align: center">
+        <div class="four columns">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><i class="fa fa-creative-commons fa-3x" aria-hidden="true"></i><br> Creative Commons</a>
+        </div>
+        <div class="four columns">
+            <a href="/donate.html" target="_blank"><i class="fa fa-btc fa-3x" aria-hidden="true"></i><br> Bağış</a>
+        </div>
+    </div>
+    
+</div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+</body>
+
+</html>
