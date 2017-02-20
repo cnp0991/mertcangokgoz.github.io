@@ -26,7 +26,6 @@ apt purge network-manager network-manager-gnome
 Ben dizüstü bilgisayar kullanıyorum her ne kadar wifi ye pek bağlanmıyor olsam da bu yüzden direk olarak kablolu bağlantıya göre interneti ayarlıyorum. `uydunet network` yazan benim kablolu bağlantım güzel bir şekilde otomatiğe aldık ve dhcp den çeksin istedik
 
 ```
-root@0x2e88ce4:~# cat /etc/network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
@@ -39,6 +38,11 @@ iface lo inet loopback
 # Uydunet Network
 allow-hotplug enp4s0
 iface enp4s0 inet dhcp
+
+# Wifi NetMASTER Uydunet-AD66
+allow-hotplug wlp3s0
+iface wlp3s0 inet dhcp
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 Şimdi bu yaptığımıza göre otomatik olarak ipleri alıp dnsleri girecek bu girdikleri modemin DNS bilgileri olacak bunu engellemek için ise
