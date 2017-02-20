@@ -5,10 +5,321 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Sat, 18 Feb 2017 08:32:34 +0300</lastBuildDate>
-        <pubDate>Sat, 18 Feb 2017 08:32:34 +0300</pubDate>
+        <lastBuildDate>Mon, 20 Feb 2017 15:32:00 +0300</lastBuildDate>
+        <pubDate>Mon, 20 Feb 2017 15:32:00 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Django ReCaptcha Eklenti Düzenleme</title>
+                <description>&lt;p&gt;Günlerden bir gün django projesi ile baya içli dışlı olmuştuk ve recaptcha uygulaması gerekiyordu. Var olan uygulamaya da baktık kurması dert kurcalaması dert bizde düşündük zaten açık kaynak kodlu kodları kendi içimize alalım hem daha sonradan değişiklik yapılacaksa bize kod bakımından kolay olur.&lt;/p&gt;
+
+&lt;p&gt;İlk önce tabi düşündük sıfırdan yazalım diye ancak daha sonradan uğraşmak istemedik. Aşağıdakileri sırasıyla projenize dahil etmeniz yeterli.&lt;/p&gt;
+
+&lt;p&gt;fields.py&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import os
+import sys
+import socket
+from django import forms
+from django.conf import settings
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import smart_text as smart_unicode
+from StreamingTwitter.widgets import ReCaptcha
+from StreamingTwitter.ReCaptcha import submit
+
+TEST_PUBLIC_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+TEST_PRIVATE_KEY = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe'
+
+
+class ReCaptchaField(forms.CharField):
+    default_error_messages = {
+        'captcha_invalid': _('Incorrect, please try again.'),
+        'captcha_error': _('Error verifying input, please try again.'),
+    }
+
+    def __init__(self, public_key=None, private_key=None, use_ssl=None,
+                 attrs=None, *args, **kwargs):
+        &quot;&quot;&quot;
+        ReCaptchaField can accepts attributes which is a dictionary of
+        attributes to be passed to the ReCaptcha widget class. The widget will
+        loop over any options added and create the RecaptchaOptions
+        JavaScript variables as specified in
+        https://code.google.com/apis/recaptcha/docs/customization.html
+        &quot;&quot;&quot;
+        if attrs is None:
+            attrs = {}
+        public_key = public_key if public_key else \
+            getattr(settings, 'RECAPTCHA_PUBLIC_KEY', TEST_PUBLIC_KEY)
+        self.private_key = private_key if private_key else \
+            getattr(settings, 'RECAPTCHA_PRIVATE_KEY', TEST_PRIVATE_KEY)
+        self.use_ssl = use_ssl if use_ssl is not None else getattr(
+            settings, 'RECAPTCHA_USE_SSL', True)
+
+        self.widget = ReCaptcha(
+            public_key=public_key, use_ssl=self.use_ssl, attrs=attrs)
+        self.required = True
+        super(ReCaptchaField, self).__init__(*args, **kwargs)
+
+    def get_remote_ip(self):
+        f = sys._getframe()
+        while f:
+            if 'request' in f.f_locals:
+                request = f.f_locals['request']
+                if request:
+                    remote_ip = request.META.get('REMOTE_ADDR', '')
+                    forwarded_ip = request.META.get('HTTP_X_FORWARDED_FOR', '')
+                    ip = remote_ip if not forwarded_ip else forwarded_ip
+                    return ip
+            f = f.f_back
+
+    def clean(self, values):
+        super(ReCaptchaField, self).clean(values[1])
+        recaptcha_challenge_value = smart_unicode(values[0])
+        recaptcha_response_value = smart_unicode(values[1])
+
+        if os.environ.get('RECAPTCHA_TESTING', None) == 'True' and \
+                        recaptcha_response_value == 'PASSED':
+            return values[0]
+
+        if not self.required:
+            return
+
+        try:
+            check_captcha = submit(
+                recaptcha_challenge_value,
+                recaptcha_response_value, private_key=self.private_key,
+                remoteip=self.get_remote_ip(), use_ssl=self.use_ssl)
+
+        except socket.error:  # Catch timeouts, etc
+            raise ValidationError(
+                self.error_messages['captcha_error']
+            )
+
+        if not check_captcha.is_valid:
+            raise ValidationError(
+                self.error_messages['captcha_invalid']
+            )
+        return values[0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;widgets.py&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from StreamingTwitter.ReCaptcha import displayhtml
+from django.utils.safestring import mark_safe
+from django import forms
+from django.conf import settings
+
+TEST_PUBLIC_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+
+
+class ReCaptcha(forms.widgets.Widget):
+    if getattr(settings, &quot;NOCAPTCHA&quot;, False):
+        recaptcha_response_name = 'g-recaptcha-response'
+        recaptcha_challenge_name = 'g-recaptcha-response'
+    else:
+        recaptcha_challenge_name = 'recaptcha_challenge_field'
+        recaptcha_response_name = 'recaptcha_response_field'
+
+    def __init__(self, public_key=None, use_ssl=None, attrs=None, *args,
+                 **kwargs):
+        self.public_key = public_key or getattr(settings, 'RECAPTCHA_PUBLIC_KEY', TEST_PUBLIC_KEY)
+        if attrs is None:
+            attrs = {}
+        self.use_ssl = use_ssl if use_ssl is not None else getattr(
+            settings, 'RECAPTCHA_USE_SSL', True)
+        self.js_attrs = attrs
+        super(ReCaptcha, self).__init__(*args, **kwargs)
+
+    def render(self, name, value, attrs=None):
+        return mark_safe(u'%s' % displayhtml(
+            self.public_key,
+            self.js_attrs, use_ssl=self.use_ssl))
+
+    def value_from_datadict(self, data, files, name):
+        return [
+            data.get(self.recaptcha_challenge_name, None),
+            data.get(self.recaptcha_response_name, None)
+        ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;ReCaptcha.py&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import json
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.utils.safestring import mark_safe
+from urllib.parse import urlencode
+from urllib.request import build_opener, ProxyHandler, Request, urlopen
+
+DEFAULT_API_SSL_SERVER = &quot;//www.google.com/recaptcha/api&quot;
+DEFAULT_API_SERVER = &quot;//www.google.com/recaptcha/api&quot;
+DEFAULT_VERIFY_SERVER = &quot;www.google.com&quot;
+DEFAULT_WIDGET_TEMPLATE = 'captcha/captcha.html'
+
+API_SSL_SERVER = getattr(settings, &quot;CAPTCHA_API_SSL_SERVER&quot;,
+                         DEFAULT_API_SSL_SERVER)
+API_SERVER = getattr(settings, &quot;CAPTCHA_API_SERVER&quot;, DEFAULT_API_SERVER)
+VERIFY_SERVER = getattr(settings, &quot;CAPTCHA_VERIFY_SERVER&quot;,
+                        DEFAULT_VERIFY_SERVER)
+WIDGET_TEMPLATE = getattr(settings, &quot;CAPTCHA_WIDGET_TEMPLATE&quot;,
+                          DEFAULT_WIDGET_TEMPLATE)
+
+
+def want_bytes(s, encoding='utf-8', errors='strict'):
+    if isinstance(s, str):
+        s = s.encode(encoding, errors)
+    return s
+
+
+class RecaptchaResponse(object):
+    def __init__(self, is_valid, error_code=None):
+        self.is_valid = is_valid
+        self.error_code = error_code
+
+
+def displayhtml(public_key,
+                attrs,
+                use_ssl=True,
+                error=None):
+    &quot;&quot;&quot;Gets the HTML to display for reCAPTCHA
+    public_key -- The public api key
+    use_ssl -- Should the request be sent over ssl? (deprecated)
+    error -- An error message to display (from RecaptchaResponse.error_code)&quot;&quot;&quot;
+
+    error_param = ''
+    if error:
+        error_param = '&amp;amp;error=%s' % error
+
+    if use_ssl:
+        server = API_SSL_SERVER
+    else:
+        server = API_SERVER
+
+    return render_to_string(
+        WIDGET_TEMPLATE,
+        {'api_server': server,
+         'public_key': public_key,
+         'error_param': error_param,
+         'options': mark_safe(json.dumps(attrs, indent=2)),
+         'options_dict': attrs,
+         })
+
+
+def request(*args, **kwargs):
+    &quot;&quot;&quot;
+    Make a HTTP request with a proxy if configured.
+    &quot;&quot;&quot;
+    if getattr(settings, 'RECAPTCHA_PROXY', False):
+        proxy = ProxyHandler({
+            'http': settings.RECAPTCHA_PROXY,
+            'https': settings.RECAPTCHA_PROXY,
+        })
+        opener = build_opener(proxy)
+
+        return opener.open(*args, **kwargs)
+    else:
+        return urlopen(*args, **kwargs)
+
+
+def submit(recaptcha_challenge_field,
+           recaptcha_response_field,
+           private_key,
+           remoteip,
+           use_ssl=False):
+    if not (recaptcha_response_field and recaptcha_challenge_field and
+                len(recaptcha_response_field) and len(recaptcha_challenge_field)):
+        return RecaptchaResponse(
+            is_valid=False,
+            error_code='incorrect-captcha-sol'
+        )
+
+    if getattr(settings, &quot;NOCAPTCHA&quot;, False):
+        params = urlencode({
+            'secret': want_bytes(private_key),
+            'response': want_bytes(recaptcha_response_field),
+            'remoteip': want_bytes(remoteip),
+        })
+    else:
+        params = urlencode({
+            'privatekey': want_bytes(private_key),
+            'remoteip': want_bytes(remoteip),
+            'challenge': want_bytes(recaptcha_challenge_field),
+            'response': want_bytes(recaptcha_response_field),
+        })
+
+    params = params.encode('utf-8')
+
+    if use_ssl:
+        verify_url = 'https://%s/recaptcha/api/verify' % VERIFY_SERVER
+    else:
+        verify_url = 'http://%s/recaptcha/api/verify' % VERIFY_SERVER
+
+    if getattr(settings, &quot;NOCAPTCHA&quot;, False):
+        verify_url = 'https://%s/recaptcha/api/siteverify' % VERIFY_SERVER
+
+    req = Request(
+        url=verify_url,
+        data=params,
+        headers={
+            'Content-type': 'application/x-www-form-urlencoded',
+            'User-agent': 'Stream reCAPTCHA Python'
+        }
+    )
+
+    httpresp = request(req)
+    if getattr(settings, &quot;NOCAPTCHA&quot;, False):
+        data = json.loads(httpresp.read().decode('utf-8'))
+        return_code = data['success']
+        return_values = [return_code, None]
+        if return_code:
+            return_code = 'true'
+        else:
+            return_code = 'false'
+    else:
+        return_values = httpresp.read().decode('utf-8').splitlines()
+        return_code = return_values[0]
+
+    httpresp.close()
+
+    if (return_code == &quot;true&quot;):
+        return RecaptchaResponse(is_valid=True)
+    else:
+        return RecaptchaResponse(is_valid=False, error_code=return_values[1])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ardından projenizde nerede kullanacaksanız. Direk olarak oraya aşağıdaki gibi bir ekleme yaparak &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; içerisine çağırmanız yeterli&lt;/p&gt;
+
+&lt;p&gt;views.py dosyanızın içerisine aşağıdaki satırları ekleyin.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;re_captcha = {'captcha': FormWithCaptcha()}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;HTML dosyanız içerisine de&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Tam olarak çalışmasını istiyorsak &lt;code class=&quot;highlighter-rouge&quot;&gt;settings.py&lt;/code&gt; dosyasına şu kısımları da eklemeyi unutmayın&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;RECAPTCHA_PUBLIC_KEY = '6Le61ykTAAAAACmvsDyHdzYHei_xkS4fNjEYFgmO'
+RECAPTCHA_SECRET_KEY = '6Le61ykTAAAAABEXwzMb9r_-J8kr9VfoNa0jWk_'
+NOCAPTCHA = True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Recaptcha özelliği otomatik olarak gelecek ve kolaylıkla yönetebileceksiniz. Ayrıca bu eklenti ile birden fazla sayfada ReCaptcha özelliğini aktif edip kullanabilmenize imkan sağlar diğerleri gibi sadece tek sayfada kullanılabilir bir şekilde ayarlanmamıştır.&lt;/p&gt;
+</description>
+                <link>https://mertcangokgoz.com/django-recaptcha-eklenti-duzenleme/</link>
+                <guid>https://mertcangokgoz.com/django-recaptcha-eklenti-duzenleme</guid>
+                <pubDate>Mon, 20 Feb 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>Debian için İphone Yapılandırması</title>
@@ -2450,8 +2761,7 @@ LocalAddress 127.0.0.31:53
 
 &lt;p&gt;Ben dizüstü bilgisayar kullanıyorum her ne kadar wifi ye pek bağlanmıyor olsam da bu yüzden direk olarak kablolu bağlantıya göre interneti ayarlıyorum. &lt;code class=&quot;highlighter-rouge&quot;&gt;uydunet network&lt;/code&gt; yazan benim kablolu bağlantım güzel bir şekilde otomatiğe aldık ve dhcp den çeksin istedik&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@0x2e88ce4:~# cat /etc/network/interfaces
-# This file describes the network interfaces available on your system
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
 source /etc/network/interfaces.d/*
@@ -2463,6 +2773,11 @@ iface lo inet loopback
 # Uydunet Network
 allow-hotplug enp4s0
 iface enp4s0 inet dhcp
+
+# Wifi NetMASTER Uydunet-AD66
+allow-hotplug wlp3s0
+iface wlp3s0 inet dhcp
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -2601,19 +2916,6 @@ network={
                 <link>https://mertcangokgoz.com/jekyll-soundcloud-eklentisi/</link>
                 <guid>https://mertcangokgoz.com/jekyll-soundcloud-eklentisi</guid>
                 <pubDate>Sat, 05 Nov 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>Ruby Eğitim Seti</title>
-                <description>&lt;p&gt;Ruby öğrenmek isteyen arkadaşlar için özenle hazırlanmış ve toplamda 76 videodan oluşan bu eğitim setini kullanarak sizlerde ruby ile web siteleri yapabilir, masaüstü uygulamaları geliştirebilirsiniz.&lt;/p&gt;
-
-&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/udtRFuay-sA?list=PLPAgSS6rtWabY7fksUEw6ms07oSVNoL6t&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Videolar &lt;strong&gt;İngilizce&lt;/strong&gt; olup anlayabileceğiniz bir düzeydedir.&lt;/p&gt;
-</description>
-                <link>https://mertcangokgoz.com/ruby-egitim-seti/</link>
-                <guid>https://mertcangokgoz.com/ruby-egitim-seti</guid>
-                <pubDate>Fri, 04 Nov 2016 00:00:00 +0300</pubDate>
         </item>
 
 

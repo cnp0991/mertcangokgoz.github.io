@@ -60,7 +60,7 @@
     <h3><a href="/">Mertcan GÖKGÖZ</a></h3>
     <div id="bio">
         <p>
-            Kategoriler:<br> <a href="/category/linux">Linux</a> &raquo; 242 Yazı<br><a href="/category/programlama">Programlama</a> &raquo; 79 Yazı<br><a href="/category/genel">Genel</a> &raquo; 70 Yazı<br><a href="/category/guvenlik">Guvenlik</a> &raquo; 57 Yazı<br><a href="/category/windows">Windows</a> &raquo; 38 Yazı<br><a href="/category/analiz">Analiz</a> &raquo; 21 Yazı<br><a href="/category/jekyll">Jekyll</a> &raquo; 16 Yazı<br><a href="/category/nginx">Nginx</a> &raquo; 15 Yazı<br><a href="/category/egitimler">Egitimler</a> &raquo; 6 Yazı<br>
+            Kategoriler:<br> <a href="/category/linux">Linux</a> &raquo; 242 Yazı<br><a href="/category/programlama">Programlama</a> &raquo; 80 Yazı<br><a href="/category/genel">Genel</a> &raquo; 70 Yazı<br><a href="/category/guvenlik">Guvenlik</a> &raquo; 57 Yazı<br><a href="/category/windows">Windows</a> &raquo; 38 Yazı<br><a href="/category/analiz">Analiz</a> &raquo; 21 Yazı<br><a href="/category/jekyll">Jekyll</a> &raquo; 16 Yazı<br><a href="/category/nginx">Nginx</a> &raquo; 15 Yazı<br><a href="/category/egitimler">Egitimler</a> &raquo; 6 Yazı<br>
             <br> Arkadaşlar:
             <br>
             <a href="https://oztaser.com/" target="_blank" rel="nofollow">Adil ÖZTAŞER</a><br>
@@ -204,8 +204,7 @@
 
 <p>Ben dizüstü bilgisayar kullanıyorum her ne kadar wifi ye pek bağlanmıyor olsam da bu yüzden direk olarak kablolu bağlantıya göre interneti ayarlıyorum. <code class="highlighter-rouge">uydunet network</code> yazan benim kablolu bağlantım güzel bir şekilde otomatiğe aldık ve dhcp den çeksin istedik</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>root@0x2e88ce4:~# cat /etc/network/interfaces
-# This file describes the network interfaces available on your system
+<div class="highlighter-rouge"><pre class="highlight"><code># This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
 source /etc/network/interfaces.d/*
@@ -217,6 +216,11 @@ iface lo inet loopback
 # Uydunet Network
 allow-hotplug enp4s0
 iface enp4s0 inet dhcp
+
+# Wifi NetMASTER Uydunet-AD66
+allow-hotplug wlp3s0
+iface wlp3s0 inet dhcp
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 </code></pre>
 </div>
 
