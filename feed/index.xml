@@ -5,8 +5,8 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Mon, 20 Feb 2017 15:32:00 +0300</lastBuildDate>
-        <pubDate>Mon, 20 Feb 2017 15:32:00 +0300</pubDate>
+        <lastBuildDate>Wed, 15 Mar 2017 00:56:03 +0300</lastBuildDate>
+        <pubDate>Wed, 15 Mar 2017 00:56:03 +0300</pubDate>
         <ttl>1800</ttl>
 
 
@@ -619,6 +619,7 @@ chmod 770 /home/mertcan/samba-dosyalar
 0.0.0.0     mixpanel.com
 0.0.0.0     list-manage.com
 0.0.0.0     list-manage1.com
+0.0.0.0     o1.mailing.sh.com.tr
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
