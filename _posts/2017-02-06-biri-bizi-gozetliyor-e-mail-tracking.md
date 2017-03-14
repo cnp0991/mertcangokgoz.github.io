@@ -133,6 +133,7 @@ Bununla birlikte, izlemeyi engellemenin en kolay ve en kolay yolu, bilgisayarın
 0.0.0.0     mixpanel.com
 0.0.0.0     list-manage.com
 0.0.0.0     list-manage1.com
+0.0.0.0     o1.mailing.sh.com.tr
 ```
 
 Bu şekilde bazılarını engelleyebilirsiniz. Ancak bu hizmeti veren oldukça fazla firma var bunların her birinin url adreslerini tek tek tespit etmek ve engellemek gerekiyor ki e-postalarınızın açılıp açılmadığını göremesinler. Spam atılan her bir mesaj o mail adresinin kullanılıp kullanılmadığını anlamak için bile gönderiliyor olabilir. Bunu aklınızın bir köşesine not edin.

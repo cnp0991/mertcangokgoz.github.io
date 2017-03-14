@@ -7,11 +7,11 @@ description: Mertcan GÖKGÖZ Kimdir ?
 
 Merhaba
 
-2 yıl kadar windows sistemler üzerine çalışmalar yaptıktan sonra **GNU/Linux** alanına geçiş yaptım. 4 yılı aşkın bir süredir bu alanda kendimi geliştirmekteyim.
+2 yıl kadar windows sistemler üzerine çalışmalar yaptıktan sonra **GNU/Linux** alanına geçiş yaptım. 5 yılı aşkın bir süredir bu alanda kendimi geliştirmekteyim.
 
 ### Neler biliyorum
 
-GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Server 2012), MsSQL Server (2012/2014), Routing, Switching, HTML5, PHP, Python, .NET, Shell Scripting(Bash, Sh vs), MySQL,  Couchbase, Redis, HAproxy, Keepalived, Apache, Nginx, Wordpress, OpenVPN, Alfresco, Zabbix, TCP/IP, SSL/TLS, MS DNS, PfSense, Iptables, Mod_Security, OpenVAS, FTP, Microsoft Office
+GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Server 2012), MsSQL Server (2012/2014), Routing, Switching, HTML5, PHP, Python, .NET, Shell Scripting(Bash, Sh vs), MySQL, PostgreSQL, Couchbase, Redis, HAproxy, Keepalived, Apache, Nginx, Wordpress, Django, OpenVPN, Alfresco, Zabbix, TCP/IP, SSL/TLS, MS DNS, PfSense, Iptables, Mod_Security, OpenVAS, FTP, Microsoft Office, Virtualization, Ansible, Docker, Vagrant
 
 
 ## Kurslar
@@ -23,6 +23,7 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 
 ## Deneyim
 
+- Network Mühendisi - Forte Bilgi ve İletişim Teknolojileri Sanayi ve Ticaret A.Ş. (2017)
 - Sistem Yönetimi - Özgür Yazılım A.Ş. (2016)
 - Teknik destek - ASUS Türkiye (2011)
 
@@ -33,6 +34,7 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 - Çocuklarınıza Kodlamayı Sevdirin Hosting Dergi Sayı 20, 25 Temmuz 2016
 - Tek IP Adresine Birden Fazla SSL Kurulumu Hosting Dergi Sayı 23, 23 Ekim 2016
 - DNSCurve Nedir Digerlerine Gore Avantajları Nelerdir Hosting Dergi Sayı 24, 24 Şubat 2017
+- HTTP Üzerinden Temel Kimlik Doğrulama kullanmayın Hosting Dergi Sayı 25, 10 Mart 2017
 
 ## Verdiğim Eğitim ve Seminerler
 
@@ -50,7 +52,7 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 
 ## Eğitim
 
-- Başkent Üniversitesi Ticari Bilimler Fakültesi, Yönetim Bilişim Sistemleri, 2013 - 2017
+- Başkent Üniversitesi Ticari Bilimler Fakültesi, Yönetim Bilişim Sistemleri, 2012 - 2017
 - İnönü Anadolu Lisesi Türkçe - Matematik, 2010 - 2012
 
 ### Bu blogun amacı
