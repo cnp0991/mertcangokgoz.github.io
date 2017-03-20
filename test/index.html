@@ -1,0 +1,123 @@
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <title>Forte Bilgi ve İletişim Teknolojileri</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/ammap.css" type="text/css" media="all"/>
+    <style>
+        #info {
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        #info p {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="mapdiv" style="width: 100%; height: 90%;"></div>
+<div id="info"></div>
+
+<script type="text/javascript">
+    var map = AmCharts.makeChart("mapdiv", {
+        type: "map",
+        backgroundAlpha: 1,
+        projection: "mercator",
+        panControlEnabled: false,
+        zoomControl: {
+            zoomControlEnabled: false,
+            minZoomLevel: 0.9
+
+        },
+        dataProvider: {
+            mapURL: "turkeyHigh.svg",
+            getAreasFromMap: true,
+            areas: [
+                {
+                    "id": "TR-01",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-02",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-03",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-04",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-05",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-06",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-07",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-08",
+                    "info": "Mertcan GÖKGÖZ"
+                }, {
+                    "id": "TR-09",
+                    "info": "Mertcan GÖKGÖZ"
+                }
+            ]
+        },
+        areasSettings: {
+            autoZoom: true,
+            selectable: true,
+            color: "#84ADE9",
+            colorSolid: "#84ADE9",
+            selectedColor: "#ef6547",
+            outlineColor: "#666666",
+            rollOverColor: "#9EC2F7",
+            rollOverOutlineColor: "#000000",
+            balloonText: "<b>[[title]]</b>"
+        },
+        listeners: [{
+            event: "clickMapObject",
+            method: function (event) {
+                document.getElementById("info").innerHTML = '<p><b>' + event.mapObject.title + '</b></p><p>' + event.mapObject.info + '</p>'
+                map.selectedObject = map.dataProvider;
+                event.mapObject.showAsSelected = !event.mapObject.showAsSelected;
+                map.returnInitialColor(event.mapObject);
+                var states = [];
+                for (var i in map.dataProvider.areas) {
+                    var area = map.dataProvider.areas[i];
+                    if (area.showAsSelected) {
+                        states.push(area.title);
+                    }
+                }
+            }
+        }, {
+            event: "zoomCompleted",
+            method: function (event) {
+                map.invalidateSize();
+            }
+        }],
+        allLabels: [
+            {
+                "text": "Forte Bilgi ve İletişim Teknolojileri San. ve Tic. A.Ş",
+                "bold": true,
+                "x": 100,
+                "y": 10,
+                align: "left"
+            }
+        ]
+    });
+    $(window).keypress(function (e) {
+        if (e.keyCode === 0 || e.keyCode === 32) {
+            e.preventDefault();
+            map.validateData();
+        }
+    })
+</script>
+</body>
+</html>

@@ -10,6 +10,6 @@
 
     /* SITE */
     Last update: 2017/01/23
-    Standards: HTML5, CSS3, JSON
+    Standards: HTML5, CSS3
     Components: Font Awesome, Font API etc.
     Software: Jekyll
