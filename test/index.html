@@ -5,21 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Mertcan GÖKGÖZ">
     <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/ammap.css" type="text/css" media="all"/>
-    <style>
-        #info {
-            padding: 10px;
-            background-color: #ffffff;
-        }
-
-        #info p {
-            margin: 5px;
-        }
-    </style>
 </head>
 <body>
 <div id="mapdiv" style="width: 100%; height: 100%;"></div>
@@ -44,10 +34,7 @@
         dataProvider: {
             mapURL: "turkeyHigh.svg",
             getAreasFromMap: true,
-            areas: [{
-                id: "TR-01",
-                title: "Ankara"
-            }]
+            areas: []
         },
         areasSettings: {
             autoZoom: true,
@@ -88,16 +75,9 @@
         }
     });
     map.addListener("init", function () {
-        var longitude = {
-            "": -130,
-            "": 120,
-            "": 1,
-            "": 40
-        };
+        var longitude = {};
 
-        var latitude = {
-            "": -85
-        };
+        var latitude = {};
 
         setTimeout(function () {
             map.dataProvider.images = [];
@@ -107,8 +87,7 @@
                 var image = new AmCharts.MapImage();
                 image.latitude = latitude[area.id] || map.getAreaCenterLatitude(area);
                 image.longitude = longitude[area.id] || map.getAreaCenterLongitude(area);
-                image.label = area.title.split('.').pop();
-                image.title = area.title;
+                image.label = area.title;
                 image.linkToObject = area;
                 image.groupId = area.id;
                 map.dataProvider.images.push(image);
