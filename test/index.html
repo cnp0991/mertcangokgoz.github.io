@@ -22,8 +22,7 @@
     </style>
 </head>
 <body>
-<div id="mapdiv" style="width: 100%; height: 90%;"></div>
-<div id="info"></div>
+<div id="mapdiv" style="width: 100%; height: 100%;"></div>
 
 <script type="text/javascript">
     var map = AmCharts.makeChart("mapdiv", {
@@ -36,39 +35,19 @@
             minZoomLevel: 0.9
 
         },
+        titles: [
+            {
+                text: "Forte Bilgi ve İletişim Teknolojileri San. ve Tic. A.Ş",
+                size: 15
+            }
+        ],
         dataProvider: {
             mapURL: "turkeyHigh.svg",
             getAreasFromMap: true,
-            areas: [
-                {
-                    "id": "TR-01",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-02",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-03",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-04",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-05",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-06",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-07",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-08",
-                    "info": "Mertcan GÖKGÖZ"
-                }, {
-                    "id": "TR-09",
-                    "info": "Mertcan GÖKGÖZ"
-                }
-            ]
+            areas: [{
+                id: "TR-01",
+                title: "Ankara"
+            }]
         },
         areasSettings: {
             autoZoom: true,
@@ -79,12 +58,11 @@
             outlineColor: "#666666",
             rollOverColor: "#9EC2F7",
             rollOverOutlineColor: "#000000",
-            balloonText: "<b>[[title]]</b>"
+            balloonText: ""
         },
         listeners: [{
             event: "clickMapObject",
             method: function (event) {
-                document.getElementById("info").innerHTML = '<p><b>' + event.mapObject.title + '</b></p><p>' + event.mapObject.info + '</p>'
                 map.selectedObject = map.dataProvider;
                 event.mapObject.showAsSelected = !event.mapObject.showAsSelected;
                 map.returnInitialColor(event.mapObject);
@@ -101,23 +79,44 @@
             method: function (event) {
                 map.invalidateSize();
             }
-        }],
-        allLabels: [
-            {
-                "text": "Forte Bilgi ve İletişim Teknolojileri San. ve Tic. A.Ş",
-                "bold": true,
-                "x": 100,
-                "y": 10,
-                align: "left"
-            }
-        ]
+        }]
     });
     $(window).keypress(function (e) {
         if (e.keyCode === 0 || e.keyCode === 32) {
             e.preventDefault();
             map.validateData();
         }
-    })
+    });
+    map.addListener("init", function () {
+        var longitude = {
+            "": -130,
+            "": 120,
+            "": 1,
+            "": 40
+        };
+
+        var latitude = {
+            "": -85
+        };
+
+        setTimeout(function () {
+            map.dataProvider.images = [];
+            for (x in map.dataProvider.areas) {
+                var area = map.dataProvider.areas[x];
+                area.groupId = area.id;
+                var image = new AmCharts.MapImage();
+                image.latitude = latitude[area.id] || map.getAreaCenterLatitude(area);
+                image.longitude = longitude[area.id] || map.getAreaCenterLongitude(area);
+                image.label = area.title.split('.').pop();
+                image.title = area.title;
+                image.linkToObject = area;
+                image.groupId = area.id;
+                map.dataProvider.images.push(image);
+            }
+            map.validateData();
+            console.log(map.dataProvider);
+        }, 100)
+    });
 </script>
 </body>
 </html>
