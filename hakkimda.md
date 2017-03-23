@@ -23,9 +23,9 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 
 ## Deneyim
 
-- Network Mühendisi - Forte Bilgi ve İletişim Teknolojileri Sanayi ve Ticaret A.Ş. (2017)
-- Sistem Yönetimi - Özgür Yazılım A.Ş. (2016)
-- Teknik destek - ASUS Türkiye (2011)
+- Forte Bilgi ve İletişim Teknolojileri Sanayi ve Ticaret A.Ş. (2017)
+- Özgür Yazılım A.Ş. (2016)
+- ASUS Türkiye (2011)
 
 ## Yayınlar
 
