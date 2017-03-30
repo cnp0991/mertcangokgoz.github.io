@@ -29,12 +29,12 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 
 ## Yayınlar
 
-- Programlamaya Nasıl Başlanır Hosting Dergi Sayı 18, 23 Mayıs 2016
-- Ddos Saldırılarında Doğru Bilinen Yanlışlar Hosting Dergi Sayı 19, 21 Haziran 2016
-- Çocuklarınıza Kodlamayı Sevdirin Hosting Dergi Sayı 20, 25 Temmuz 2016
-- Tek IP Adresine Birden Fazla SSL Kurulumu Hosting Dergi Sayı 23, 23 Ekim 2016
-- DNSCurve Nedir Digerlerine Gore Avantajları Nelerdir Hosting Dergi Sayı 24, 24 Şubat 2017
-- HTTP Üzerinden Temel Kimlik Doğrulama kullanmayın Hosting Dergi Sayı 25, 10 Mart 2017
+- Programlamaya Nasıl Başlanır / Hosting Dergi Sayı 18, 23 Mayıs 2016
+- Ddos Saldırılarında Doğru Bilinen Yanlışlar / Hosting Dergi Sayı 19, 21 Haziran 2016
+- Çocuklarınıza Kodlamayı Sevdirin / Hosting Dergi Sayı 20, 25 Temmuz 2016
+- Tek IP Adresine Birden Fazla SSL Kurulumu / Hosting Dergi Sayı 23, 23 Ekim 2016
+- DNSCurve Nedir Digerlerine Gore Avantajları Nelerdir / Hosting Dergi Sayı 24, 24 Şubat 2017
+- HTTP Üzerinden Temel Kimlik Doğrulama kullanmayın / Hosting Dergi Sayı 25, 10 Mart 2017
 
 ## Verdiğim Eğitim ve Seminerler
 
@@ -59,6 +59,6 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 
 Bu blogda yer alan tüm dokümanlar anlatıldığı gibi pratikde çalıştığını gözlemlediklerimi oluşturmaktadır. Site de bulunan tüm içerik online doküman olması amacıyla daha sonradan kullanılması için yazılmakta ve her daim güncel tutulmaktadır. Dokümanlar ile yapılan herhangi bir işte sorun yaşarsanız hiçbir şekilde sorumluluk kabul etmiyorum. **Başarınızda başarısızlığınızda tamamen size aittir.**
 
-Bu blogda yazılan tüm yazılar başka platformlar da kaynak gösterilerek istenildiği gibi paylaşılabilir, kullanılabilir, dağıtılabilir ve değiştirilebilir.
+Yayınlanan tüm yazılar başka platformlar da kaynak gösterilerek istenildiği gibi paylaşılabilir, kullanılabilir, dağıtılabilir ve değiştirilebilir.
 
 [CV_Mertcan_GÖKGÖZ](https://mertcangokgoz.com/CV_Mertcan_GOKGOZ_2017.pdf)
