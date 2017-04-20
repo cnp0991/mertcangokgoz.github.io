@@ -5,10 +5,56 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Thu, 30 Mar 2017 22:52:57 +0300</lastBuildDate>
-        <pubDate>Thu, 30 Mar 2017 22:52:57 +0300</pubDate>
+        <lastBuildDate>Thu, 20 Apr 2017 22:22:35 +0300</lastBuildDate>
+        <pubDate>Thu, 20 Apr 2017 22:22:35 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Dell N4032F Switch İçin Stack Ayarlama</title>
+                <description>&lt;p&gt;Geçenlerde yeni kurulum için bir takım konfigürasyon işleri yaparken Dell marka N4032F model 2 adet switch elimize geçti konfigürasyonlar olarak ciscoya her ne kadar benzesede biraz farklı geldi ancak işin içinden çıkmayı güzelce başardık.&lt;/p&gt;
+
+&lt;p&gt;Ayrıca Stack yapılacak switchlerin her ikisininde aynı sürüm yazılım kullanması ve desteklenen modellerden birinin olması gerekiyor. Bunu görmek için;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;show supported
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Baktık sürümler ve cihazlar stack destekliyor. Stack işlemini yapalımda kurtulalım dedik bu sırada 1Ge lik portlardan yanıt almak istedik dokümantasyondada bu adamlar bize demiyor ki kardeş siz sadece 10Ge lik portlardan stack yapabilirsiniz. Bizde 2 saatimizi 1Ge olan cibikler üzerinden yapmaya çalışıyoruz.&lt;/p&gt;
+
+&lt;p&gt;Neyse yemek yedikten sonra aklımıza dank etti de sonradan dokümantasyonda gördük akıl ettik fiberini taktık ve oldu, böyle dediğime bakmayın gene dokümantasyonda şöyle yapın dememiş&lt;/p&gt;
+
+&lt;p&gt;Herneyse master belirlememiz gerekiyor biliyorsunuz. Bunun için cihaz Mac adresi en büyük olanı seçiyor olması lazım yani sizin MAC adresi büyük olan switchi ayarlamanız gerekiyor. Bunun için ise;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;config
+stack
+stack-port tengigabitethernet 1/0/23 stack
+stack-port tengigabitethernet 1/0/24 stack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;bu işlemden sonra direk olarak ikinci switch ede aynı konfigürasyonu eklemeniz gerekiyor. Daha sonra direk olarak &lt;code class=&quot;highlighter-rouge&quot;&gt;do reload&lt;/code&gt; her iki yada kaç tane switch konfigure ediyorsanız yeniden başlatırsanız. Otomatik olarak kendisi stack olacak ve ayarlamaya ve konfigürasyonunu senkronize etmeye başlayacak ve hangisinin MAC adresi yüksek ise sadece ondan ayarlanmak üzere diğer switchleri düzenleyecek&lt;/p&gt;
+
+&lt;p&gt;Daha sonra yapmanız gereken ek ne kadar ayar yapılacak ise onu yapmak vlan ayarlamak ip vermek ve bağlantı ekipmanlarını ayağa kaldırmak olacak.&lt;/p&gt;
+
+&lt;p&gt;tabi stack olup olmadığını görmek için&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;show switch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;komutunu verebilirsiniz direk olarak burada stack olan ve master olan switch görmeniz gerekecek&lt;/p&gt;
+
+&lt;p&gt;Tabi son olarak ayarları kayıt etmeyi unutmayın sonra çok uğraşırsınız. Kaydetmek için ise&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;write
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+                <link>https://mertcangokgoz.com/dell-n4032f-switch-icin-stack-ayarlama/</link>
+                <guid>https://mertcangokgoz.com/dell-n4032f-switch-icin-stack-ayarlama</guid>
+                <pubDate>Thu, 20 Apr 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>Centos 7 Üzerine CachetHQ Kurulumu</title>
@@ -3247,57 +3293,6 @@ LocalAddress 127.0.0.31:53
                 <link>https://mertcangokgoz.com/dnscrypt-ve-unbound-kullanarak-dns-trafigini-sifreleme/</link>
                 <guid>https://mertcangokgoz.com/dnscrypt-ve-unbound-kullanarak-dns-trafigini-sifreleme</guid>
                 <pubDate>Tue, 22 Nov 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>DNSCurve Nedir ?</title>
-                <description>&lt;p&gt;&lt;strong&gt;DNSCurve&lt;/strong&gt;, Daniel J. Bernstein tarafından tasarlanan ve Etki Alanı Adı Sistemi (DNS) için önerilen yeni ve güvenli bir protokoldür.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;DNSCurve&lt;/strong&gt;, tarafından kullanılan &lt;code class=&quot;highlighter-rouge&quot;&gt;Curve25519&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;Salsa20&lt;/code&gt; ve &lt;code class=&quot;highlighter-rouge&quot;&gt;Poly1305&lt;/code&gt; MAC işleviyle eşleşen anahtarları, çözümleyiciler ve yetkili sunucular arasındaki &lt;strong&gt;DNS&lt;/strong&gt; paketlerini şifrelemek, doğrulamak ve bağlantı kurmak için eliptik eğri şifrelemesi kullanılır. Uzak yetkili sunucular için ortak anahtarlar NS kayıtlarına yerleştirilir, bu nedenle recursive çözümleyiciler sunucunun DNSCurve’u destekleyip desteklemediğini bilir. Olay &lt;code class=&quot;highlighter-rouge&quot;&gt;uz5&lt;/code&gt; ile başlar ve sunucunun 255 bitlik genel anahtarının 51 baytlık bir &lt;code class=&quot;highlighter-rouge&quot;&gt;Base32&lt;/code&gt; kodlamasını izler.&lt;/p&gt;
-
-&lt;p&gt;Örneğin, &lt;strong&gt;BIND&lt;/strong&gt; biçiminde;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mertcangokgoz.com. IN NS uz5xo1ymn4mw5oodb4mxixn3e2ntnqzjnndxl3ejdjbxl.mertcangokgoz.com.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Çözümleyici daha sonra sunucuya &lt;strong&gt;DNSCurve&lt;/strong&gt; genel anahtarını, 96 bit &lt;strong&gt;nonce&lt;/strong&gt;(Kriptografi’de bir nonce, yalnızca bir kez kullanılabilen keyfi rastgele bir sayıdır.) ve sorguyu cryptographic box içeren bir paket halinde gönderir. Cryptographic box, çözümleyici özel anahtarı, sunucunun genel anahtarı ve &lt;strong&gt;nonce&lt;/strong&gt; kullanılarak oluşturulur.&lt;/p&gt;
-
-&lt;p&gt;Sunucudan gelen yanıt, farklı bir 96-bit &lt;strong&gt;nonce&lt;/strong&gt; ve sorunun cevabını içeren kendi Kriptografik bilgiyi içerir.&lt;/p&gt;
-
-&lt;p&gt;DNSCurve’de kullanılan şifreleme araçları, TCP’ye benzer, ancak verileri şifrelemek ve doğrulamak için eliptik eğri şifreleme kullanan UDP tabanlı bir iletişim kuralı olan &lt;strong&gt;CurveCP’de&lt;/strong&gt; kullanılanla aynıdır. Bir benzetme yapalım, &lt;strong&gt;DNSSEC&lt;/strong&gt;, PGP ile bir web sayfası imzalamak isterken &lt;strong&gt;CurveCP&lt;/strong&gt; ve DNSCurve, SSL’yi kullanarak kanalı şifrelemek ve doğrulamak için ve Tıpkı PGP imzalı web sayfaları şifreli bir kanal üzerinden SSL kullanarak gönderilebileceği gibi, &lt;strong&gt;DNSSEC&lt;/strong&gt; verileri de DNSCurve kullanılarak korunabilir.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;DNSCurve&lt;/strong&gt;, önceki DNS hizmetlerine göre avantajları;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Gizlilik&lt;/strong&gt; - normal DNS, istekleri ve yanıtları şifrelemez ve herhangi bir saldırgana bu bilgileri yayınlayabilir.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Bütünlük&lt;/strong&gt; - normal DNS, bazı korumalara sahiptir ancak sabırlı bir şekilde sniffing ile saldırganlar DNS kayıtlarını yeniden oluşturabilir; Bu, &lt;strong&gt;DNSCurve&lt;/strong&gt;‘nin Kriptografik kimlik doğrulaması ile engellenir.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Kullanılabilirlik&lt;/strong&gt; - normal DNS, saniyede birkaç sahte paket gönderen sniffing saldırganlarından ve hizmet reddine (DoS) lara karşı koruma sağlamaz. &lt;strong&gt;DNSCurve&lt;/strong&gt; ise sahte DNS paketlerini tanır ve atar; SMTP, HTTP, HTTPS gibi bazı protokoller DoS’a karşı savunmasızdırlar.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;güvenlik&quot;&gt;Güvenlik&lt;/h3&gt;
-
-&lt;p&gt;DNSCurve, &lt;strong&gt;NIST&lt;/strong&gt;(Ulusal Standartlar ve Teknoloji Enstitüsü)’nin kabaca 3072-bit RSA’ya eşdeğer olduğunu tahmin ettiği 256-bit eliptik eğri şifrelemeyi kullanır. &lt;code class=&quot;highlighter-rouge&quot;&gt;ECRYPT&lt;/code&gt; benzer bir eşdeğerliği bildirir. Sorgu başına sorguya açık anahtarlı şifreleme (SSH ve SSL gibi) ve tekrar çalma saldırılarına karşı koruma sağlamak için 96 bitlik şifreler kullanır.&lt;/p&gt;
-
-&lt;p&gt;Google güvenlik sorumlusu Adam Langley;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Çok yüksek bir ihtimalle kimse büyük bir kuantum bilgisayar olmadan curve25519’un tek bir örneğini çözemez&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;diyor.&lt;/p&gt;
-
-&lt;h3 id=&quot;hız&quot;&gt;Hız&lt;/h3&gt;
-
-&lt;p&gt;Adam Langley kişisel web sitesinde, test edilen eliptik eğriler arasında en hızlı olması için DNSCurve tarafından kullanılan &lt;strong&gt;curve25519&lt;/strong&gt;‘u gösteren hız testleri yayınladı. &lt;sup&gt;&lt;a href=&quot;https://www.imperialviolet.org/2010/12/21/eccspeed.html&quot;&gt;1&lt;/a&gt;&lt;sup&gt;&lt;/sup&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;NSA’ya göre, eliptik eğri kriptografisi, anahtar boyutları arttıkça &lt;code class=&quot;highlighter-rouge&quot;&gt;RSA&lt;/code&gt; ve &lt;code class=&quot;highlighter-rouge&quot;&gt;Diffie-Hellman&lt;/code&gt; ‘a göre geometrik bir oranda çok daha üstün performans sunar.&lt;/p&gt;
-
-&lt;p&gt;Kaynak: https://en.wikipedia.org/wiki/DNSCurve&lt;/p&gt;
-</description>
-                <link>https://mertcangokgoz.com/dnscurve-nedir/</link>
-                <guid>https://mertcangokgoz.com/dnscurve-nedir</guid>
-                <pubDate>Mon, 21 Nov 2016 00:00:00 +0300</pubDate>
         </item>
 
 

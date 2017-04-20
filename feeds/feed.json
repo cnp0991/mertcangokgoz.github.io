@@ -22,6 +22,18 @@
 
     
     {
+        "title": "Dell N4032F Switch İçin Stack Ayarlama",
+        "content": "Geçenlerde yeni kurulum için bir takım konfigürasyon işleri yaparken Dell marka N4032F model 2 adet switch elimize geçti konfigürasyonlar olarak ciscoya her ne kadar benzesede biraz farklı geldi ancak işin içinden çıkmayı güzelce başardık.\n\nAyrıca Stack yapılacak switchlerin her ikisininde aynı sürüm yazılım kullanması ve desteklenen modellerden birinin olması gerekiyor. Bunu görmek için;\n\nshow supported\n\n\n\nBaktık sürümler ve cihazlar stack destekliyor. Stack işlemini yapalımda kurtulalım dedik bu sırada 1Ge lik portlardan yanıt almak istedik dokümantasyondada bu adamlar bize demiyor ki kardeş siz sadece 10Ge lik portlardan stack yapabilirsiniz. Bizde 2 saatimizi 1Ge olan cibikler üzerinden yapmaya çalışıyoruz.\n\nNeyse yemek yedikten sonra aklımıza dank etti de sonradan dokümantasyonda gördük akıl ettik fiberini taktık ve oldu, böyle dediğime bakmayın gene dokümantasyonda şöyle yapın dememiş\n\nHerneyse master belirlememiz gerekiyor biliyorsunuz. Bunun için cihaz Mac adresi en büyük olanı seçiyor olması lazım yani sizin MAC adresi büyük olan switchi ayarlamanız gerekiyor. Bunun için ise;\n\nconfig\nstack\nstack-port tengigabitethernet 1/0/23 stack\nstack-port tengigabitethernet 1/0/24 stack\n\n\n\nbu işlemden sonra direk olarak ikinci switch ede aynı konfigürasyonu eklemeniz gerekiyor. Daha sonra direk olarak do reload her iki yada kaç tane switch konfigure ediyorsanız yeniden başlatırsanız. Otomatik olarak kendisi stack olacak ve ayarlamaya ve konfigürasyonunu senkronize etmeye başlayacak ve hangisinin MAC adresi yüksek ise sadece ondan ayarlanmak üzere diğer switchleri düzenleyecek\n\nDaha sonra yapmanız gereken ek ne kadar ayar yapılacak ise onu yapmak vlan ayarlamak ip vermek ve bağlantı ekipmanlarını ayağa kaldırmak olacak.\n\ntabi stack olup olmadığını görmek için\n\nshow switch\n\n\n\nkomutunu verebilirsiniz direk olarak burada stack olan ve master olan switch görmeniz gerekecek\n\nTabi son olarak ayarları kayıt etmeyi unutmayın sonra çok uğraşırsınız. Kaydetmek için ise\n\nwrite\n\n\n",
+        "link": "/dell-n4032f-switch-icin-stack-ayarlama/",
+        "date": "2017-04-20 00:00:00 +0300",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
         "title": "Centos 7 Üzerine CachetHQ Kurulumu",
         "content": "Projemizin status sayfası için yana döne bir şeyler arıyordum sonuçta bunu da el ile yapmak olmaz. Sonra google arama sonuçlarında CachetHQ adında PHP ve laravel kullanarak yazılmış güzel bir uygulama gözüme çarptı.\n\nilk önce web server ve geriye kalan şeyleri kuralım\n\nyum install -y epel-release\nyum install nginx mariadb-server php5-fpm php5-mysql\nyum update\n\n\n\nŞimdi githubdan repoyu indirelim. direk web serverin dizine indirmeyi unutmayın unutursanızda sonradan taşıyın ki sorun olmasın\n\ncd /var/www/html\ngit clone https://github.com/cachethq/Cachet.git\ncd Cachet\n\n\n\nBiraz ortalarda yapıyoruz gibi olacak ama mysql için bi kurulum yapmamız gerekiyor ön tanımlı kullanıcıyı tanımlamak için vs\n\nmysql_secure_installation\n\n\n\nŞimdi bu girdiğiniz Cachet klasörünün içerisinde .env.example diye bir dosya var bunun adını aşağıdakinin yardımı ile değiştiriyoruz.\n\nsudo mv .env.example .env\n\n\n\nNano ile bu dosyanın içerisine giriyoruz.\n\nAPP_ENV=production\nAPP_DEBUG=false\nAPP_URL=http://localhost\nAPP_KEY=SomeRandomString\n\nDB_DRIVER=mysql\nDB_HOST=localhost\nDB_DATABASE=cachet\nDB_USERNAME=homestead\nDB_PASSWORD=secret\nDB_PORT=null\n\nCACHE_DRIVER=apc\nSESSION_DRIVER=apc\nQUEUE_DRIVER=database\nCACHET_EMOJI=false\n\nMAIL_DRIVER=smtp\nMAIL_HOST=mailtrap.io\nMAIL_PORT=2525\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ADDRESS=null\nMAIL_NAME=\"Project Status Page\"\nMAIL_ENCRYPTION=tls\n\nREDIS_HOST=null\nREDIS_DATABASE=null\nREDIS_PORT=null\n\nGITHUB_TOKEN=null\n\n\n\nBu işlemi de başarılı bir şekilde yaptıysanız sıra geldi composer indirmeye dediğim gibi bu arkadaş php frameworkü ile yazıldığı için biraz teferruatlı\n\nsudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer \n\n\n\nSonra bir güzel kuruyoruz.\n\nsudo composer install --no-dev -o\n\n\n\nDaha ileri gitmeden önce, APP_KEY yapılandırmasını ayarlamamız gerekecek. Bu, Cachet’de kullanılan tüm şifrelemeler için kullanılacak\n\nphp artisan key:generate\n\n\n\nBu komutu çalıştırmadan önce .env için doğru izinlere sahip olduğunuzdan emin olun. Eminseniz artık kurulumu sonlandıralım\n\nphp artisan app:install\n\n\n\nSıra geldi nginx için yapılandırmalara\n\n# Upstream to abstract backend connection(s) for php\nupstream php {\n    server unix:/tmp/php-cgi.socket;\n    server 127.0.0.1:9000;\n}\n\nserver {\n    server_name  cachet.mycompany.com; \n    listen 80 default;\n    rewrite ^(.*) https://cachet.mycompany.com$1 permanent;\n}\n\n# HTTPS server\n\nserver {\n    listen 443;\n    server_name cachet.mycompany.com;\n\n    root /var/vhost/cachet.mycompany.com/public;\n    index index.php;\n\n    ssl on;\n    ssl_certificate /etc/ssl/crt/cachet.mycompany.com.crt; # Or wherever your crt is\n    ssl_certificate_key /etc/ssl/key/cachet.mycompany.com.key; # Or wherever your key is\n    ssl_session_timeout 5m;\n\n    # Best practice as at March 2014\n    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;\n    ssl_prefer_server_ciphers on;\n    ssl_ciphers \"ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA\";\n    ssl_buffer_size 1400; # 1400 bytes, within MTU - because we generally have small responses. Could increase to 4k, but default 16k is too big\n\n    location / {\n        add_header Strict-Transport-Security max-age=15768000;\n        try_files $uri /index.php$is_args$args;\n    }\n\n    location ~ \\.php$ {\n                include fastcgi_params;\n                fastcgi_pass unix:/var/run/php5-fpm.sock;\n                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\n                fastcgi_index index.php;\n                fastcgi_keep_conn on;\n                add_header Strict-Transport-Security max-age=15768000;\n    }\n}\n\n\n\nDaha sonrasında nginx ve php5 yi çalıştırın.\n\nYukardaki ayar dosyası içerisinde SSL kurulumu gerektirecek parametreler bulunmaktadır. Kısacası size 1 adet 1 yıl geçerli bir SSL gerekmektedir. Bunu unutmayın sonra yok efendim çalışmıyo olmasın.\n\n",
         "link": "/centos-7-uzerine-cachethq-kurulumu/",
@@ -6765,6 +6777,18 @@
         "link": "/category/windows/",
         "date": null,
         "excerpt": "Windows kategorisindeki yazılar",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Network",
+        "content": "",
+        "link": "/category/network/",
+        "date": null,
+        "excerpt": "Network kategorisindeki yazılar",
         "search_omit": ""
     }
     
