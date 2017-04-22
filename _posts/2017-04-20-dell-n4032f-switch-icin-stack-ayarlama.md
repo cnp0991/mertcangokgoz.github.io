@@ -5,6 +5,7 @@ date: 2017-04-20
 type: post
 categories: network
 description: Geçenlerde yeni kurulum için bir takım konfigürasyon işleri yaparken Dell marka N4032F model 2 adet switch elimize geçti konfigürasyonlar
+commentid: 8
 ---
 
 Geçenlerde yeni kurulum için bir takım konfigürasyon işleri yaparken Dell marka N4032F model 2 adet switch elimize geçti konfigürasyonlar olarak ciscoya her ne kadar benzesede biraz farklı geldi ancak işin içinden çıkmayı güzelce başardık.
