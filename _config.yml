@@ -5,7 +5,6 @@ highlighter: rouge
 lsi: false
 
 gems:
-#  - amp-jekyll
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
@@ -17,9 +16,6 @@ gems:
 
 #Ditaaa Settings
 ditaa_output_directory: /assets/ditaa
-
-#Jekyll AMP
-#ampdir: amp
 
 #Jekyll gist
 gist:
@@ -33,9 +29,26 @@ jekyll-archives:
   permalinks:
     year: '/arsiv/:year/'
 
+# Jekyll SEO
+social:
+  name: Mertcan GÖKGÖZ
+  links:
+    - http://twitter.com/mertcangokgoz
+    - https://www.linkedin.com/in/mertcangokgoz
+    - https://plus.google.com/+MertcanGokgoz
+    - https://github.com/MertcanGokgoz
+    - https://keybase.io/MertcanGokgoz
+
+webmaster_verifications:
+  google: 72uYg4UxAer0YwWdtkU93OGqjNq7ZThpqe0M4KxyvIg
+  bing: 2183CAED5258723C183F825A20DF9C4A
+  yandex: 67dfe7436c3122f7
+
+lang: tr_TR
+
 #Main Settings
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock, .travis.yml, .ruby-version, .bundle, build.sh, vendor, Rakefile]
-timezone: Europe/Istanbul
+timezone: 'Europe/Istanbul'
 encoding: 'utf-8'
 
 #Markdown Settings

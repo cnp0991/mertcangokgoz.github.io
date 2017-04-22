@@ -1,6 +1,6 @@
     /* TEAM */
     Name: Mertcan
-    Surname: Gokgoz
+    Surname: GÖKGÖZ
     Site: https://mertcangokgoz.com
     Contacts: admin@mertcangokgoz.com
     Twitter: @mertcangokgoz
@@ -9,7 +9,7 @@
                         [...]
 
     /* SITE */
-    Last update: 2017/01/23
+    Last update: 2017/04/22
     Standards: HTML5, CSS3
     Components: Font Awesome, Font API etc.
     Software: Jekyll

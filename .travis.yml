@@ -1,5 +1,12 @@
 os: linux
+dist: trusty
+sudo: required
 language: ruby
+cache: bundler
+addons:
+  apt:
+    packages:
+      - haveged
 install:
 - bundle install
 before_script:

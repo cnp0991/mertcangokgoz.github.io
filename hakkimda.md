@@ -2,12 +2,8 @@
 layout: fourpage
 title: Hakkımda
 type: page
-description: Mertcan GÖKGÖZ Kimdir ?
+description: Mertcan GÖKGÖZ hakkında ?
 ---
-
-Merhaba
-
-2 yıl kadar windows sistemler üzerine çalışmalar yaptıktan sonra **GNU/Linux** alanına geçiş yaptım. 5 yılı aşkın bir süredir bu alanda kendimi geliştirmekteyim.
 
 ### Neler biliyorum
 
@@ -23,9 +19,9 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 
 ## Deneyim
 
-- Forte Bilgi ve İletişim Teknolojileri Sanayi ve Ticaret A.Ş. (2017)
-- Özgür Yazılım A.Ş. (2016)
-- ASUS Türkiye (2011)
+- Forte Bilgi ve İletişim Teknolojileri Sanayi ve Ticaret A.Ş. (2017) - Network Destek Uzmanı
+- Özgür Yazılım A.Ş. (2016) - Sistem Yöneticisi
+- ASUS Türkiye (2011) - Teknik Destek
 
 ## Yayınlar
 
@@ -47,8 +43,6 @@ GNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Ser
 ## Diller
 
 - İngilizce, Orta
-- Fransızca, Başlangıç
-- Almanca, Başlangıç
 
 ## Eğitim
 

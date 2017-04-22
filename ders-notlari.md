@@ -18,5 +18,7 @@ Arşivde bulunan İçerikler;
 *   Geçmiş yıllara ait sınav soruları(Vize ve Final)
 *   Bitirilmiş proje örnekleri
 *   Tamamlanmış tüm ödevler ve çalışmalar
+*   Staj ve İş başında eğitim Dokümanları
+*   Dönem projesi örnekleri
 
-# [Tüm Ders Notları İçin Tıklayın](https://drive.google.com/drive/folders/0B7ExQgcdBN8pYUdWaDZEcGxLSUE?usp=sharing)
+# [Tüm Ders Notları İçin Tıklayın](https://drive.google.com/)
