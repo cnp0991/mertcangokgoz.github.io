@@ -6615,7 +6615,7 @@
     
     ,{
         "title": "Ders Notları",
-        "content": "\n\nBaşkent Üniversitesi - Ders Notları\n\nBu ders notları Başkent Üniversitesi Ticari bilimler fakültesinde ve Hukuk Fakültesinde okutulmakta olan tüm ders notlarına ait dokümanları içermektedir. Bu siteden indirilen tüm ders notları özgürce herkes tarafından kullanılabilir, dağıtılabilir ve değiştirilebilir.\n\nArşivde bulunan İçerikler;\n\n\n  Ders notları\n  Ders kitaplarının PDF halleri\n  Geçmiş yıllara ait sınav soruları(Vize ve Final)\n  Bitirilmiş proje örnekleri\n  Tamamlanmış tüm ödevler ve çalışmalar\n\n\nTüm Ders Notları İçin Tıklayın\n",
+        "content": "\n\nBaşkent Üniversitesi - Ders Notları\n\nBu ders notları Başkent Üniversitesi Ticari bilimler fakültesinde ve Hukuk Fakültesinde okutulmakta olan tüm ders notlarına ait dokümanları içermektedir. Bu siteden indirilen tüm ders notları özgürce herkes tarafından kullanılabilir, dağıtılabilir ve değiştirilebilir.\n\nArşivde bulunan İçerikler;\n\n\n  Ders notları\n  Ders kitaplarının PDF halleri\n  Geçmiş yıllara ait sınav soruları(Vize ve Final)\n  Bitirilmiş proje örnekleri\n  Tamamlanmış tüm ödevler ve çalışmalar\n  Staj ve İş başında eğitim Dokümanları\n  Dönem projesi örnekleri\n\n\nTüm Ders Notları İçin Tıklayın\n",
         "link": "/ders-notlari/",
         "date": null,
         "excerpt": "Bu ders notları Başkent Üniversitesi Ticari bilimler fakültesi ve Hukuk Fakültesinde okutulmakda olan tüm dokümanları içermektedir.",
@@ -6629,7 +6629,7 @@
     
     ,{
         "title": "Gizlilik Politikası",
-        "content": "![Gizlilik Politikası](/assets/gizlilikgorsel1.jpg)\n\n1. Sitemiz içerisindeki ziyaretçi davranışları **Google Analytics** aracılığı ile gözlemlenmektedir.\n2. Yaptığınız yorumlarda kullandığınız kişisel bilgileriniz **3.kişi veya kurumlar ile kesinlikle paylaşmaz.**\n3. Yapılan yorumlarda ip adresleri **kayıt altına alınmaktadır.** Adli Makamlar tarafından talebi halinde verilebilir.\n4. Yorumlarda kişisel hak ve hürriyetlere önem verilir. Kişiler ve Kurumlar hakkında karalayıcı, aşağılayıcı yorumlar tarafımızca onaylanmaz.\n5. Sitemize giriş yaptığınızda ki kullandığınız tarayıcı bilgileri ve ip adresiniz kayıt altına alınmaz.\n",
+        "content": "![Gizlilik Politikası](/assets/gizlilikgorsel1.jpg)\n\n1. Sitemiz içerisindeki ziyaretçi davranışları **Google Analytics** aracılığı ile gözlemlenmektedir.\n2. Yaptığınız yorumlarda kullandığınız kişisel bilgileriniz **3.kişi veya kurumlar ile kesinlikle paylaşılmaz.**\n3. Yapılan yorumlarda ip adresleri **kayıt altına alınmamaktadır.**\n4. Yorumlarda kişisel hak ve hürriyetlere önem verilir. Kişiler ve Kurumlar hakkında karalayıcı, aşağılayıcı yorumlar tarafımızca kalıcı olarak **silinir.**\n5. Web Sitesine giriş yaptığınız andan itibaren kullandığınız tarayıcı bilgileri ve ip adresiniz **kayıt altına alınmaz.**\n6. Bu web sitesine giriş yaptığınız andan itibaren yukarıda yazan **gizlilik politikası kurallarını kabul etmiş sayılırsınız.**",
         "link": "/gizlilik-politikasi/",
         "date": null,
         "excerpt": "Mertcan GÖKGÖZ Gizlilik Politikası",
@@ -6641,10 +6641,10 @@
     
     ,{
         "title": "Hakkımda",
-        "content": "Merhaba\n\n2 yıl kadar windows sistemler üzerine çalışmalar yaptıktan sonra **GNU/Linux** alanına geçiş yaptım. 5 yılı aşkın bir süredir bu alanda kendimi geliştirmekteyim.\n\n### Neler biliyorum\n\nGNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Server 2012), MsSQL Server (2012/2014), Routing, Switching, HTML5, PHP, Python, .NET, Shell Scripting(Bash, Sh vs), MySQL, PostgreSQL, Couchbase, Redis, HAproxy, Keepalived, Apache, Nginx, Wordpress, Django, OpenVPN, Alfresco, Zabbix, TCP/IP, SSL/TLS, MS DNS, PfSense, Iptables, Mod_Security, OpenVAS, FTP, Microsoft Office, Virtualization, Ansible, Docker, Vagrant\n\n\n## Kurslar\n\n- MCSD/MCPD - 51254\n- CCNA/CCNA Security - NaN\n- CEH - NaN\n- Stratejik insan Kaynakları Yönetimi - 151018106271\n\n## Deneyim\n\n- Forte Bilgi ve İletişim Teknolojileri Sanayi ve Ticaret A.Ş. (2017)\n- Özgür Yazılım A.Ş. (2016)\n- ASUS Türkiye (2011)\n\n## Yayınlar\n\n- Programlamaya Nasıl Başlanır / Hosting Dergi Sayı 18, 23 Mayıs 2016\n- Ddos Saldırılarında Doğru Bilinen Yanlışlar / Hosting Dergi Sayı 19, 21 Haziran 2016\n- Çocuklarınıza Kodlamayı Sevdirin / Hosting Dergi Sayı 20, 25 Temmuz 2016\n- Tek IP Adresine Birden Fazla SSL Kurulumu / Hosting Dergi Sayı 23, 23 Ekim 2016\n- DNSCurve Nedir Digerlerine Gore Avantajları Nelerdir / Hosting Dergi Sayı 24, 24 Şubat 2017\n- HTTP Üzerinden Temel Kimlik Doğrulama kullanmayın / Hosting Dergi Sayı 25, 10 Mart 2017\n\n## Verdiğim Eğitim ve Seminerler\n\n(Henüz yok)\n\n## Onurlar ve Ödüller\n\n- Dünyayı Kurtaran Hacker'ın Oğlu CTF Invictus Europe, Haziran 2016 -  CTF Yarışması \"YGZ\" Takımı 13.Sıra Top 20 Ödülü\n\n## Diller\n\n- İngilizce, Orta\n- Fransızca, Başlangıç\n- Almanca, Başlangıç\n\n## Eğitim\n\n- Başkent Üniversitesi Ticari Bilimler Fakültesi, Yönetim Bilişim Sistemleri, 2012 - 2017\n- İnönü Anadolu Lisesi Türkçe - Matematik, 2010 - 2012\n\n### Bu blogun amacı\n\nBu blogda yer alan tüm dokümanlar anlatıldığı gibi pratikde çalıştığını gözlemlediklerimi oluşturmaktadır. Site de bulunan tüm içerik online doküman olması amacıyla daha sonradan kullanılması için yazılmakta ve her daim güncel tutulmaktadır. Dokümanlar ile yapılan herhangi bir işte sorun yaşarsanız hiçbir şekilde sorumluluk kabul etmiyorum. **Başarınızda başarısızlığınızda tamamen size aittir.**\n\nYayınlanan tüm yazılar başka platformlar da kaynak gösterilerek istenildiği gibi paylaşılabilir, kullanılabilir, dağıtılabilir ve değiştirilebilir.\n\n[CV_Mertcan_GÖKGÖZ](https://mertcangokgoz.com/CV_Mertcan_GOKGOZ_2017.pdf)\n",
+        "content": "### Neler biliyorum\n\nGNU/Linux (RHEL, CentOS, Debian, Ubuntu…), Windows(XP/2003/2008/7/8/8.1/10/Server 2012), MsSQL Server (2012/2014), Routing, Switching, HTML5, PHP, Python, .NET, Shell Scripting(Bash, Sh vs), MySQL, PostgreSQL, Couchbase, Redis, HAproxy, Keepalived, Apache, Nginx, Wordpress, Django, OpenVPN, Alfresco, Zabbix, TCP/IP, SSL/TLS, MS DNS, PfSense, Iptables, Mod_Security, OpenVAS, FTP, Microsoft Office, Virtualization, Ansible, Docker, Vagrant\n\n\n## Kurslar\n\n- MCSD/MCPD - 51254\n- CCNA/CCNA Security - NaN\n- CEH - NaN\n- Stratejik insan Kaynakları Yönetimi - 151018106271\n\n## Deneyim\n\n- Forte Bilgi ve İletişim Teknolojileri Sanayi ve Ticaret A.Ş. (2017) - Network Destek Uzmanı\n- Özgür Yazılım A.Ş. (2016) - Sistem Yöneticisi\n- ASUS Türkiye (2011) - Teknik Destek\n\n## Yayınlar\n\n- Programlamaya Nasıl Başlanır / Hosting Dergi Sayı 18, 23 Mayıs 2016\n- Ddos Saldırılarında Doğru Bilinen Yanlışlar / Hosting Dergi Sayı 19, 21 Haziran 2016\n- Çocuklarınıza Kodlamayı Sevdirin / Hosting Dergi Sayı 20, 25 Temmuz 2016\n- Tek IP Adresine Birden Fazla SSL Kurulumu / Hosting Dergi Sayı 23, 23 Ekim 2016\n- DNSCurve Nedir Digerlerine Gore Avantajları Nelerdir / Hosting Dergi Sayı 24, 24 Şubat 2017\n- HTTP Üzerinden Temel Kimlik Doğrulama kullanmayın / Hosting Dergi Sayı 25, 10 Mart 2017\n\n## Verdiğim Eğitim ve Seminerler\n\n(Henüz yok)\n\n## Onurlar ve Ödüller\n\n- Dünyayı Kurtaran Hacker'ın Oğlu CTF Invictus Europe, Haziran 2016 -  CTF Yarışması \"YGZ\" Takımı 13.Sıra Top 20 Ödülü\n\n## Diller\n\n- İngilizce, Orta\n\n## Eğitim\n\n- Başkent Üniversitesi Ticari Bilimler Fakültesi, Yönetim Bilişim Sistemleri, 2012 - 2017\n- İnönü Anadolu Lisesi Türkçe - Matematik, 2010 - 2012\n\n### Bu blogun amacı\n\nBu blogda yer alan tüm dokümanlar anlatıldığı gibi pratikde çalıştığını gözlemlediklerimi oluşturmaktadır. Site de bulunan tüm içerik online doküman olması amacıyla daha sonradan kullanılması için yazılmakta ve her daim güncel tutulmaktadır. Dokümanlar ile yapılan herhangi bir işte sorun yaşarsanız hiçbir şekilde sorumluluk kabul etmiyorum. **Başarınızda başarısızlığınızda tamamen size aittir.**\n\nYayınlanan tüm yazılar başka platformlar da kaynak gösterilerek istenildiği gibi paylaşılabilir, kullanılabilir, dağıtılabilir ve değiştirilebilir.\n\n[CV_Mertcan_GÖKGÖZ](https://mertcangokgoz.com/CV_Mertcan_GOKGOZ_2017.pdf)\n",
         "link": "/hakkimda/",
         "date": null,
-        "excerpt": "Mertcan GÖKGÖZ Kimdir ?",
+        "excerpt": "Mertcan GÖKGÖZ hakkında ?",
         "search_omit": ""
     }
     
@@ -6653,7 +6653,7 @@
     
     ,{
         "title": "Barındıran",
-        "content": "Wordpress veya Drupal gibi hazır sistemler kullanmak yerine güncelleme ve yenileme derdi gerektirmeyen [Jekyll Site Generator](https://jekyllrb.com/) Kullanılmıştır. Jekyll ile Markdown formatında yazılan yazıları otomatik olarak statik dosyalara dönüştürebilirsiniz. Zahmetsizdir kullanımı kolaydır ve sıkıntı çıkartmaz ayrıca tema olarak temelde [Lagom teması](https://github.com/swanson/lagom) kullanılarak geliştirilmiştir.\n\nPara vermemek isteyişimden dolayı tüm bu içerik [Github Pages](https://pages.github.com/) servisin de ücretsiz bir şekilde host edilmektedir. Statik olarak sunulacak olan içerik [Travis-CI](https://travis-ci.org/) tarafından oluşturulmakta ve Github'a gönderilmektedir.  Yorum yapılabilmesi için [Disqus](https://disqus.com/) adlı sistem kullanılmıştır.\n\nKullanıcı davranışlarını ve istatistiklerini izleyebilmek için [Google Analytcis](https://analytics.google.com/analytics/web/) kullanılmaktadır. Yayınlanan tüm içerik [Creative Commons Atıf-Paylaşım Lisansı](https://creativecommons.org/licenses/by-sa/3.0/) altında bulunmaktadır. Bu bağlamda yazılar kaynak verilerek kopyalanabilir, değiştirilebilir ve geliştirilebilir.\n\n**Reklam Yok, Satış Ortaklığı Yok, Siteler Arası İstek Yok**\n\n![Github Images](/assets/jekyll-opt.jpg)\n",
+        "content": "Wordpress veya Drupal gibi hazır sistemler kullanmak yerine güncelleme ve yenileme derdi gerektirmeyen [Jekyll Site Generator](https://jekyllrb.com/) Kullanılmıştır. Jekyll ile Markdown formatında yazılan yazıları otomatik olarak statik dosyalara dönüştürülmektedir. Zahmetsizdir kullanımı kolaydır. Tema olarak temelde [Lagom teması](https://github.com/swanson/lagom) kullanılarak geliştirilmiştir.\n\nTüm bu içerik [Github Pages](https://pages.github.com/) servisin de ücretsiz bir şekilde host edilmektedir. Statik olarak sunulacak olan içerik [Travis-CI](https://travis-ci.org/) tarafından oluşturulmakta ve Github'a gönderilmektedir.  Yorum yapılabilmesi için [Github Comments issue API](https://github.com/) adlı sistem kullanılmıştır.\n\nKullanıcı davranışlarını ve istatistiklerini izleyebilmek için [Google Analytcis](https://analytics.google.com/analytics/web/) kullanılmaktadır. Yayınlanan tüm içerik [Creative Commons Atıf-Paylaşım Lisansı](https://creativecommons.org/licenses/by-nc-sa/4.0/) altında bulunmaktadır. Bu bağlamda yazılar kaynak verilerek atıfda bulunularak kopyalanabilir, değiştirilebilir ve geliştirilebilir. Ancak kesinlikle ve kesinlikle ticari amaçlar için kullanılamaz.\n\n**Reklam Yok, Satış Ortaklığı Yok, Siteler Arası İstek Yok**\n\n![Github Images](/assets/jekyll-opt.jpg)\n",
         "link": "/hosted/",
         "date": null,
         "excerpt": "Mertcan GÖKGÖZ kişisel web sitesi hakkında teknik detaylar",
@@ -6665,94 +6665,10 @@
     
     ,{
         "title": "İletişim",
-        "content": "Reklam ve Sponsorluk anlaşmaları,\n\nSoru, Görüşleriniz,\n\nve diğer tüm konular için \n\n\n\n\n\n\nE-Mail : mertcan.gokgoz@gmail.com\n",
+        "content": "Soru, Görüşleriniz\n\nve diğer tüm konular için \n\n\n\n\n\n\nE-Mail : admin@mertcangokgoz.com\n",
         "link": "/iletisim/",
         "date": null,
         "excerpt": "Mertcan GÖKGÖZ ile iletişim kur",
-        "search_omit": ""
-    }
-    
-    
-
-    
-    ,{
-        "title": "Arama",
-        "content": "\n   Aramak istediğinizi yazın ve \"Arama YAP\" butonuna tıklayarak bekleyin...\n   \n   \n \n \n    Sonuç bulundu = &ldquo;&rdquo;\n \n \n \n \n \n \n",
-        "link": "/search/",
-        "date": null,
-        "excerpt": "Arama yapabileceğiniz yer",
-        "search_omit": "true"
-    }
-    
-    
-
-    
-    ,{
-        "title": "Genel",
-        "content": "",
-        "link": "/category/genel/",
-        "date": null,
-        "excerpt": "Genel kategorisindeki yazılar",
-        "search_omit": ""
-    }
-    
-    
-
-    
-    ,{
-        "title": "Analiz",
-        "content": "",
-        "link": "/category/analiz/",
-        "date": null,
-        "excerpt": "Analiz kategorisindeki yazılar",
-        "search_omit": ""
-    }
-    
-    
-
-    
-    ,{
-        "title": "Linux",
-        "content": "",
-        "link": "/category/linux/",
-        "date": null,
-        "excerpt": "Linux kategorisindeki yazılar",
-        "search_omit": ""
-    }
-    
-    
-
-    
-    ,{
-        "title": "Güvenlik",
-        "content": "",
-        "link": "/category/guvenlik/",
-        "date": null,
-        "excerpt": "Güvenlik kategorisindeki yazılar",
-        "search_omit": ""
-    }
-    
-    
-
-    
-    ,{
-        "title": "Nginx",
-        "content": "",
-        "link": "/category/nginx/",
-        "date": null,
-        "excerpt": "Nginx kategorisindeki yazılar",
-        "search_omit": ""
-    }
-    
-    
-
-    
-    ,{
-        "title": "Jekyll",
-        "content": "",
-        "link": "/category/jekyll/",
-        "date": null,
-        "excerpt": "Jekyll kategorisindeki yazılar",
         "search_omit": ""
     }
     
@@ -6772,11 +6688,35 @@
 
     
     ,{
+        "title": "Jekyll",
+        "content": "",
+        "link": "/category/jekyll/",
+        "date": null,
+        "excerpt": "Jekyll kategorisindeki yazılar",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
         "title": "Windows",
         "content": "",
         "link": "/category/windows/",
         "date": null,
         "excerpt": "Windows kategorisindeki yazılar",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Genel",
+        "content": "",
+        "link": "/category/genel/",
+        "date": null,
+        "excerpt": "Genel kategorisindeki yazılar",
         "search_omit": ""
     }
     
@@ -6796,12 +6736,72 @@
 
     
     ,{
+        "title": "Analiz",
+        "content": "",
+        "link": "/category/analiz/",
+        "date": null,
+        "excerpt": "Analiz kategorisindeki yazılar",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
         "title": "Egitimler",
         "content": "",
         "link": "/category/egitimler/",
         "date": null,
         "excerpt": "Eğitimler kategorisindeki yazılar",
         "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Nginx",
+        "content": "",
+        "link": "/category/nginx/",
+        "date": null,
+        "excerpt": "Nginx kategorisindeki yazılar",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Güvenlik",
+        "content": "",
+        "link": "/category/guvenlik/",
+        "date": null,
+        "excerpt": "Güvenlik kategorisindeki yazılar",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Linux",
+        "content": "",
+        "link": "/category/linux/",
+        "date": null,
+        "excerpt": "Linux kategorisindeki yazılar",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Arama",
+        "content": "\n   Aramak istediğinizi yazın ve \"Arama YAP\" butonuna tıklayarak bekleyin...\n   \n   \n \n \n    Sonuç bulundu = &ldquo;&rdquo;\n \n \n \n \n \n \n",
+        "link": "/search/",
+        "date": null,
+        "excerpt": "Arama yapabileceğiniz yer",
+        "search_omit": "true"
     }
     
     
@@ -6823,7 +6823,7 @@
     
     ,{
         "title": "Kullanım Koşulları",
-        "content": "![kullanim-kosullari](/assets/kullanim-kosullari.jpg)\n\n1. Sitede yer alan yazıların tamamı **\"Mertcan GÖKGÖZ\"** tarafından sunulmaktadır.\n2. Sitemizde yer alan yorumların yasal yükümlülüğünden yorumu yapan kullanıcı **sorumlu** tutulmaktadır\n3. Sitede yer alan yazılar farklı sitelerde **tıklanabilir link** ile kaynak ibaresi yazı sonuna eklenerek kullanılabilir, geliştirilebilir ve değiştirilebilir.\n4. Bu web sitesine giriş yaptığınız andan itibaren yukarıda yazan **şart ve koşulları kabul etmiş sayılırsınız.**\n",
+        "content": "![kullanim-kosullari](/assets/kullanim-kosullari.jpg)\n\n1. Sitede yer alan yazıların tamamı **\"Mertcan GÖKGÖZ\"** tarafından sunulmaktadır.\n2. Sitemizde yer alan yorumların yasal yükümlülüğünden yorumu yapan kullanıcı **sorumlu** tutulmaktadır.\n3. Sitede yer alan yazılar farklı sitelerde **tıklanabilir link** ile kaynak ibaresi yazı sonuna eklenerek kullanılabilir, geliştirilebilir ve değiştirilebilir.\n4. Bu web sitesine giriş yaptığınız andan itibaren yukarıda yazan **şart ve koşulları kabul etmiş sayılırsınız.**\n",
         "link": "/kullanim-kosullari/",
         "date": null,
         "excerpt": "Mertcan GÖKGÖZ Web Sitesi Kullanım Koşulları",
