@@ -5,6 +5,7 @@ date: 2017-05-01
 type: post
 categories: analiz
 description: Günlerden bir gün BTK bir açıklama yaparak kotaların kaldırılması konusunda bir yaptırım yapılması gerektiğini çok şikayet geldiğini
+commentid: 9
 ---
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/BHg9Gae1IR4" frameborder="0" allowfullscreen></iframe>
