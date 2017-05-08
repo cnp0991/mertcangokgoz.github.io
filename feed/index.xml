@@ -5,10 +5,35 @@
         <description>Mertcan GÖKGÖZ - Özgür Yazılım, Sunucu Yönetimi ve Hizmetleri - Mertcan GÖKGÖZ</description>
         <link>https://mertcangokgoz.com</link>
         <link></link>
-        <lastBuildDate>Tue, 02 May 2017 00:38:30 +0300</lastBuildDate>
-        <pubDate>Tue, 02 May 2017 00:38:30 +0300</pubDate>
+        <lastBuildDate>Mon, 08 May 2017 23:00:42 +0300</lastBuildDate>
+        <pubDate>Mon, 08 May 2017 23:00:42 +0300</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Macbook İçin TFTP Yönetim Aracı</title>
+                <description>&lt;p&gt;Macbook içerisinde build-in olarak gelen güzel bir tftp uygulaması bulunuyor. Yapmış olduğum bu betik ile de bağlantı işlemlerini yani TFTP server işlemlerini kolaylaştırmaya çalıştım. Firmware yükleme işlemlerinde oldukça kolaylık sağlaması için yaptım gerçekten de işe yarıyor.&lt;/p&gt;
+
+&lt;p&gt;Neyse uzatmayalım kodu paylaşalım. Dialog kullandım çünkü birazda olsa güzel görünmesi benimde hakkım Kayıp paket yöneticimiz olan homebrew ile &lt;code class=&quot;highlighter-rouge&quot;&gt;dialog&lt;/code&gt; paketini kurmayı unutmayın.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install dialog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ardından hiç bir şey olmamış gibi uygulamayı çalıştırıp kullanabilirsiniz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod +x tftpServer.sh
+./tftpServer.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://gist.github.com/MertcanGokgoz/6388668bfebf2ceeb9c2e1cb6f10c9f9.js&quot;&gt; &lt;/script&gt;
+
+</description>
+                <link>https://mertcangokgoz.com/macbook-icin-tftp-yonetim-araci/</link>
+                <guid>https://mertcangokgoz.com/macbook-icin-tftp-yonetim-araci</guid>
+                <pubDate>Mon, 08 May 2017 00:00:00 +0300</pubDate>
+        </item>
 
         <item>
                 <title>Halksın Sen Küçük Düşün Büyük Ye</title>
@@ -3153,64 +3178,6 @@ sudo apt-get install php5.6-xml
                 <link>https://mertcangokgoz.com/ubuntu-vm-uzerine-laravel-framework-kurulumu/</link>
                 <guid>https://mertcangokgoz.com/ubuntu-vm-uzerine-laravel-framework-kurulumu</guid>
                 <pubDate>Sat, 26 Nov 2016 00:00:00 +0300</pubDate>
-        </item>
-
-        <item>
-                <title>Carrier-Grade NAT Nedir ?</title>
-                <description>&lt;p&gt;Büyük ölçekli NAT (LSN) olarak da bilinen Carrier-grade NAT (CGN), son sitelerin, özellikle konut ağlarının, genel ağa IPv4 adreslerine çevrilen özel ağ adresleriyle yapılandırıldığı, &lt;strong&gt;IPv4&lt;/strong&gt; ağ tasarımına ait bir yaklaşımdır.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Middlebox&lt;/strong&gt;(Trafiği, paket iletme dışında başka amaçlarla dönüştüren, denetleyen, filtreleyen ya da başka türlü yöneten bir ağ cihazı) ağ adres çeviricisi cihazlarını ağ operatörünün ağına gömülür ve pek çok son site arasında ortak adreslerin küçük havuzlarının paylaşılmasına izin verir. Bu, NAT işlevini ve yapılandırmasını müşteriden İnternet servis sağlayıcı ağına kaydırır.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/CGN-IPv4.jpg&quot; alt=&quot;cgn ipv4 gorsel&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Carrier-grade NAT&lt;/strong&gt;, IPv4 adres tükenmesinin hafifletilmesi için bir yaklaşım olarak önerildi.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Carrier-grade NAT&lt;/strong&gt;‘ın eleştirmenleri aşağıdaki hususları savunuyor;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;NAT’ın herhangi bir biçimi gibi, uçtan-uca ilkesine son verir&lt;/li&gt;
-  &lt;li&gt;Durumlu olmasından ötürü, ölçeklenebilirlik ve önemli güvenilirlik sorunları vardır&lt;/li&gt;
-  &lt;li&gt;Adreslerin tercümesi kaydedilmezse, kolluk kuvvetleri işlemleri için kayıt tutma işlemini daha zor hale getirir.&lt;/li&gt;
-  &lt;li&gt;Hizmetleri barındırmanın imkansız olmasını sağlar.&lt;/li&gt;
-  &lt;li&gt;Web barındırma gibi genel bir IP adresi gerektiğinde IPv4 adres tükenme sorununu çözmez.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;CGN’nin bir kullanım senaryosu &lt;strong&gt;NAT444&lt;/strong&gt; olarak tanımlanabilir, çünkü bazı müşterilerin kamu sunucularına olan bağlantıları üç farklı &lt;strong&gt;IPv4&lt;/strong&gt; adresleme alanından geçecektir; müşterinin kendi özel ağı, operatörün özel ağı ve kamusal İnternet ortamı&lt;/p&gt;
-
-&lt;p&gt;Bir başka CGN senaryosu, taşıyıcının ağının IPv6 kullandığı ve bu nedenle yalnızca iki IPv4 adresleme alanına ihtiyaç duyulan Dual-Stack Lite’dır.&lt;/p&gt;
-
-&lt;h2 id=&quot;paylaşılan-adres-alanı&quot;&gt;Paylaşılan adres alanı&lt;/h2&gt;
-
-&lt;p&gt;Bir &lt;strong&gt;ISS&lt;/strong&gt;(İnternet Servis Sağlayıcısı), bir CGN dağıttığında ve müşterilerini numaralandırmak için RFC 1918 adres alanını kullanıyorsa, müşteride bulunan donanım zaten RFC 1918 alanını kullanmanın durmasına neden olur. Bunun nedeni, aynı adreslerin hem ağ ara birimlerin içinde hem de dışında kullanılması durumunda yönlendirme ve NAT’ın çalışmamasıdır.&lt;/p&gt;
-
-&lt;p&gt;Bu, bazı İSS’lerin CGN’ler için yeni özel adres alanı tahsis etmek için &lt;strong&gt;ARIN&lt;/strong&gt; içinde politika geliştirmelerini sağlamıştır, ancak ARIN, konunun tipik bir tahsis olmadığı, teknik amaçlı bir rezervasyon olduğunu (RFC 2860’a göre) gösteren politikayı uygulamadan önce IETF(Internet Mühendisliği Görev Gücü)’yi ertelemiştir.&lt;/p&gt;
-
-&lt;p&gt;IETF, ISP CGN dağıtımlarında hem gelen hem de giden ara yüzlerde aynı adresleri işleyebilen NAT aygıtlarında kullanılmak üzere &lt;strong&gt;Paylaşılan Adres Alanını&lt;/strong&gt; ayrıntılandıran RFC 6598’i oluşturdu. ARIN, bu tahsisat için ihtiyaç duyduğu şekilde IANA’ya yer değiştirdi.&lt;/p&gt;
-
-&lt;p&gt;Ayrılan ve kullanılan adres bloğu 100.64.0.0/10’ oldu. Böylelikle özel ip adreslerini dışarıya açmış oldular.&lt;/p&gt;
-
-&lt;h2 id=&quot;sorunlar&quot;&gt;Sorunlar&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Bir IPv4 adresinin herkese açık olup olmadığını anlamaya çalışan aygıtlar veya yazılımlar, yeni alanı tanımak için güncellenmelidir aksi taktirde açık veya kapalı olduğunu anlayamazlar.&lt;/li&gt;
-  &lt;li&gt;NAT aygıtları için daha fazla özel IPv4 adres alanı atamak, IPv6’ya geçiş sürecini uzatabilir.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;dezavantajları&quot;&gt;Dezavantajları&lt;/h3&gt;
-
-&lt;p&gt;Carrier-grade NAT, genellikle ISS müşterilerinin port yönlendirme özelliğini kullanmasını engeller, çünkü ağ adresi çevirisi (NAT) genellikle ağdaki NAT aygıtlarının bağlantı noktalarını harici ara birimdeki diğer bağlantı noktalarına eşleyerek gerçekleştirilir.&lt;/p&gt;
-
-&lt;p&gt;Bu, yönlendiricinin yanıtları doğru cihaza eşleyeceği şekilde yapılır; Carrier-grade NAT ağlarında, tüketici tarafındaki yönlendirici port yönlendirmesi için yapılandırılmış olmasına rağmen, CGN’yi çalıştıran ISS’nin “ana yönlendiricisi”, bu bağlantı noktasını iletmeyi engeller çünkü gerçek port müşterinin ayarladığı port değildir. Eski dezavantajın üstesinden gelmek için, Port Kontrol Protokolü (PCP) RFC 6887’de standartlaştırılmıştır.&lt;/p&gt;
-
-&lt;p&gt;Buna ek olarak, nadir bulunan durumlarda IP adreslerine dayanan bir yasak söz konusu olabilir;&lt;/p&gt;
-
-&lt;p&gt;Örneğin Wikipedia, spam kullanan bir kullanıcıyı temsil eden IP adresini yasaklayarak kullanıcıyı engelleyebilir. Bu kullanıcı operatör sınıfı NAT’ın gerisinde kalırsa, aynı genel IP’yi kullanan spamcı ile paylaşan diğer kullanıcıları yanlışlıkla engeller.&lt;/p&gt;
-
-&lt;p&gt;Kaynak: https://en.wikipedia.org/wiki/Carrier-grade_NAT&lt;/p&gt;
-</description>
-                <link>https://mertcangokgoz.com/carrier-grade-nat-nedir/</link>
-                <guid>https://mertcangokgoz.com/carrier-grade-nat-nedir</guid>
-                <pubDate>Thu, 24 Nov 2016 00:00:00 +0300</pubDate>
         </item>
 
 
