@@ -22,6 +22,18 @@
 
     
     {
+        "title": "Macbooklarınızda Kullanabileceğiniz Uygulamalar",
+        "content": "Özellikle Mac OSX kullanan arkadaşlarımızı da artık düşünerek burada güzel ve işe yarar uygulamaları toplamaya karar verdim. Özellikle bazı işlemler için çok güzel programlar mevcut üstelik sürücü derdi de yok\n\nLafı uzatmadan hemen uygulamalarımıza geçelim\n\n\n  Serial\n  LanScan\n  Termius\n  TweetDeck\n  Telegram\n  VMware Fusion\n  VMware Remote Console\n  Paragon NTFS for MAC\n  Microsoft Remote Desktop\n  iTerm\n  Numi\n  CoRD\n  LimeChat\n  4K Video Downloader\n  pgAdmin 4\n  Visual Studio Code\n  TeamViewer\n  Dash\n  Github Desktop\n  Spotify\n  KeePassX\n  Microsoft Office 365\n  Microsoft Outlook\n  VSD Viewer\n  Anaconda\n  VLC Media Player\n  HomeBrew\n\n\nNetwork ve aynı zamanda sistem ile ilgileniyorsanız yukarıdaki uygulamaları mutlaka kurmanız ve kullanmanızı şiddetle tavsiye ediyorum. Ayrıca normal zamanlarda kullanabileceğiniz uygulamalarda mevcut\n",
+        "link": "/macbooklarinizda-kullanabileceginiz-uygulamalar/",
+        "date": "2017-05-15 00:00:00 +0300",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
         "title": "Macbook İçin TFTP Yönetim Aracı",
         "content": "Macbook içerisinde build-in olarak gelen güzel bir tftp uygulaması bulunuyor. Yapmış olduğum bu betik ile de bağlantı işlemlerini yani TFTP server işlemlerini kolaylaştırmaya çalıştım. Firmware yükleme işlemlerinde oldukça kolaylık sağlaması için yaptım gerçekten de işe yarıyor.\n\nNeyse uzatmayalım kodu paylaşalım. Dialog kullandım çünkü birazda olsa güzel görünmesi benimde hakkım Kayıp paket yöneticimiz olan homebrew ile dialog paketini kurmayı unutmayın.\n\nbrew install dialog\n\n\n\nArdından hiç bir şey olmamış gibi uygulamayı çalıştırıp kullanabilirsiniz.\n\nchmod +x tftpServer.sh\n./tftpServer.sh\n\n\n\n\n\n",
         "link": "/macbook-icin-tftp-yonetim-araci/",
@@ -6866,6 +6878,8 @@
         "search_omit": ""
     }
     
+    
+
     
 
     
