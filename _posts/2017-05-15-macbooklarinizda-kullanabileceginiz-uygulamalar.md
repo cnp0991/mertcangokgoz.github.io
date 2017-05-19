@@ -3,7 +3,7 @@ layout: post
 title: Macbooklarınızda Kullanabileceğiniz Uygulamalar
 date: 2017-05-15
 type: post
-categories: macosx
+categories: macos
 description: Özellikle Mac OSX kullanan arkadaşlarımızı da artık düşünerek burada güzel ve işe yarar uygulamaları toplamaya karar verdim. Özellikle
 commentid: 11
 ---
